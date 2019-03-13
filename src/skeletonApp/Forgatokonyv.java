@@ -2,7 +2,7 @@ package skeletonApp;
 
 /** A forgatókönyvek listájának elemei implementálják.
  */
-public interface ForgatokonyvListaElem {
+public interface Forgatokonyv {
 	
 	/**
 	 * Leírás a forgatókönyvhöz.

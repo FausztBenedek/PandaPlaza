@@ -10,7 +10,7 @@ public class SkeletonApp {
 	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
 	 * amelyet a felhasználó lefuttathat.
 	 */
-	private static ForgatokonyvListaElem[] elems = {
+	private static Forgatokonyv[] elems = {
 		new ListaElemTest(),
 		new ListaElemTest(),
 	};

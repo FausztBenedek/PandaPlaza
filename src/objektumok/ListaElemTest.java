@@ -1,12 +1,12 @@
 package objektumok;
 
-import skeletonApp.ForgatokonyvListaElem;
+import skeletonApp.Forgatokonyv;
 
 /**
  * Ez az osztály a main függvény működését teszteli.
  * Tölendő
  */
-public class ListaElemTest implements ForgatokonyvListaElem{
+public class ListaElemTest implements Forgatokonyv{
 
 	@Override
 	public String getLeiras() {
