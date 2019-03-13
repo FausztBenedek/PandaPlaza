@@ -1,3 +1,4 @@
+package skeletonApp;
 
 /** A forgatókönyvek listájának elemei implementálják.
  */
