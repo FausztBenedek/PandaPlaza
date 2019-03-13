@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Fotel extends Dolog implements ITickable {
@@ -14,5 +11,6 @@ public class Fotel extends Dolog implements ITickable {
 	
 	/** */
 	public void SetPanda(Ulos u) {
+				
 	}
 }

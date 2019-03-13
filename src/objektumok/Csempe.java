@@ -1,12 +1,10 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Csempe {
 	/** */
 	public Csempe GetNeigbour(int irany) {
+		return null; // TODO
 	}
 	
 	/** */
@@ -15,6 +13,7 @@ public class Csempe {
 	
 	/** */
 	public Dolog GetDolog() {
+		return null; // TODO
 	}
 	
 	/** */

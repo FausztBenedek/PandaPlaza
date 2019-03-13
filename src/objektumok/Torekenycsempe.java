@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Torekenycsempe extends Csempe {
@@ -10,9 +7,11 @@ public class Torekenycsempe extends Csempe {
 	
 	/** */
 	public void Accept(Allat a) {
+		
 	}
 	
 	/** */
 	public void Ugrott() {
+		elettartam-=3;
 	}
 }

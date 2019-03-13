@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Jatekgep extends Dolog implements ITickable {

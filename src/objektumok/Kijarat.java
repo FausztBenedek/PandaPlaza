@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Kijarat extends Dolog {

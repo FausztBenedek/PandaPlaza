@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Ugros extends Panda {

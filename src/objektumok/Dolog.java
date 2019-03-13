@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public abstract class Dolog {
@@ -11,6 +8,7 @@ public abstract class Dolog {
 	
 	/** */
 	public Csempe GetCsempe() {
+		return null; // TODO
 	}
 	
 	/** */

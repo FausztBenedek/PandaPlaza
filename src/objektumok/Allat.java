@@ -1,8 +1,4 @@
-
-
-
-
-
+package objektumok;
 /** */
 public abstract class Allat extends Dolog {
 	/** */
@@ -17,6 +13,7 @@ public abstract class Allat extends Dolog {
 	
 	/** */
 	public Allat GetHatsoMancs() {
+		return null;
 	}
 	
 	/** */

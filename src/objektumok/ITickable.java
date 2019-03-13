@@ -1,11 +1,7 @@
-
-
-
-
+package objektumok;
 
 /** */
-public class ITickable {
+public interface ITickable {
 	/** */
-	public void Tick() {
-	}
+	public void Tick();
 }

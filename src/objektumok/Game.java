@@ -1,10 +1,7 @@
-
-
-
-
+package objektumok;
 
 /** */
-private class Game {
+public class Game {
 	/** */
 	private int pontszam;
 	

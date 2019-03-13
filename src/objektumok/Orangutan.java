@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Orangutan extends Allat {

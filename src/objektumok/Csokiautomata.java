@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public class Csokiautomata extends Dolog implements ITickable {

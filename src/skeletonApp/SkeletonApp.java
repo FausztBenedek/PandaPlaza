@@ -10,7 +10,7 @@ public class SkeletonApp {
 	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
 	 * amelyet a felhasználó lefuttathat.
 	 */
-	private static Forgatokonyv[] elems = {
+	private static Forgatokonyv[] forgatokonyvek = {
 		new ListaElemTest(),
 		new ListaElemTest(),
 	};
@@ -28,7 +28,7 @@ public class SkeletonApp {
 			
 			// Kiírjuk a lehetőségeket
 			System.out.println("A lehetséges forgatókönyvek:");
-			for (int i = 0; i < elems.length; i++) {
+			for (int i = 0; i < forgatokonyvek.length; i++) {
 				
 				// Sorszámok kiírása (indextől eggyel nagyobb)
 				System.out.print('\t');
@@ -36,12 +36,12 @@ public class SkeletonApp {
 				System.out.print('.');
 			
 				// A forgatókönyv leírásának kiírása
-				String leiras = elems[i].getLeiras();
+				String leiras = forgatokonyvek[i].getLeiras();
 				System.out.println(leiras);
 			}
 			
 			// Elkérjük az inputot a felhasználótól, és megállítjuk a programot, ha rosszat ad.
-			System.out.println("Melyik forgatókönyvet választot? Add meg a számát! Kilépéshez bármi mást!");
+			System.out.println("Melyik forgatókönyvet választod? Add meg a számát! Kilépéshez bármi mást!");
 			int userInput;
 			try {
 				userInput = sc.nextInt();
@@ -52,7 +52,7 @@ public class SkeletonApp {
 			
 			// A szükséges logika végrehajtása, ha tartozik hozzá sorszám.
 			try {
-				elems[userInput - 1].action();
+				forgatokonyvek[userInput - 1].action();
 				
 				// Elválasztáshoz egy üres sort beszúrunk
 				System.out.println("");

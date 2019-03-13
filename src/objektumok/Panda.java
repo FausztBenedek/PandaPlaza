@@ -1,7 +1,4 @@
-
-
-
-
+package objektumok;
 
 /** */
 public abstract class Panda extends Allat implements ITickable {
@@ -22,6 +19,7 @@ public abstract class Panda extends Allat implements ITickable {
 	
 	/** */
 	public Allat GetElsoMancs() {
+		return elsoMancs;
 	}
 	
 	/** */
