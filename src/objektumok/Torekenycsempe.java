@@ -12,6 +12,6 @@ public class Torekenycsempe extends Csempe {
 	
 	/** */
 	public void Ugrott() {
-		elettartam-=3;
+
 	}
 }
