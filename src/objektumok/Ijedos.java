@@ -4,6 +4,14 @@ package objektumok;
  * Olyan panda, aki a játékgép csilingelésétől megijed
  * */
 public class Ijedos extends Panda {
+	
+	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Ijedos(Csempe c) {
+		super(c);
+	}
 	/** 
 	 * Megijeszti az ijedős pandát: elengedi az előtte és mögötte állók mancsát.
 	 * */
