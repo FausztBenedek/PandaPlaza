@@ -4,6 +4,13 @@ package objektumok;
  * Egy orangutánt reprezentál
  * */
 public class Orangutan extends Allat {
+	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Orangutan(Csempe c) {
+		super(c);
+	}
 	/** 
 	 * Lépteti a megadott irányba az orangutánt
 	 * */

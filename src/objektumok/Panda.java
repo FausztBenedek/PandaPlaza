@@ -6,7 +6,13 @@ import java.util.ArrayList;
  * Egy pandát reprezentáló osztály
  * */
 public abstract class Panda extends Allat implements ITickable {
-
+	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Panda(Csempe c) {
+		super(c);
+	}
 	/** 
 	 * Véletlen irányba lépteti egyet a Pandát
 	 * */

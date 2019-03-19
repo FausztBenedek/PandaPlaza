@@ -5,6 +5,14 @@ package objektumok;
  * */
 public class Ulos extends Panda {
 	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Ulos(Csempe c) {
+		super(c);
+	}
+	
+	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi
 	 * */
 	public void hitBy(Fotel f) {		

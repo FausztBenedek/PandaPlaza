@@ -4,6 +4,13 @@ package objektumok;
  * Olyan panda, aki a csokiautomata sípolásától ugrik egyet
  * */
 public class Ugros extends Panda {
+	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Ugros(Csempe c) {
+		super(c);
+	}
 	/** 
 	 * Ugratja a pandát
 	 * */

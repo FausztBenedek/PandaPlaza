@@ -2,6 +2,14 @@ package objektumok;
 
 /** */
 public abstract class Allat extends Dolog {
+	/**
+	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
+	 * @param c - A kezdőpozíció.
+	 */
+	public Allat(Csempe c) {
+		super(c);
+	}
+	
 	/** 
 	 * Az az állat, akit a hátsó mancsával fog
 	 * */
