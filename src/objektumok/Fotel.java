@@ -9,17 +9,11 @@ import java.util.ArrayList;
 public class Fotel extends Dolog implements ITickable {
 	
 	/**
-	 * Konstruktor. Megadja, hogy a Fotel melyik csempén helyezkedik el,
-	 * illetve, hogy hány Tick-en át tartja az Ulos pandát ülve, valamint
-	 * az irányt, ahova a panda feláll.
+	 * Konstruktor. Megadja, hogy a Fotel melyik csempén helyezkedik el.
 	 * @param c - A kezdőcsempe.
-	 * @param pandatTart - Ennyi Tick-en át marad a panda ülve a fotelben.
-	 * @param felallasIrany - Ebben az irányban áll fel a panda.
 	 */
-	public Fotel(Csempe c, int pandatTart, int felallasIrany) {
+	public Fotel(Csempe c) {
 		super(c);
-		this.counterMax = pandatTart;
-		this.felallasIrany = felallasIrany;
 	}
 	
 	/**
@@ -38,40 +32,45 @@ public class Fotel extends Dolog implements ITickable {
 	 * Ha a counter eléri ezt az értéket, akkor a panda feláll
 	 * a Fotel-ből, és tovább megy.
 	 */
-	private int counterMax;
-	
-	/**
-	 * Ebben az irányban lévő csempére áll fel a panda.
-	 */
-	private int felallasIrany;
+	private final int counterMax = 5;
 	
 	/**
 	 * Két feladata van:
-	 * 1. A szomszédos mezőkön lévő Ulos pandákat leülteti, ha vannak.
-	 * 2. Ha letelt az idő felállítja a pandát a helyéről.
+	 * 1. A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
+	 * de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
+	 * 2. Ha letelt az idő felállítja a pandát a helyéről, és egy szabadon lévő
+	 * közeli csempére rakja.
 	 */
 	public void Tick() {
-		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákat
-		// leülteti, ha vannak.
+		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
+		// de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
 		{
-			// Szomszédok összegyűjtése
-			Csempe cs = getCsempe();
-			ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
-			for(int i = 0; i < 100; i++) { //TODO
-				if(cs.GetNeigbour(i)!=null)
-					szomszedok.add(cs.GetNeigbour(i));
-			}
-			
-			// Mindegyik szomszédon lévő dologgal ütköztetjük.
-			for (Csempe szomszed : szomszedok) {
-				Dolog other = szomszed.GetDolog();
-				other.hitBy(this);
+			// Check, hogy üres a fotel
+			if (panda == null) {
+				// Szomszédok összegyűjtése
+				Csempe cs = getCsempe();
+				ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
+				for(int i = 0; i < 100; i++) { //TODO
+					if(cs.GetNeigbour(i)!=null)
+						szomszedok.add(cs.GetNeigbour(i));
+				}
+				
+				// Mindegyik szomszédon lévő dologgal ütköztetjük.
+				for (Csempe szomszed : szomszedok) {
+					Dolog other = szomszed.GetDolog();
+					other.hitBy(this);
+					// Leállítjuk a loopot, ha leültettünk valakit
+					if (this.panda != null) {
+						break;
+					}
+				}
 			}
 		}
 		
-		// 2. feladat: Ha letelt az idő felállítja a pandát a helyéről.
+		// 2. feladat: Ha letelt az idő felállítja a pandát a helyéről, és egy szabadon lévő
+		// közeli csempére rakja.
 		{
-			// Panda felállítására várakozás
+			// Check, hogy van-e valaki a fotelban
 			if (panda != null) {
 				// Inkrementáljuk a countert, és ha elérte a maxot...
 				if (counter++ < counterMax) {
@@ -81,18 +80,24 @@ public class Fotel extends Dolog implements ITickable {
 					// A pandát fel kell állítani 
 					// vagyis (a target Csempe-re kell rakni)
 					Csempe pos = this.getCsempe();
-					Csempe target = pos.GetNeigbour(felallasIrany);
+					Csempe target;
 					
-					// Ezt csak akkor teszzük meg, ha a target-en
-					// nincs senki.
-					if (target.GetDolog() == null) {
-						target.SetDolog(panda);
-						this.panda = null;
-						counter = 0;
-					}
-					else {
-						// A panda marad még egy kört, ameddig
-						// a target csempe nem lesz üres.
+					// Megnézzük, hogy van-e olyan szomszéd, ami üres
+					// Ehhez lehet hogy az összes szomszédot meg kell nézni
+					// Ez a for loop addig fut, ameddig nem talál egyet.
+					int[] iranyok = pos.getIranyok();
+					for (int i = 0; i < iranyok.length; i++) {
+						target = pos.GetNeigbour(iranyok[i]);
+						
+						// Ha a targeten nincsen senki, akkor odarakjuk
+						// a pandát, vissza állítjuk a counter-t és készen vagyunk.
+						if (target.GetDolog() == null) {
+							target.SetDolog(panda);
+							panda.setCsempe(target);
+							this.panda = null;
+							counter = 0;
+							break;
+						}
 					}
 				}
 			}
