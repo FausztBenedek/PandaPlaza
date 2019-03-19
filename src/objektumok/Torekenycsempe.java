@@ -6,12 +6,12 @@ public class Torekenycsempe extends Csempe {
 	private int elettartam;
 	
 	/** */
-	public void Accept(Allat a) {
+	public void accept(Allat a) {
 		
 	}
 	
 	/** */
-	public void Ugrott() {
+	public void ugrott() {
 
 	}
 }

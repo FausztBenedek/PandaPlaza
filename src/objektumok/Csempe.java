@@ -3,29 +3,29 @@ package objektumok;
 /** */
 public class Csempe {
 	/** */
-	public Csempe GetNeigbour(int irany) {
+	public Csempe getNeigbour(int irany) {
 		return null; // TODO
 	}
 	
 	/** */
-	public void Accept(Allat a) {
+	public void accept(Allat a) {
 	}
 	
 	/** */
-	public Dolog GetDolog() {
+	public Dolog getDolog() {
 		return null; // TODO
 	}
 	
 	/** */
-	public void SetDolog(Dolog d) {
+	public void setDolog(Dolog d) {
 	}
 	
 	/** */
-	public void SetNeighbour(int irany, Csempe c) {
+	public void setNeighbour(int irany, Csempe c) {
 	}
 	
 	/** */
-	public void Ugrott() {
+	public void ugrott() {
 	}
 	
 	public int[] getIranyok() {

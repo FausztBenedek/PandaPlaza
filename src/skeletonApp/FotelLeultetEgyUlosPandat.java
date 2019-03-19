@@ -19,8 +19,8 @@ public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
 		Csempe fotelPos = new Csempe();
 		Csempe pandaPos = new Csempe();
 		// A két csempe összekötése:
-		fotelPos.SetNeighbour(0, pandaPos);
-		pandaPos.SetNeighbour(0, fotelPos);
+		fotelPos.setNeighbour(0, pandaPos);
+		pandaPos.setNeighbour(0, fotelPos);
 		
 		// Fotel, amelyik 5 ticken át tartja ott a pandát.
 		// És a 0 irányú szomszédra teszi ki.
@@ -30,7 +30,7 @@ public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
 		u.setCsempe(pandaPos);
 		
 		// És végül a trigger
-		f.Tick();
+		f.tick();
 	}
 
 }

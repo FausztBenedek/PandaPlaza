@@ -18,27 +18,27 @@ public class Game {
 	private Dolog dolgok;
 	
 	/** */
-	public void AddPoints(int p) {
+	public void addPoints(int p) {
 	}
 	
 	/** */
-	public void AddDolog(Dolog d) {
+	public void addDolog(Dolog d) {
 	}
 	
 	/** */
-	public void AddCsempe(Csempe c) {
+	public void addCsempe(Csempe c) {
 	}
 	
 	/** */
-	public void SetActiveOrangutan(Orangutan o) {
+	public void setActiveOrangutan(Orangutan o) {
 	}
 	
 	/** */
-	public void StartGame() {
+	public void startGame() {
 	}
 	
 	/** */
-	public void EndGame() {
+	public void endGame() {
 	}
 	
 	/** */
@@ -46,10 +46,10 @@ public class Game {
 	}
 	
 	/** */
-	public void PandaSzamCsokkent() {
+	public void pandaSzamCsokkent() {
 	}
 	
 	/** */
-	public void CsempeOsszekot(Csempe c1, int i1, Csempe c2, int i2) {
+	public void csempeOsszekot(Csempe c1, int i1, Csempe c2, int i2) {
 	}
 }

@@ -41,7 +41,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * 2. Ha letelt az idő felállítja a pandát a helyéről, és egy szabadon lévő
 	 * közeli csempére rakja.
 	 */
-	public void Tick() {
+	public void tick() {
 		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
 		// de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
 		{
@@ -52,8 +52,8 @@ public class Fotel extends Dolog implements ITickable {
 				// Mindegyik szomszédon lévő dologgal ütköztetjük.
 				int[] iranyok = pos.getIranyok();
 				for (int i = 0; i < iranyok.length; i++) {
-					Csempe szomszed = pos.GetNeigbour(iranyok[i]);
-					Dolog other = szomszed.GetDolog();
+					Csempe szomszed = pos.getNeigbour(iranyok[i]);
+					Dolog other = szomszed.getDolog();
 					other.hitBy(this);
 					// Leállítjuk a loopot, ha leültettünk valakit
 					if (this.panda != null) {
@@ -83,12 +83,12 @@ public class Fotel extends Dolog implements ITickable {
 					// Ez a for loop addig fut, ameddig nem talál egyet.
 					int[] iranyok = pos.getIranyok();
 					for (int i = 0; i < iranyok.length; i++) {
-						target = pos.GetNeigbour(iranyok[i]);
+						target = pos.getNeigbour(iranyok[i]);
 						
 						// Ha a targeten nincsen senki, akkor odarakjuk
 						// a pandát, vissza állítjuk a counter-t és készen vagyunk.
-						if (target.GetDolog() == null) {
-							target.SetDolog(panda);
+						if (target.getDolog() == null) {
+							target.setDolog(panda);
 							panda.setCsempe(target);
 							this.panda = null;
 							counter = 0;

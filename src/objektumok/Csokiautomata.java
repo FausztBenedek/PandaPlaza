@@ -18,15 +18,15 @@ public class Csokiautomata extends Dolog implements ITickable {
 	/** Random időközönként ugratja a szomszédos csempéken
 	 * lévő Ugros pandákat.
 	 */
-	public void Tick() {
+	public void tick() {
 		
 		Csempe pos = getCsempe();
 		
 		// Mindegyik szomszédon lévő dologgal ütköztetjük.
 		int[] iranyok = pos.getIranyok();
 		for (int i = 0; i < iranyok.length; i++) {
-			Csempe szomszed = pos.GetNeigbour(iranyok[i]);
-			Dolog other = szomszed.GetDolog();
+			Csempe szomszed = pos.getNeigbour(iranyok[i]);
+			Dolog other = szomszed.getDolog();
 			other.hitBy(this);
 		}
 	}

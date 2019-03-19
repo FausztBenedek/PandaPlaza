@@ -7,5 +7,5 @@ public interface ITickable {
 	/**
 	 * Időben lépteti az objektumot.
 	 * */
-	public void Tick();
+	public void tick();
 }

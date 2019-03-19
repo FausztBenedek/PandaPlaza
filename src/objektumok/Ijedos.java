@@ -7,20 +7,20 @@ public class Ijedos extends Panda {
 	/** 
 	 * Megijeszti az ijedős pandát: elengedi az előtte és mögötte állók mancsát.
 	 * */
-	public void HitBy(Jatekgep j) {
+	public void hitBy(Jatekgep j) {
 		
 		//Ha valakit fog az első mancsával, elengedi
-		Allat ae = GetElsoMancs();
+		Allat ae = getElsoMancs();
 		if(ae != null) {
-			ae.SetHatsoMancs(null);
-			SetElsoMancs(null);
+			ae.setHatsoMancs(null);
+			setElsoMancs(null);
 		}
 		
 		//Ha valakit fog az hátsó mancsával, elengedi
-		Allat ah = GetHatsoMancs();
+		Allat ah = getHatsoMancs();
 		if(ah != null) {
-			ah.SetElsoMancs(null);
-			SetHatsoMancs(null);
+			ah.setElsoMancs(null);
+			setHatsoMancs(null);
 		}
 	}
 }

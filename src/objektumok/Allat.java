@@ -20,65 +20,65 @@ public abstract class Allat extends Dolog {
 	/** 
 	 * Elengedi az előtte és mögötte állók mancsát és leveszi a pályáról az állatot
 	 * */
-	public void Die() {		
+	public void die() {		
 		//Ha valakit fog az első mancsával, elengedi
-		Allat ae = GetElsoMancs();
+		Allat ae = getElsoMancs();
 		if(ae != null) {
-			ae.SetHatsoMancs(null);
-			SetElsoMancs(null);
+			ae.setHatsoMancs(null);
+			setElsoMancs(null);
 		}
 		
 		//Ha valakit fog az hátsó mancsával, elengedi
-		Allat ah = GetHatsoMancs();
+		Allat ah = getHatsoMancs();
 		if(ah != null) {
-			ah.SetElsoMancs(null);
-			SetHatsoMancs(null);
+			ah.setElsoMancs(null);
+			setHatsoMancs(null);
 		}
 		
 		// Leveszi az állatot a csempéről
-		GetCsempe().SetDolog(null);
+		getCsempe().setDolog(null);
 	}
 	
 	/** 
 	 * Visszatér azzal az állattal, akit a hátsó mancsával fog
 	 * */
-	public Allat GetHatsoMancs() {
+	public Allat getHatsoMancs() {
 		return hatsoMancs;
 	}
 	
 	/** 
 	 * Megfogja a hátsó mancsával a paraméterül kapott állatot
 	 * */
-	public void SetHatsoMancs(Allat a) {
+	public void setHatsoMancs(Allat a) {
 		hatsoMancs = a;
 	}
 	
 	/** 
 	 * Visszatér azzal az állattal, akit az első mancsával fog
 	 * */
-	public Allat GetElsoMancs() {
+	public Allat getElsoMancs() {
 		return elsoMancs;
 	}
 	
 	/** 
 	 * Megfogja az első mancsával a paraméterül kapott állatot
 	 * */
-	public void SetElsoMancs(Allat a) {
+	public void setElsoMancs(Allat a) {
 		elsoMancs = a;
 	}
 	
 	/** 
 	 * Megpróbálja ráléptetni a paraméterül kapott csempére az állatot
 	 * */
-	public void Leptet(Csempe c) {
+	public void leptet(Csempe c) {
 		// Lekéri a csempén lévő dolgot
-		Dolog d = c.GetDolog();
+		Dolog d = c.getDolog();
 		
 		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
 		if(d==null) {
-			c.Accept(this);
+			c.accept(this);
 		} else {
-			d.HitBy(this);
+			d.hitBy(this);
 		}
 	}
 }

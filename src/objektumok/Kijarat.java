@@ -9,7 +9,7 @@ public class Kijarat extends Dolog {
 	private Bejarat bejarat;
 	
 	/** */
-	public void HitBy(Allat a) {
+	public void hitBy(Allat a) {
 	}
 	
 }

@@ -10,55 +10,55 @@ public abstract class Panda extends Allat implements ITickable {
 	/** 
 	 * Véletlen irányba lépteti egyet a Pandát
 	 * */
-	public void Leptet() {		
-		Csempe cs = GetCsempe();
+	public void leptet() {		
+		Csempe cs = getCsempe();
 		ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
 		for(int i = 0; i < 100; i++) { //TODO
-			if(cs.GetNeigbour(i)!=null)
-				szomszedok.add(cs.GetNeigbour(i));
+			if(cs.getNeigbour(i)!=null)
+				szomszedok.add(cs.getNeigbour(i));
 		}
 		
 		// Random csempe kiválasztása a szomszédok közül
 		Csempe randomCsempe = szomszedok.get((int)Math.floor(Math.random()*szomszedok.size()));
 		
 		//Megpróbálja a véletlenszerűen választott csempére léptetni a pandát
-		Leptet(randomCsempe);
+		leptet(randomCsempe);
 	}
 	
 	/**
 	 * Jelzi a pandának, hogy telt az idő, ennek hatására eldönti, hogy akar-e lépni
 	 * */
-	public void Tick() {
-		if(GetElsoMancs()==null)
-			Leptet();
+	public void tick() {
+		if(getElsoMancs()==null)
+			leptet();
 	}
 	
 	/** 
 	 * Ha a panda szabadon kószál, beállítja az orangután mögé a pandát, és megcseréli a helyüket.
 	 * */
-	public void HitBy(Orangutan o) {
-		if(GetElsoMancs()==null) {
-			Csempe c1 = o.GetCsempe();
-			GetCsempe().Accept(o);
-			c1.Accept(this);
-			SetElsoMancs(o);
-			Allat orangutanMogotti = o.GetHatsoMancs();
+	public void hitBy(Orangutan o) {
+		if(getElsoMancs()==null) {
+			Csempe c1 = o.getCsempe();
+			getCsempe().accept(o);
+			c1.accept(this);
+			setElsoMancs(o);
+			Allat orangutanMogotti = o.getHatsoMancs();
 			if(orangutanMogotti!=null) {
-				SetHatsoMancs(orangutanMogotti);
-				orangutanMogotti.SetElsoMancs(this);				
+				setHatsoMancs(orangutanMogotti);
+				orangutanMogotti.setElsoMancs(this);				
 			}
-			o.SetHatsoMancs(this);			
+			o.setHatsoMancs(this);			
 		}			
 	}
 	
 	/** 
 	 * Törli a pályáról a Pandát, csökkenti a hátralévő pandák számát.
 	 * */
-	public void Die() {
+	public void die() {
 		// Elengedi mindenkinek a kezét, leveszi a pályáról
-		super.Die();
+		super.die();
 		
 		// Csökkenti a hátralévő pandák számát
-		game.PandaSzamCsokkent();		
+		game.pandaSzamCsokkent();		
 	}
 }
