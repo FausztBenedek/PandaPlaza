@@ -26,8 +26,7 @@ public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
 		// És a 0 irányú szomszédra teszi ki.
 		Fotel f = new Fotel(fotelPos);
 		
-		Ulos u = new Ulos();
-		u.setCsempe(pandaPos);
+		Ulos u = new Ulos(pandaPos);
 		
 		// És végül a trigger
 		f.tick();
