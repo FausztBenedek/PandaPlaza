@@ -1,5 +1,4 @@
 package objektumok;
-package objektumok;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,16 +20,12 @@ public class Csokiautomata extends Dolog implements ITickable {
 	 */
 	public void Tick() {
 		
-		// Szomszédok összegyűjtése
-		Csempe cs = getCsempe();
-		ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
-		for(int i = 0; i < 100; i++) { //TODO
-			if(cs.GetNeigbour(i)!=null)
-				szomszedok.add(cs.GetNeigbour(i));
-		}
+		Csempe pos = getCsempe();
 		
 		// Mindegyik szomszédon lévő dologgal ütköztetjük.
-		for (Csempe szomszed : szomszedok) {
+		int[] iranyok = pos.getIranyok();
+		for (int i = 0; i < iranyok.length; i++) {
+			Csempe szomszed = pos.GetNeigbour(iranyok[i]);
 			Dolog other = szomszed.GetDolog();
 			other.hitBy(this);
 		}
