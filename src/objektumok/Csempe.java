@@ -27,4 +27,8 @@ public class Csempe {
 	/** */
 	public void Ugrott() {
 	}
+	
+	public int[] getIranyok() {
+		return null; // TODO
+	}
 }
