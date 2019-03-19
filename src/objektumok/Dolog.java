@@ -1,4 +1,5 @@
 package objektumok;
+import skeletonApp.*;
 
 /** A dolog reprezentál minden olyan objektumot a játékban,
  * ami ütközhet egy másik példánnyal.
@@ -40,6 +41,8 @@ public abstract class Dolog {
 	 * @param d - A dolog amivel ez a dolog ütközik.
 	 */
 	public void hitBy(Dolog d) {
+		Skeleton.print("Dolog.hitBy()");
+		Skeleton.ret();
 	}
 	
 	/**
@@ -47,6 +50,8 @@ public abstract class Dolog {
 	 * @return - A csempe.
 	 */
 	public Csempe getCsempe() {
+		Skeleton.print("Dolog.getCsempe()");
+		Skeleton.ret();
 		return c;
 	}
 	
@@ -56,10 +61,12 @@ public abstract class Dolog {
 	 * @throws IllegalArgumentException - Ha a paraméter null.
 	 */
 	public void setCsempe(Csempe c) {
+		Skeleton.print("Dolog.setCsempe()");
 		if (c == null) {
 			throw new IllegalArgumentException(
 					"A dolog osztály csempe attribútuma nem lehet null");
 		}
 		this.c = c;
+		Skeleton.ret();
 	}
 }

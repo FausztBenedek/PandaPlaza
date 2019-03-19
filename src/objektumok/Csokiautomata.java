@@ -3,6 +3,8 @@ package objektumok;
 import java.util.ArrayList;
 import java.util.Random;
 
+import skeletonApp.Skeleton;
+
 /** A Csokiautomata ugratja a szomszédos mezőkön álló Ugros pandákat.
  */
 public class Csokiautomata extends Dolog implements ITickable {
@@ -19,6 +21,7 @@ public class Csokiautomata extends Dolog implements ITickable {
 	 * lévő Ugros pandákat.
 	 */
 	public void tick() {
+		Skeleton.print("Csokiautomata.tick()");
 		
 		Csempe pos = getCsempe();
 		
@@ -29,5 +32,6 @@ public class Csokiautomata extends Dolog implements ITickable {
 			Dolog other = szomszed.getDolog();
 			other.hitBy(this);
 		}
+		Skeleton.ret();
 	}
 }

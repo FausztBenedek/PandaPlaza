@@ -2,6 +2,8 @@ package objektumok;
 
 import java.util.ArrayList;
 
+import skeletonApp.Skeleton;
+
 /**
  * A Fotel a szomszédos mezőn lévő Ulos pandákat leülteti,
  * és ott tartja egy ideig.
@@ -42,6 +44,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * közeli csempére rakja.
 	 */
 	public void tick() {
+		Skeleton.print("Fotel.tick()");
 		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
 		// de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
 		{
@@ -98,6 +101,7 @@ public class Fotel extends Dolog implements ITickable {
 				}
 			}
 		}
+		Skeleton.ret();
 	}
 	
 	/**
@@ -108,8 +112,10 @@ public class Fotel extends Dolog implements ITickable {
 	 * ha üres a fotel. Csak True esetén történik változás.
 	 */
 	public boolean setPanda(Ulos u) {
+		Skeleton.print("Fotel.setPanda()");
 		if (panda != null) return false;
 		this.panda = u;
+		Skeleton.ret();
 		return true;
 	}
 }

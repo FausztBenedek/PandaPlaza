@@ -1,5 +1,7 @@
 package objektumok;
 
+import skeletonApp.Skeleton;
+
 /** A Jatekgep random időközönként megijeszti a szomszédos mezőkön lévő
  * lévő Ijedos pandákat.
  */
@@ -18,6 +20,7 @@ public class Jatekgep extends Dolog implements ITickable {
 	 */
 	@Override
 	public void tick() {
+		Skeleton.print("Jatekgep.tick()");
 		
 		Csempe pos = getCsempe();
 		
@@ -28,5 +31,6 @@ public class Jatekgep extends Dolog implements ITickable {
 			Dolog other = szomszed.getDolog();
 			other.hitBy(this);
 		}
+		Skeleton.ret();
 	}
 }
