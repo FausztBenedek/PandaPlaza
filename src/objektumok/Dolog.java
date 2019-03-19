@@ -58,14 +58,9 @@ public abstract class Dolog {
 	/**
 	 * Setter a csempére, amire egy dolgot akarunk helyezni.
 	 * @param c - Az új csempe.
-	 * @throws IllegalArgumentException - Ha a paraméter null.
 	 */
 	public void setCsempe(Csempe c) {
 		Skeleton.print("Dolog.setCsempe()");
-		if (c == null) {
-			throw new IllegalArgumentException(
-					"A dolog osztály csempe attribútuma nem lehet null");
-		}
 		this.c = c;
 		Skeleton.ret();
 	}
