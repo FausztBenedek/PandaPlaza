@@ -60,5 +60,6 @@ public abstract class Dolog {
 			throw new IllegalArgumentException(
 					"A dolog osztály csempe attribútuma nem lehet null");
 		}
+		this.c = c;
 	}
 }
