@@ -24,7 +24,7 @@ public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
 		
 		// Fotel, amelyik 5 ticken át tartja ott a pandát.
 		// És a 0 irányú szomszédra teszi ki.
-		Fotel f = new Fotel(fotelPos, 5, 0);
+		Fotel f = new Fotel(fotelPos);
 		
 		Ulos u = new Ulos();
 		u.setCsempe(pandaPos);
