@@ -72,11 +72,21 @@ public abstract class Allat extends Dolog {
 	}
 	
 	/** 
-	 * Megfogja az első mancsával a paraméterül kapott állatot
+	 * Megfogja az első mancsával a paraméterül kapott állatot. Ha nullt kap paraméterként, elengedi a mögötte álló mancsát.
+	 * @param A megfogandó állat
 	 * */
 	public void setElsoMancs(Allat a) {
 		Skeleton.print(this, "setElsoMancs");		
 		elsoMancs = a;
+		// Ha elengedték az első mancsát
+		if(a==null) {
+			// Ha fog valakit a hátsó mancsával
+			if(hatsoMancs!=null) {
+				// Elengedi a mögötte álló mancsát
+				hatsoMancs.setElsoMancs(null);
+				hatsoMancs = null;
+			}
+		}			
 		Skeleton.ret();
 	}
 	

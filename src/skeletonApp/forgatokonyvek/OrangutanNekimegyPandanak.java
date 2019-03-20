@@ -1,6 +1,7 @@
-package skeletonApp;
+package skeletonApp.forgatokonyvek;
 
 import objektumok.*;
+import skeletonApp.*;
 
 public class OrangutanNekimegyPandanak extends Forgatokonyv {
 		

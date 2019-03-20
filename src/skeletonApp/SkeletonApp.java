@@ -1,6 +1,7 @@
 package skeletonApp;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import skeletonApp.forgatokonyvek.*;
 
 public class SkeletonApp {
 	
