@@ -34,7 +34,7 @@ public abstract class Dolog {
 	 * @param d - A dolog amivel ez a dolog ütközik.
 	 */
 	public void hitBy(Dolog d) {
-		Skeleton.print(this,"hitBy");
+		Skeleton.print(this,"hitBy", d);
 		Skeleton.ret();
 	}
 	
@@ -53,7 +53,7 @@ public abstract class Dolog {
 	 * @param c - Az új csempe.
 	 */
 	public void setCsempe(Csempe c) {
-		Skeleton.print(this,"setCsempe");
+		Skeleton.print(this,"setCsempe", c);
 		this.c = c;
 		Skeleton.ret();
 	}

@@ -41,6 +41,7 @@ public abstract class Allat extends Dolog {
 		
 		// Leveszi az állatot a csempéről
 		getCsempe().setDolog(null);
+		setCsempe(null);
 		Skeleton.ret();
 	}
 	

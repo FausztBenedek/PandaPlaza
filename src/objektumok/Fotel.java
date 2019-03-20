@@ -104,7 +104,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * ha üres a fotel. Csak True esetén történik változás.
 	 */
 	public boolean setPanda(Ulos u) {
-		Skeleton.print(this,"setPanda");
+		Skeleton.print(this, "setPanda", u);
 		if (panda != null) return false;
 		this.panda = u;
 		Skeleton.ret();

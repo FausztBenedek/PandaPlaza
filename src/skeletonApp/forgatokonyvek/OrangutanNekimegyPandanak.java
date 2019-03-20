@@ -39,6 +39,12 @@ public class OrangutanNekimegyPandanak extends Forgatokonyv {
 		c0.setDolog(u2);
 		
 		
+		// TODO csak próba
+		Game g  = new Game();
+		u2.setGame(g);
+		u2.die();
+		//próba vége
+		
 		
 		o.leptet(2);
 		

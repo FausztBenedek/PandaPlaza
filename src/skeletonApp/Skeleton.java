@@ -45,10 +45,9 @@ public class Skeleton {
 			System.out.print("\t");
 		}
 		String paramNames = "";
-		for(int i = 0; i < params.length; i++) 
-			paramNames += getObjectName(params[i])!=null ? getObjectName(params[i]) : params[i].toString()+", ";	
-		if(paramNames.endsWith(", ")) 
-			paramNames = paramNames.substring(0, paramNames.length()-2); // TODO?		
+		for(int i = 0; i < params.length; i++)
+			paramNames += params[i]==null?"null":getObjectName(params[i])!=null ? getObjectName(params[i]) : params[i].toString()+", ";
+		if(paramNames.endsWith(", ")) paramNames = paramNames.substring(0, paramNames.length()-2);	
 		System.out.println(Skeleton.getObjectName(object)+"."+methodName+"("+paramNames+")");
 		tabok++;
 	}
