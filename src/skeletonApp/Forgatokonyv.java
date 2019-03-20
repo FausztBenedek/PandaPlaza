@@ -2,18 +2,18 @@ package skeletonApp;
 
 /** A forgatókönyvek listájának elemei implementálják.
  */
-public interface Forgatokonyv {
-	
+public abstract class Forgatokonyv {
+		
 	/**
 	 * Leírás a forgatókönyvhöz.
 	 * @return - A forgatókönyv leírása.
 	 */
-	public String getLeiras();
+	public abstract String getLeiras();
 	
 	/**
 	 * A forgatókönyvhöz tartozó objektumok példányosításához, 
 	 * a forgatókönyv inicializálásához, és az inditásnak megfelelő
 	 * metódus meghívásához szükséges logika.
 	 */
-	public void action();
+	public abstract void action();
 }

@@ -16,9 +16,9 @@ public abstract class Dolog {
 	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
 	 * @param c - A kezdőpozíció.
 	 */
-	public Dolog(Csempe c) {
-		this.c = c;
-	}
+//	public Dolog(Csempe c) {
+//		this.c = c;
+//	}
 	/** A leszármazottak ennek a metódusnak a felüldefiniálásával
 	 * implementálják az ütközéskor végrehajtott logikát. Alapértelmezetten
 	 * ez egy üres metódus, nincs semilyen végrehajtandó logika.
@@ -41,7 +41,7 @@ public abstract class Dolog {
 	 * @param d - A dolog amivel ez a dolog ütközik.
 	 */
 	public void hitBy(Dolog d) {
-		Skeleton.print("Dolog.hitBy()");
+		Skeleton.print(this,"hitBy");
 		Skeleton.ret();
 	}
 	
@@ -50,7 +50,7 @@ public abstract class Dolog {
 	 * @return - A csempe.
 	 */
 	public Csempe getCsempe() {
-		Skeleton.print("Dolog.getCsempe()");
+		Skeleton.print(this,"getCsempe");
 		Skeleton.ret();
 		return c;
 	}
@@ -60,7 +60,7 @@ public abstract class Dolog {
 	 * @param c - Az új csempe.
 	 */
 	public void setCsempe(Csempe c) {
-		Skeleton.print("Dolog.setCsempe()");
+		Skeleton.print(this,"setCsempe");
 		this.c = c;
 		Skeleton.ret();
 	}

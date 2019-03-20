@@ -1,5 +1,7 @@
 package objektumok;
 
+import java.util.ArrayList;
+
 /** */
 public class Csempe {
 	/** */
@@ -28,7 +30,7 @@ public class Csempe {
 	public void ugrott() {
 	}
 	
-	public int[] getIranyok() {
-		return null; // TODO
+	public ArrayList<Integer> getIranyok() {
+		return new ArrayList<Integer>(); //TODO
 	}
 }

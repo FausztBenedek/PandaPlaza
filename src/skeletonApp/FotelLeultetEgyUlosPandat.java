@@ -2,7 +2,7 @@ package skeletonApp;
 
 import objektumok.*;
 
-public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
+public class FotelLeultetEgyUlosPandat extends Forgatokonyv {
 
 	@Override
 	public String getLeiras() {
@@ -16,20 +16,27 @@ public class FotelLeultetEgyUlosPandat implements Forgatokonyv {
 	@Override
 	public void action() {
 		// A két csempe példányosítása:
-		Csempe fotelPos = new Csempe();
+		Csempe fotelPos = new Csempe();	
+		Skeleton.addObjectName(fotelPos, "fotelCsempe");
+		
 		Csempe pandaPos = new Csempe();
+		Skeleton.addObjectName(pandaPos, "pandaCsempe");
 		// A két csempe összekötése:
 		fotelPos.setNeighbour(0, pandaPos);
 		pandaPos.setNeighbour(0, fotelPos);
 		
 		// Fotel, amelyik 5 ticken át tartja ott a pandát.
 		// És a 0 irányú szomszédra teszi ki.
-		Fotel f = new Fotel(fotelPos);
-		
-		Ulos u = new Ulos(pandaPos);
+		Fotel f = new Fotel();
+		Skeleton.addObjectName(f, "fotel1");
+		f.setCsempe(fotelPos);
+		fotelPos.setDolog(f);
+		Ulos u = new Ulos();
+		Skeleton.addObjectName(u, "ulos1");
+		u.setCsempe(pandaPos);
+		pandaPos.setDolog(u);
 		
 		// És végül a trigger
 		f.tick();
 	}
-
 }

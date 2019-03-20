@@ -6,7 +6,7 @@ import skeletonApp.Forgatokonyv;
  * Ez az osztály a main függvény működését teszteli.
  * Tölendő
  */
-public class ListaElemTest implements Forgatokonyv{
+public class ListaElemTest extends Forgatokonyv{
 
 	@Override
 	public String getLeiras() {

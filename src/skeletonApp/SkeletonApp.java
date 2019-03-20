@@ -13,6 +13,8 @@ public class SkeletonApp {
 	private static Forgatokonyv[] forgatokonyvek = {
 		new ListaElemTest(),
 		new ListaElemTest(),
+		new FotelLeultetEgyUlosPandat(),
+		new OrangutanNekimegyPandanak()
 	};
 	
 	/**
