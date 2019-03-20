@@ -1,15 +1,9 @@
 package objektumok;
 
+import skeletonApp.Skeleton;
+
 /** */
 public class Kijarat extends Dolog {
-	
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Kijarat(Csempe c) {
-//		super(c);
-//	}
 	
 	/** */
 	private Game game;
@@ -19,6 +13,7 @@ public class Kijarat extends Dolog {
 	
 	/** */
 	public void hitBy(Allat a) {
+		Skeleton.print(this, "hitBy", a);
+		Skeleton.ret();
 	}
-	
 }

@@ -9,15 +9,7 @@ import skeletonApp.Skeleton;
  * és ott tartja egy ideig.
  */
 public class Fotel extends Dolog implements ITickable {
-	
-	/**
-	 * Konstruktor. Megadja, hogy a Fotel melyik csempén helyezkedik el.
-	 * @param c - A kezdőcsempe.
-	 */
-//	public Fotel(Csempe c) {
-//		super(c);
-//	}
-	
+		
 	/**
 	 * Referencia a fotelban ülő pandára. Ha a fotel üres, akkor null.
 	 */

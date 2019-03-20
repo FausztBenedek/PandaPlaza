@@ -8,15 +8,7 @@ import skeletonApp.Skeleton;
  * lévő Ijedos pandákat.
  */
 public class Jatekgep extends Dolog implements ITickable {
-	
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Jatekgep(Csempe startPos) {
-//		super(startPos);
-//	}
-	
+
 	/** Random időközönként megijeszti a szomszédos mezőkön lévő
 	 * lévő Ijedos pandákat, ha vannak.
 	 */

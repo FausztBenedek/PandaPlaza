@@ -12,13 +12,6 @@ public abstract class Dolog {
 	 */
 	private Csempe c;
 	
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Dolog(Csempe c) {
-//		this.c = c;
-//	}
 	/** A leszármazottak ennek a metódusnak a felüldefiniálásával
 	 * implementálják az ütközéskor végrehajtott logikát. Alapértelmezetten
 	 * ez egy üres metódus, nincs semilyen végrehajtandó logika.

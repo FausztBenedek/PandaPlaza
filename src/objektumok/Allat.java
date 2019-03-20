@@ -4,14 +4,7 @@ import skeletonApp.Skeleton;
 
 /** */
 public abstract class Allat extends Dolog {
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Allat(Csempe c) {
-//		super(c);
-//	}
-	
+
 	/** 
 	 * Az az állat, akit a hátsó mancsával fog
 	 * */
@@ -82,9 +75,9 @@ public abstract class Allat extends Dolog {
 	 * Megfogja az első mancsával a paraméterül kapott állatot
 	 * */
 	public void setElsoMancs(Allat a) {
-		Skeleton.print(this, "setElsoMancs");
-		Skeleton.ret();
+		Skeleton.print(this, "setElsoMancs");		
 		elsoMancs = a;
+		Skeleton.ret();
 	}
 	
 	/** 
@@ -109,6 +102,8 @@ public abstract class Allat extends Dolog {
 	 * @param A beállítandó érték
 	 */
 	public void setGame(Game g) {
+		Skeleton.print(this, "setGame");
 		game = g;
+		Skeleton.ret();
 	}
 }

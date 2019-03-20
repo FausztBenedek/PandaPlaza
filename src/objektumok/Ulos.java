@@ -1,21 +1,17 @@
 package objektumok;
 
+import skeletonApp.Skeleton;
+
 /**
  * Olyan panda, akit bele lehet ültetni egy fotelbe.
  * */
 public class Ulos extends Panda {
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Ulos(Csempe c) {
-//		super(c);
-//	}
 	
 	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi
 	 * */
-	public void hitBy(Fotel f) {		
+	public void hitBy(Fotel f) {	
+		Skeleton.print(this, "hitBy", f);
 		//Ha valakit fog az első mancsával, elengedi
 		Allat ae = getElsoMancs();
 		if(ae != null) {
@@ -31,5 +27,6 @@ public class Ulos extends Panda {
 		
 		// Beleülteti a fotelbe a pandát
 		f.setPanda(this);
-	}
+		Skeleton.ret();
+	}	
 }

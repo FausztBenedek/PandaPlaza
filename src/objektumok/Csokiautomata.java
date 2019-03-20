@@ -6,21 +6,12 @@ import skeletonApp.Skeleton;
 
 /** A Csokiautomata ugratja a szomszédos mezőkön álló Ugros pandákat.
  */
-public class Csokiautomata extends Dolog implements ITickable {
-
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-//	public Csokiautomata(Csempe c) {
-//		super(c);
-//	}
-	
+public class Csokiautomata extends Dolog implements ITickable {	
 	/** Random időközönként ugratja a szomszédos csempéken
 	 * lévő Ugros pandákat.
 	 */
 	public void tick() {
-		Skeleton.print(this,"tick");
+		Skeleton.print(this, "tick");
 		
 		Csempe pos = getCsempe();
 		
