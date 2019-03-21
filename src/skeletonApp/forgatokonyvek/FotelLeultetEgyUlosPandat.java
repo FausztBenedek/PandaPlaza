@@ -38,6 +38,8 @@ public class FotelLeultetEgyUlosPandat extends Forgatokonyv {
 		pandaPos.setDolog(u);
 		
 		// És végül a trigger
+		Skeleton.startForgatokonyv();
 		f.tick();
+		Skeleton.finishForgatokonyv();
 	}
 }

@@ -8,6 +8,12 @@ import java.util.HashMap;
 public class Skeleton {
 
 	/**
+	 * A skeleton osztály csak akkor ír ki bármit is, ha
+	 * ez a változó true.
+	 */
+	private static boolean started = false;
+	
+	/**
 	 * Megadja, hány tabulátorral kell behúzni a sort.
 	 */
 	private static int tabok = 0;
@@ -20,11 +26,13 @@ public class Skeleton {
 	 * @param methodName - A metódus neve, amit ke kell írni
 	 */
 	public static void print(Object object, String methodName) {
-		for (int i = 0; i < tabok; i++) {
-			System.out.print("\t");
+		if (started) {
+			for (int i = 0; i < tabok; i++) {
+				System.out.print("\t");
+			}
+			System.out.println(Skeleton.getObjectName(object)+"."+methodName+"()");
+			tabok++;
 		}
-		System.out.println(Skeleton.getObjectName(object)+"."+methodName+"()");
-		tabok++;
 	}
 	
 	/*public static void print(Object object, String methodName, ArrayList<Object> params) {
@@ -41,15 +49,17 @@ public class Skeleton {
 	}*/
 	
 	public static void print(Object object, String methodName, Object... params) {
-		for (int i = 0; i < tabok; i++) {
-			System.out.print("\t");
+		if (started) {
+			for (int i = 0; i < tabok; i++) {
+				System.out.print("\t");
+			}
+			String paramNames = "";
+			for(int i = 0; i < params.length; i++)
+				paramNames += params[i]==null?"null":getObjectName(params[i])!=null ? getObjectName(params[i]) : params[i].toString()+", ";
+			if(paramNames.endsWith(", ")) paramNames = paramNames.substring(0, paramNames.length()-2);	
+			System.out.println(Skeleton.getObjectName(object)+"."+methodName+"("+paramNames+")");
+			tabok++;
 		}
-		String paramNames = "";
-		for(int i = 0; i < params.length; i++)
-			paramNames += params[i]==null?"null":getObjectName(params[i])!=null ? getObjectName(params[i]) : params[i].toString()+", ";
-		if(paramNames.endsWith(", ")) paramNames = paramNames.substring(0, paramNames.length()-2);	
-		System.out.println(Skeleton.getObjectName(object)+"."+methodName+"("+paramNames+")");
-		tabok++;
 	}
 	
 	/**
@@ -57,9 +67,11 @@ public class Skeleton {
 	 * @throws IllegalStateException - Ha többször lett meghívva, mint a print
 	 */
 	public static void ret() {
-		tabok--;
-		if (tabok < 0) {
-			throw new IllegalStateException("Tabulálás nem lehet negatív");
+		if (started) {
+			tabok--;
+			if (tabok < 0) {
+				throw new IllegalStateException("Tabulálás nem lehet negatív");
+			}
 		}
 	}
 	
@@ -72,6 +84,22 @@ public class Skeleton {
 	
 	public static String getObjectName(Object o) {
 		return objektumok.get(System.identityHashCode(o));
+	}
+	
+	/**
+	 * Elindítja a forgatókönyvet.
+	 */
+	public static void startForgatokonyv() {
+		started = true;
+	}
+	
+	/**
+	 * Visszaállítja az osztályt 
+	 * az kiindulási állapotba.
+	 */
+	public static void finishForgatokonyv() {
+		started = false;
+		objektumok.clear();
 	}
 	
 	

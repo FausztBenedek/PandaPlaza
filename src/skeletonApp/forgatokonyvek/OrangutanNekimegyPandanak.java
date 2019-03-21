@@ -45,8 +45,9 @@ public class OrangutanNekimegyPandanak extends Forgatokonyv {
 		u2.die();
 		//próba vége
 		
-		
+		Skeleton.startForgatokonyv();
 		o.leptet(2);
+		Skeleton.finishForgatokonyv();
 		
 	}
 
