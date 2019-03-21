@@ -17,6 +17,14 @@ public class Szekreny extends Dolog {
 	private Szekreny masik;
 	
 	/**
+	 * Beállítja, hogy a szekrény hova teleportálja az állatokat.
+	 * @param masik - Ide fogja az állatokat teleportálni a szekrény.
+	 */
+	public void setMasik(Szekreny masik) {
+		this.masik = masik;
+	}
+	
+	/**
 	 * A teleportálási logikát megvalósító metódus.
 	 * @param a - Az állat, akit a szekrény elteleportál.
 	 */
