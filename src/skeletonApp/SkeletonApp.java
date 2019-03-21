@@ -10,8 +10,19 @@ public class SkeletonApp {
 	 * amelyet a felhasználó lefuttathat.
 	 */
 	private static Forgatokonyv[] forgatokonyvek = {	
+		new OrangutanNekimegyPandanak(),
+		new CsokiautomataUgratjaAzUgrosPandat(),
+		new CsokiautomataSipolassalHatAzUlosPandara(),
+		new PandaMeghalACsempen(),
+		new PandaKivezetes(),
+		new PandaEgySzekrenyben(),
+		new OrangutanMeghal(),
 		new FotelLeultetEgyUlosPandat(),
-		new OrangutanNekimegyPandanak()
+		new JatekVege(),
+		new FotelFelallitEgyUlosPandat(),
+		new LeultetesFelbontEgyPandalancot(),
+		new PalyaLetreHozasa(),
+		new MegijedEgyIjedosPanda()
 	};
 	
 	/**
