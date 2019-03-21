@@ -10,7 +10,7 @@ public class Csempe {
 	
 	//attribútumok
 	private Dolog dolog;
-	private ArrayList<Csempe> szomszedok;
+	private ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
 	
 	//Függvények
 	
@@ -58,6 +58,7 @@ public class Csempe {
 	 *  */
 	public void setNeighbour(int irany, Csempe c) {
 		Skeleton.print(this, "setNeighbour", irany, c);
+		while(irany>=szomszedok.size()) szomszedok.add(null);
 		szomszedok.set(irany, c);
 		Skeleton.ret();
 	}
