@@ -19,10 +19,9 @@ public class Csempe {
 	 * 
 	 * */
 	public Csempe getNeigbour(int irany) {
-		Skeleton.print("Csempe.getNeigbour()");
+		Skeleton.print(this, "getNeighbour", irany);
 		Skeleton.ret();
 		return szomszedok.get(irany);
-		
 	}
 	
 	/** 
@@ -30,26 +29,26 @@ public class Csempe {
 	 *attribútumát saját magára
 	 * */
 	public void accept(Allat a) {
-		Skeleton.print("Csempe.accept()");
-		this.setDolog(a);
-		Skeleton.ret();
+		Skeleton.print(this, "accept", a);
+		this.setDolog(a);		
 		a.setCsempe(this);
+		Skeleton.ret();
 	}
 	
 	/** 
 	 * Visszaadja a csempén tartózkodó dolgot
 	 * */
 	public Dolog getDolog() {
-		Skeleton.print("Csempe.getDolog()");
+		Skeleton.print(this, "getDolog");
 		Skeleton.ret();
-		return dolog; // TODO
+		return dolog;
 	}
 	
 	/**
 	 * Beállítja a paraméterül kapott dolgot a csempére
 	 *  */
 	public void setDolog(Dolog d) {
-		Skeleton.print("Csempe.setDolog()");
+		Skeleton.print(this, "setDolog", d);
 		dolog = d;
 		Skeleton.ret();
 	}
@@ -58,7 +57,7 @@ public class Csempe {
 	 * A paraméterül kapott csempét beállítja a saját adott irányban található szomszédjaként
 	 *  */
 	public void setNeighbour(int irany, Csempe c) {
-		Skeleton.print("Csempe.setNeighbour()");
+		Skeleton.print(this, "setNeighbour", irany, c);
 		szomszedok.set(irany, c);
 		Skeleton.ret();
 	}
@@ -67,21 +66,19 @@ public class Csempe {
 	 * Lekezeli azt hogy egy rajta álló panda ugrott. A normál csempe esetén nem történik semmi
 	 *  */
 	public void ugrott() {
-		Skeleton.print("Csempe.ugrott");
+		Skeleton.print(this, "ugrott");
 		Skeleton.ret();
 	}
 	
 	/**
 	 * Visszaad egy random szomszédos csempét
-	 * @return
+	 * @return A véletlenszerűen kiválaszott csempe
 	 */
 	public Csempe getRandomSzomszed() {
-		Skeleton.print("Csempe.getRandomSzomszed()");
+		Skeleton.print(this,"getRandomSzomszed");
 		Random rand = new Random();
 		int irany = rand.nextInt(szomszedok.size()); // elvileg ez a felső határt kapja paraméterül (az alsó 0) és annál szigorúan kisebbeket generál
 		Skeleton.ret();
 		return szomszedok.get(irany);	
-		
-		
 	}
 }

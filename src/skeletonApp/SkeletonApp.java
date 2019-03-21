@@ -1,8 +1,7 @@
 package skeletonApp;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import objektumok.*;
+import skeletonApp.forgatokonyvek.*;
 
 public class SkeletonApp {
 	
@@ -10,9 +9,9 @@ public class SkeletonApp {
 	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
 	 * amelyet a felhasználó lefuttathat.
 	 */
-	private static Forgatokonyv[] forgatokonyvek = {
-		new ListaElemTest(),
-		new ListaElemTest(),
+	private static Forgatokonyv[] forgatokonyvek = {	
+		new FotelLeultetEgyUlosPandat(),
+		new OrangutanNekimegyPandanak()
 	};
 	
 	/**

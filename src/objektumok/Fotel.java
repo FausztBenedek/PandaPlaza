@@ -9,15 +9,7 @@ import skeletonApp.Skeleton;
  * és ott tartja egy ideig.
  */
 public class Fotel extends Dolog implements ITickable {
-	
-	/**
-	 * Konstruktor. Megadja, hogy a Fotel melyik csempén helyezkedik el.
-	 * @param c - A kezdőcsempe.
-	 */
-	public Fotel(Csempe c) {
-		super(c);
-	}
-	
+		
 	/**
 	 * Referencia a fotelban ülő pandára. Ha a fotel üres, akkor null.
 	 */
@@ -44,7 +36,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * közeli csempére rakja.
 	 */
 	public void tick() {
-		Skeleton.print("Fotel.tick()");
+		Skeleton.print(this,"tick");
 		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
 		// de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
 		{
@@ -53,9 +45,9 @@ public class Fotel extends Dolog implements ITickable {
 				Csempe pos = getCsempe();
 				
 				// Mindegyik szomszédon lévő dologgal ütköztetjük.
-				int[] iranyok = pos.getIranyok();
-				for (int i = 0; i < iranyok.length; i++) {
-					Csempe szomszed = pos.getNeigbour(iranyok[i]);
+				ArrayList<Integer> iranyok = pos.getIranyok();
+				for (int i = 0; i < iranyok.size(); i++) {
+					Csempe szomszed = pos.getNeigbour(iranyok.get(i));
 					Dolog other = szomszed.getDolog();
 					other.hitBy(this);
 					// Leállítjuk a loopot, ha leültettünk valakit
@@ -84,9 +76,9 @@ public class Fotel extends Dolog implements ITickable {
 					// Megnézzük, hogy van-e olyan szomszéd, ami üres
 					// Ehhez lehet hogy az összes szomszédot meg kell nézni
 					// Ez a for loop addig fut, ameddig nem talál egyet.
-					int[] iranyok = pos.getIranyok();
-					for (int i = 0; i < iranyok.length; i++) {
-						target = pos.getNeigbour(iranyok[i]);
+					ArrayList<Integer> iranyok = pos.getIranyok();
+					for (int i = 0; i < iranyok.size(); i++) {
+						target = pos.getNeigbour(iranyok.get(i));
 						
 						// Ha a targeten nincsen senki, akkor odarakjuk
 						// a pandát, vissza állítjuk a counter-t és készen vagyunk.
@@ -112,7 +104,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * ha üres a fotel. Csak True esetén történik változás.
 	 */
 	public boolean setPanda(Ulos u) {
-		Skeleton.print("Fotel.setPanda()");
+		Skeleton.print(this, "setPanda", u);
 		if (panda != null) return false;
 		this.panda = u;
 		Skeleton.ret();

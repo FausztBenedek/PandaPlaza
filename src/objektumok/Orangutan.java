@@ -1,20 +1,17 @@
 package objektumok;
 
+import skeletonApp.Skeleton;
+
 /** 
  * Egy orangutánt reprezentál
  * */
 public class Orangutan extends Allat {
-	/**
-	 * Konstruktor, amelyben meghatározzuk a kezdő csempét.
-	 * @param c - A kezdőpozíció.
-	 */
-	public Orangutan(Csempe c) {
-		super(c);
-	}
+
 	/** 
 	 * Lépteti a megadott irányba az orangutánt
 	 * */
 	public void leptet(int irany) {
+		Skeleton.print(this, "leptet", irany);
 		// Lekéri az adott irányú szomszédos csempét
 		Csempe cs = getCsempe().getNeigbour(irany);
 		
@@ -27,10 +24,12 @@ public class Orangutan extends Allat {
 	 * Megöli az orángutánt: leveszi az orangutánt a pályáról, elengedi a mögötte lévő mancsát, és csökkenti a hátralévő orángutánok számát
 	 * */
 	public void die() {
+		Skeleton.print(this, "die");
 		// Leveszi a pályáról, elengedi a szomszédjai mancsát
 		super.die();
 		
 		// Csökkenti a hátralévő orangutánok számát
 		game.OrangutanSzamCsokkent();
+		Skeleton.ret();
 	}	
 }
