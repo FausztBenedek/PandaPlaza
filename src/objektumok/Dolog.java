@@ -42,6 +42,7 @@ public abstract class Dolog {
 	public void hitBy(Csokiautomata c) {}
 	public void hitBy(Jatekgep p ) {}
 	public void hitBy(Fotel f) {}
+	public void hitBy(Orangutan o) {}
 	
 	/**
 	 * Getter a csempére, amin a dolog éppen áll.
