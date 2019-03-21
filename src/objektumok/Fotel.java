@@ -42,14 +42,11 @@ public class Fotel extends Dolog implements ITickable {
 		{
 			// Check, hogy üres a fotel
 			if (panda == null) {
-				Csempe pos = getCsempe();
-				
+				Csempe sajatCsempe = getCsempe();				
 				// Mindegyik szomszédon lévő dologgal ütköztetjük.
-				ArrayList<Integer> iranyok = pos.getIranyok();
-				for (int i = 0; i < iranyok.size(); i++) {
-					Csempe szomszed = pos.getNeigbour(iranyok.get(i));
-					Dolog other = szomszed.getDolog();
-					other.hitBy(this);
+				ArrayList<Csempe> szomszedCsempek = sajatCsempe.getAllNeighbours();
+				for (int i = 0; i < szomszedCsempek.size(); i++) {
+					szomszedCsempek.get(i).getDolog().hitBy(this);					
 					// Leállítjuk a loopot, ha leültettünk valakit
 					if (this.panda != null) {
 						break;
@@ -69,16 +66,16 @@ public class Fotel extends Dolog implements ITickable {
 				}
 				else {
 					// A pandát fel kell állítani 
-					// vagyis (a target Csempe-re kell rakni)
-					Csempe pos = this.getCsempe();
+					// vagyis (a target Csempére kell rakni)
+					Csempe sajatCsempe = this.getCsempe();
 					Csempe target;
 					
 					// Megnézzük, hogy van-e olyan szomszéd, ami üres
 					// Ehhez lehet hogy az összes szomszédot meg kell nézni
 					// Ez a for loop addig fut, ameddig nem talál egyet.
-					ArrayList<Integer> iranyok = pos.getIranyok();
-					for (int i = 0; i < iranyok.size(); i++) {
-						target = pos.getNeigbour(iranyok.get(i));
+					ArrayList<Csempe> szomszedCsempek = sajatCsempe.getAllNeighbours();
+					for (int i = 0; i < szomszedCsempek.size(); i++) {
+						target = szomszedCsempek.get(i);
 						
 						// Ha a targeten nincsen senki, akkor odarakjuk
 						// a pandát, vissza állítjuk a counter-t és készen vagyunk.

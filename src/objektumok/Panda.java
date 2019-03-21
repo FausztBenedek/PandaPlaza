@@ -1,7 +1,5 @@
 package objektumok;
 
-import java.util.ArrayList;
-
 import skeletonApp.Skeleton;
 
 /** 
@@ -14,18 +12,22 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	public void leptet() {		
 		Skeleton.print(this, "leptet");
+		
+		//Ezt kiváltja a getRandomSzomszed TODO
+		/*
 		Csempe cs = getCsempe();
-		ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
+		ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();		
 		for(int i = 0; i < 100; i++) { //TODO
 			if(cs.getNeigbour(i)!=null)
 				szomszedok.add(cs.getNeigbour(i));
-		}
-		
+		}		
 		// Random csempe kiválasztása a szomszédok közül
 		Csempe randomCsempe = szomszedok.get((int)Math.floor(Math.random()*szomszedok.size()));
+		*/
 		
-		//Megpróbálja a véletlenszerűen választott csempére léptetni a pandát
-		leptet(randomCsempe);
+		
+		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
+		leptet(getCsempe().getRandomSzomszed());
 		Skeleton.ret();
 	}
 	

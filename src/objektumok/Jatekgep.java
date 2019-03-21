@@ -16,15 +16,13 @@ public class Jatekgep extends Dolog implements ITickable {
 	public void tick() {
 		Skeleton.print(this,"tick");
 		
-		Csempe pos = getCsempe();
+		Csempe sajatCsempe = getCsempe();
 		
 		// Mindegyik szomszédon lévő dologgal ütköztetjük.
-		ArrayList<Integer> iranyok = pos.getIranyok();
-		for (int i = 0; i < iranyok.size(); i++) {
-			Csempe szomszed = pos.getNeigbour(iranyok.get(i));
-			Dolog other = szomszed.getDolog();
-			other.hitBy(this);
-		}
+		ArrayList<Csempe> szomszedCsempek = sajatCsempe.getAllNeighbours();
+		for(Csempe c : szomszedCsempek)
+			c.getDolog().hitBy(this);
+		
 		Skeleton.ret();
 	}
 }

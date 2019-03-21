@@ -81,4 +81,15 @@ public class Csempe {
 		Skeleton.ret();
 		return szomszedok.get(irany);	
 	}
+	
+	/**
+	 * Visszatér az összes szomszédos csempével
+	 * @return A szomszédos csempék gyűjteménye
+	 */
+	public ArrayList<Csempe> getAllNeighbours(){
+		ArrayList<Csempe> ret = new ArrayList<Csempe>();
+		for(Csempe c : szomszedok)
+			ret.add(c);
+		return ret;
+	}
 }
