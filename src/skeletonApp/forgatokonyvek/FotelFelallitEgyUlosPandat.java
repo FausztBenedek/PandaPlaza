@@ -11,7 +11,7 @@ public class FotelFelallitEgyUlosPandat extends Forgatokonyv {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		// TODO 
 		
 	}
 

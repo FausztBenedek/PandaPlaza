@@ -34,20 +34,7 @@ public class Skeleton {
 			tabok++;
 		}
 	}
-	
-	/*public static void print(Object object, String methodName, ArrayList<Object> params) {
-		for (int i = 0; i < tabok; i++) {
-			System.out.print("\t");
-		}
-		String paramNames = "";
-		for(int i = 0; i < params.size(); i++) 
-			paramNames += getObjectName(params.get(i))+", ";	
-		if(paramNames.endsWith(", ")) 
-			paramNames.substring(0, paramNames.length()-3); // TODO?		
-		System.out.println(Skeleton.getObjectName(object)+"."+methodName+"("+paramNames+")");
-		tabok++;
-	}*/
-	
+
 	public static void print(Object object, String methodName, Object... params) {
 		if (started) {
 			for (int i = 0; i < tabok; i++) {

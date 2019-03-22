@@ -18,8 +18,8 @@ public class Torekenycsempe extends Csempe {
 		Skeleton.print(this, "accept", a);	
 		this.setDolog(a);		
 		a.setCsempe(this);
-		elettartam--;
-		a.die();
+		if(a!=null) elettartam--;
+		if(elettartam <=0) a.die();
 		Skeleton.ret();
 	}
 	
@@ -27,9 +27,11 @@ public class Torekenycsempe extends Csempe {
 	 * Csökkenti a törékeny csempe élettartamát 3-mal
 	 * */
 	@Override
-	public void ugrott() {
-		Skeleton.print(this, "ugrott");
+	public void ugrott(Allat a) {
+		Skeleton.print(this, "ugrott",a);
 		elettartam-=3;
+		if(elettartam <=0)			
+			a.die();
 		Skeleton.ret();
 	}
 }

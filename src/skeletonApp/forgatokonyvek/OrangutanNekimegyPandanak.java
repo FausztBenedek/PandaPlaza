@@ -37,18 +37,9 @@ public class OrangutanNekimegyPandanak extends Forgatokonyv {
 		Skeleton.addObjectName(u2, "ugros2");
 		u2.setCsempe(c0);
 		c0.setDolog(u2);
-		
-		
-		// TODO csak próba
-		Game g  = new Game();
-		u2.setGame(g);
-		u2.die();
-		//próba vége
-		
+				
 		Skeleton.startForgatokonyv();
 		o.leptet(2);
-		Skeleton.finishForgatokonyv();
-		
+		Skeleton.finishForgatokonyv();		
 	}
-
 }

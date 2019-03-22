@@ -25,14 +25,17 @@ public class Csempe {
 	}
 	
 	/** 
-	 * Beállítja a csempe dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
+	 * Leveszi az állatot az előző csempéjéről, és beállítja a csempe 
+	 * dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
 	 * attribútumát saját magára
 	 * @param A csempére rakandó állat
 	 * */
 	public void accept(Allat a) {
 		Skeleton.print(this, "accept", a);
-		this.setDolog(a);		
+		Csempe elozo = a.getCsempe();
+		elozo.setDolog(null);
 		a.setCsempe(this);
+		this.setDolog(a);
 		Skeleton.ret();
 	}
 	
@@ -67,8 +70,8 @@ public class Csempe {
 	/**
 	 * Lekezeli azt hogy egy rajta álló panda ugrott. A normál csempe esetén nem történik semmi
 	 *  */
-	public void ugrott() {
-		Skeleton.print(this, "ugrott");
+	public void ugrott(Allat a) {
+		Skeleton.print(this, "ugrott",a);
 		Skeleton.ret();
 	}
 	

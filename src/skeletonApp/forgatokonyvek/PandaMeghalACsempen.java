@@ -19,15 +19,18 @@ public class PandaMeghalACsempen extends Forgatokonyv {
 		Skeleton.addObjectName(tor, "torekenyCsempe");
 		Ugros u = new Ugros();
 		Skeleton.addObjectName(u, "ugros1");
+		tor.accept(u);
 		c1.accept(u);
 		
 		c1.setNeighbour(2, tor);
 		tor.setNeighbour(0, c1);
 		
-		tor.ugrott(); //TODO meghívni többször, hogy indításkor 1 élete legyen
+		for(int i = 0; i < 6; i++)
+			tor.ugrott(u); //TODO meghívni többször, hogy indításkor 1 élete legyen, attól függ hogy hány élettel indul
 		Game g = new Game();;
 		Skeleton.addObjectName(g, "game");
 		u.setGame(g);
+		
 		Skeleton.startForgatokonyv();
 		u.leptet();
 		Skeleton.finishForgatokonyv();		
