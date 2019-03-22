@@ -12,7 +12,6 @@ public class Jatekgep extends Dolog implements ITickable {
 	/** Random időközönként megijeszti a szomszédos mezőkön lévő
 	 * lévő Ijedos pandákat, ha vannak.
 	 */
-	@Override
 	public void tick() {
 		Skeleton.print(this,"tick");
 		

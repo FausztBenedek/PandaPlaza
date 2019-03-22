@@ -94,19 +94,7 @@ public abstract class Allat extends Dolog {
 	/** 
 	 * Megpróbálja ráléptetni a paraméterül kapott csempére az állatot
 	 * */
-	public void leptet(Csempe c) {
-		Skeleton.print(this, "leptet", c);
-		// Lekéri a csempén lévő dolgot
-		Dolog d = c.getDolog();
-		
-		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
-		if(d==null) {
-			c.accept(this);
-		} else {
-			d.hitBy(this);
-		}
-		Skeleton.ret();
-	}
+	public abstract void leptet(Csempe c);
 	
 	/**
 	 * Beállítja az állat game attribútumát a paraméterben kapottra 

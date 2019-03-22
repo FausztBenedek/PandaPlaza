@@ -28,6 +28,7 @@ public class Szekreny extends Dolog {
 	 * A teleportálási logikát megvalósító metódus.
 	 * @param a - Az állat, akit a szekrény elteleportál.
 	 */
+	@Override
 	public void hitBy(Allat a) {
 		Skeleton.print(this, "hitBy", a);
 		

@@ -38,11 +38,11 @@ public abstract class Dolog {
 		Skeleton.ret();
 	}
 	
-	public void hitBy(Allat a) {}
-	public void hitBy(Csokiautomata c) {}
-	public void hitBy(Jatekgep p ) {}
-	public void hitBy(Fotel f) {}
-	public void hitBy(Orangutan o) {}
+	public void hitBy(Allat a) {hitBy((Dolog)a);}
+	public void hitBy(Csokiautomata c) {hitBy((Dolog)c);}
+	public void hitBy(Fotel f) {hitBy((Dolog)f);}
+	public void hitBy(Jatekgep p ) {hitBy((Dolog)p);}	
+	public void hitBy(Orangutan o) {hitBy((Dolog)o);}
 	
 	/**
 	 * Getter a csempére, amin a dolog éppen áll.

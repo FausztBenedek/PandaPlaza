@@ -10,6 +10,7 @@ public class Ulos extends Panda {
 	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi
 	 * */
+	@Override
 	public void hitBy(Fotel f) {	
 		Skeleton.print(this, "hitBy", f);
 		//Ha valakit fog az első mancsával, elengedi

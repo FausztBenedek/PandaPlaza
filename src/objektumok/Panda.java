@@ -12,20 +12,6 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	public void leptet() {		
 		Skeleton.print(this, "leptet");
-		
-		//Ezt kiváltja a getRandomSzomszed TODO
-		/*
-		Csempe cs = getCsempe();
-		ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();		
-		for(int i = 0; i < 100; i++) { //TODO
-			if(cs.getNeigbour(i)!=null)
-				szomszedok.add(cs.getNeigbour(i));
-		}		
-		// Random csempe kiválasztása a szomszédok közül
-		Csempe randomCsempe = szomszedok.get((int)Math.floor(Math.random()*szomszedok.size()));
-		*/
-		
-		
 		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
 		leptet(getCsempe().getRandomSzomszed());
 		Skeleton.ret();
@@ -44,6 +30,7 @@ public abstract class Panda extends Allat implements ITickable {
 	/** 
 	 * Ha a panda szabadon kószál, beállítja az orangután mögé a pandát, és megcseréli a helyüket.
 	 * */
+	@Override
 	public void hitBy(Orangutan o) {
 		Skeleton.print(this, "hitBy", o);
 		if(getElsoMancs()==null) {
@@ -60,10 +47,25 @@ public abstract class Panda extends Allat implements ITickable {
 		}		
 		Skeleton.ret();
 	}
+		
+	public void leptet(Csempe c) { 
+		Skeleton.print(this, "leptet", c);
+		// Lekéri a csempén lévő dolgot
+		Dolog d = c.getDolog();
+		
+		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
+		if(d==null) {
+			c.accept(this);
+		} else {
+			d.hitBy(this);
+		}
+		Skeleton.ret();
+	}
 	
 	/** 
 	 * Törli a pályáról a Pandát, csökkenti a hátralévő pandák számát.
 	 * */
+	@Override
 	public void die() {
 		Skeleton.print(this, "die");
 		// Elengedi mindenkinek a kezét, leveszi a pályáról

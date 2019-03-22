@@ -72,5 +72,6 @@ public class SkeletonApp {
 				break;
 			}
 		}
+		sc.close(); // Scanner lezárása
 	}
 }
