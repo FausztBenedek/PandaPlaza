@@ -23,7 +23,8 @@ public class CsokiautomataUgratjaAzUgrosPandat extends Forgatokonyv{
 		Skeleton.addObjectName(u, "ugros1");
 		Csokiautomata cs = new Csokiautomata();
 		Skeleton.addObjectName(cs, "csoki1");
-		csokiCsempe.accept(cs);
+		csokiCsempe.setDolog(cs);
+		cs.setCsempe(csokiCsempe);
 		ugrosCsempe.accept(u);
 		
 		Skeleton.startForgatokonyv();

@@ -25,13 +25,14 @@ public class Csempe {
 	}
 	
 	/** 
-	 *Beállítja a csempe dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
-	 *attribútumát saját magára
+	 * Beállítja a csempe dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
+	 * attribútumát saját magára
+	 * @param A csempére rakandó állat
 	 * */
-	public void accept(Dolog d) {
-		Skeleton.print(this, "accept", d);
-		this.setDolog(d);		
-		d.setCsempe(this);
+	public void accept(Allat a) {
+		Skeleton.print(this, "accept", a);
+		this.setDolog(a);		
+		a.setCsempe(this);
 		Skeleton.ret();
 	}
 	

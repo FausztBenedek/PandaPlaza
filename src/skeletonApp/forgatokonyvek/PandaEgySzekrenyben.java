@@ -37,8 +37,10 @@ public class PandaEgySzekrenyben extends Forgatokonyv {
 		Skeleton.addObjectName(cSzekreny2, "masikSzekrenyCsempeje");
 		
 		// Szekrenyeket rakjuk a csempékre:
-		cSzekreny1.accept(szekreny1);
-		cSzekreny2.accept(szekreny2);
+		cSzekreny1.setDolog(szekreny1);
+		szekreny1.setCsempe(cSzekreny1);
+		cSzekreny2.setDolog(szekreny2);
+		szekreny2.setCsempe(cSzekreny2);
 		
 		// Csempe, ahova az állat fog érkezni
 		Csempe target = new Csempe();
