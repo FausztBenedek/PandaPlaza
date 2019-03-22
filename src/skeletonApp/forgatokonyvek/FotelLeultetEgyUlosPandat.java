@@ -30,12 +30,11 @@ public class FotelLeultetEgyUlosPandat extends Forgatokonyv {
 		// És a 0 irányú szomszédra teszi ki.
 		Fotel f = new Fotel();
 		Skeleton.addObjectName(f, "fotel1");
-		f.setCsempe(fotelPos);
-		fotelPos.setDolog(f);
+		fotelPos.accept(f);
+		
 		Ulos u = new Ulos();
 		Skeleton.addObjectName(u, "ulos1");
-		u.setCsempe(pandaPos);
-		pandaPos.setDolog(u);
+		pandaPos.accept(u);	
 		
 		// És végül a trigger
 		Skeleton.startForgatokonyv();

@@ -9,8 +9,8 @@ public class Torekenycsempe extends Csempe {
 	
 	/** */
 	@Override
-	public void accept(Allat a) {
-		Skeleton.print(this, "accept", a);
+	public void accept(Dolog d) {
+		Skeleton.print(this, "accept", d);
 		Skeleton.ret();
 	}
 	

@@ -28,10 +28,10 @@ public class Csempe {
 	 *Beállítja a csempe dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
 	 *attribútumát saját magára
 	 * */
-	public void accept(Allat a) {
-		Skeleton.print(this, "accept", a);
-		this.setDolog(a);		
-		a.setCsempe(this);
+	public void accept(Dolog d) {
+		Skeleton.print(this, "accept", d);
+		this.setDolog(d);		
+		d.setCsempe(this);
 		Skeleton.ret();
 	}
 	
@@ -88,9 +88,12 @@ public class Csempe {
 	 * @return A szomszédos csempék gyűjteménye
 	 */
 	public ArrayList<Csempe> getAllNeighbours(){
+		Skeleton.print(this, "getAllNeighbours");
 		ArrayList<Csempe> ret = new ArrayList<Csempe>();
 		for(Csempe c : szomszedok)
-			ret.add(c);
-		return ret;
+			if(c!=null)
+				ret.add(c);
+		Skeleton.ret();
+		return ret;		
 	}
 }
