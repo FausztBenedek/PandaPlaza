@@ -18,6 +18,7 @@ public class Orangutan extends Allat {
 		//Megpróbálja az adott irányú csempére léptetni az orangutánt, ha létezik ilyen irányú szomszéd
 		if(cs !=null)
 			leptet(cs);
+		Skeleton.ret();
 	}
 	
 	public void leptet(Csempe c) {

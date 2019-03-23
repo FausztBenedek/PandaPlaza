@@ -82,10 +82,11 @@ public class Csempe {
 	 */
 	public Csempe getRandomSzomszed() {
 		Skeleton.print(this,"getRandomSzomszed");
-		Random rand = new Random();
-		int irany = rand.nextInt(szomszedok.size()); // elvileg ez a felső határt kapja paraméterül (az alsó 0) és annál szigorúan kisebbeket generál
+		ArrayList<Csempe> allNeighbours = getAllNeighbours();
+		Random rand = new Random();		
 		Skeleton.ret();
-		return szomszedok.get(irany);	
+		// elvileg ez a felső határt kapja paraméterül (az alsó 0) és annál szigorúan kisebbeket generál:
+		return allNeighbours.get(rand.nextInt(allNeighbours.size()));	
 	}
 	
 	/**

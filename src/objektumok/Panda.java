@@ -50,11 +50,12 @@ public abstract class Panda extends Allat implements ITickable {
 		
 	public void leptet(Csempe c) { 
 		Skeleton.print(this, "leptet", c);
-		// Lekéri a csempén lévő dolgot
+		
+		// Lekéri a csempén lévő dolgot		
 		Dolog d = c.getDolog();
 		
 		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
-		if(d==null) {
+		if(d==null) {			
 			c.accept(this);
 		} else {
 			d.hitBy(this);
