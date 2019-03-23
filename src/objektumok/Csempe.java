@@ -33,7 +33,8 @@ public class Csempe {
 	public void accept(Allat a) {
 		Skeleton.print(this, "accept", a);
 		Csempe elozo = a.getCsempe();
-		elozo.setDolog(null);
+		if(elozo!=null)
+			elozo.setDolog(null);
 		a.setCsempe(this);
 		this.setDolog(a);
 		Skeleton.ret();
