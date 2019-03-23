@@ -25,9 +25,13 @@ public class Ulos extends Panda {
 			ah.setElsoMancs(null);
 			setHatsoMancs(null);
 		}
+		// Leveszi magát a jelenlegi mezőről
+		getCsempe().setDolog(null);
 		
 		// Beleülteti a fotelbe a pandát
 		f.setPanda(this);
+		
+		
 		Skeleton.ret();
 	}	
 }
