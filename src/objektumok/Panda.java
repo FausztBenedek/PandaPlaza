@@ -47,7 +47,12 @@ public abstract class Panda extends Allat implements ITickable {
 		}		
 		Skeleton.ret();
 	}
-		
+	
+	/**
+	 * Megpróbálja ráléptetni az adott csempére a pandát. Ha van ott 
+	 * valami, meghívja rá a hitby függvényt.
+	 * @param A csempe amelyikre léptetni akarjuk
+	 */
 	public void leptet(Csempe c) { 
 		Skeleton.print(this, "leptet", c);
 		

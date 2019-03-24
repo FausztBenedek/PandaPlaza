@@ -9,6 +9,7 @@ public class Ugros extends Panda {
 
 	/** 
 	 * Ugratja a pandát
+	 * @param A csokiautomata aki ugratta 
 	 * */
 	@Override
 	public void hitBy(Csokiautomata c) {

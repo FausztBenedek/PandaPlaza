@@ -9,6 +9,7 @@ public class Ulos extends Panda {
 	
 	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi
+	 *  @param A fotel aki leültette
 	 * */
 	@Override
 	public void hitBy(Fotel f) {	
@@ -31,7 +32,6 @@ public class Ulos extends Panda {
 		
 		// Beleülteti a fotelbe a pandát
 		f.setPanda(this);
-		
 		
 		Skeleton.ret();
 	}	

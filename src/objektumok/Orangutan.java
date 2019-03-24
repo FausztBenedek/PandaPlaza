@@ -21,6 +21,11 @@ public class Orangutan extends Allat {
 		Skeleton.ret();
 	}
 	
+	/**
+	 * Megpróbálja ráléptetni az adott csempére az orangutánt. Ha van ott 
+	 * valami, meghívja rá a hitby függvényt.
+	 * @param A csempe amelyikre léptetni akarjuk
+	 */
 	public void leptet(Csempe c) {
 		Skeleton.print(this, "leptet", c);
 		// Lekéri a csempén lévő dolgot

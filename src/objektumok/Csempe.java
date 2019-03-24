@@ -16,7 +16,7 @@ public class Csempe {
 	
 	/** 
 	 * Visszaadja azt a csempét ami a paraméterül kapott irányban van
-	 * 
+	 * @param Melyik irányú csempét kérjük
 	 * */
 	public Csempe getNeigbour(int irany) {
 		Skeleton.print(this, "getNeighbour", irany);

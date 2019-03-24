@@ -36,8 +36,7 @@ public abstract class Dolog {
 	public void hitBy(Dolog d) {
 		Skeleton.print(this,"hitBy", d);
 		Skeleton.ret();
-	}
-	
+	}	
 	public void hitBy(Allat a) {hitBy((Dolog)a);}
 	public void hitBy(Csokiautomata c) {hitBy((Dolog)c);}
 	public void hitBy(Fotel f) {hitBy((Dolog)f);}
