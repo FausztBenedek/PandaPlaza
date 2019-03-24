@@ -1,7 +1,5 @@
 package skeletonApp.forgatokonyvek;
 
-import java.util.Scanner;
-
 import objektumok.*;
 import skeletonApp.*;
 

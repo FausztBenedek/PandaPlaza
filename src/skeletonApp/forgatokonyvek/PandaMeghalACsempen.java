@@ -21,6 +21,7 @@ public class PandaMeghalACsempen extends Forgatokonyv {
 		Scanner in = new Scanner(System.in);
 		// Beolvasás:
 		int elet = in.nextInt();
+		in.close();
 		// Objektumok létrehozása és regisztrálása
 		Csempe c1 = new Csempe();
 		Skeleton.addObjectName(c1, "csempe1");
