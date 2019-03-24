@@ -49,10 +49,7 @@ public class Szekreny extends Dolog {
 		// Ha minden lehetséges csempe foglalt, akkor
 		// ...
 		if (target == null) {
-			// TODO Ki kell találni, hogy ha a cél szekrényből nem lehet kilépni, mert minden csempe foglalt, akkor mi történik.
-			// Ezt a skeletonhoz nem kell, mert egyetlen egy forgatókönyvet sem fogunk így inicializálni.
-			// Ha ezt a részt egyszerűen kihagynánk, a kódból, 
-			// az állat ott maradna, ahol éppen áll. (Az eredeti szekrény mellett.)
+			// Ha a szekrény túloldalán nincs szabad hely, akkor a szekrényre lépő állat helyben marad.
 		}
 		else {
 			a.leptet(target);
