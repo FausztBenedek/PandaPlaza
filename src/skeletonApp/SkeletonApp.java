@@ -25,14 +25,14 @@ public class SkeletonApp {
 		new MegijedEgyIjedosPanda()
 	};
 	
+	public static Scanner sc = new Scanner(System.in);
+
 	/**
 	 * A skeleton app belépési pontja.
 	 * @param args - Nincs most ilyen
 	 */
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
+				
 		// Ameddig valid inputot kapunk, addig fut a program
 		while (true) {
 			
