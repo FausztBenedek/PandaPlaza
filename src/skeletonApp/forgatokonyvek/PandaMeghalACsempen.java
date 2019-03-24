@@ -5,6 +5,8 @@ import java.util.Scanner;
 import objektumok.*;
 import skeletonApp.Forgatokonyv;
 import skeletonApp.Skeleton;
+import skeletonApp.SkeletonApp;
+
 
 public class PandaMeghalACsempen extends Forgatokonyv {
 
@@ -18,10 +20,8 @@ public class PandaMeghalACsempen extends Forgatokonyv {
 		// Bekérés a tesztelőtől, hogy hány élete legyen a törékeny csmepének
 		System.out.println("Hány élete legyen a törékeny csempének, amelyre éppen rá fog lépni egy panda?");
 		System.out.println("(1 vagy kevesebb értéknél hal meg a panda)");
-		Scanner in = new Scanner(System.in);
 		// Beolvasás:
-		int elet = in.nextInt();
-		in.close();
+		int elet = SkeletonApp.sc.nextInt();
 		// Objektumok létrehozása és regisztrálása
 		Csempe c1 = new Csempe();
 		Skeleton.addObjectName(c1, "csempe1");
