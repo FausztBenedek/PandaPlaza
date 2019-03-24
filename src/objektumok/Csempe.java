@@ -63,7 +63,7 @@ public class Csempe {
 	 *  */
 	public void setNeighbour(int irany, Csempe c) {
 		Skeleton.print(this, "setNeighbour", irany, c);
-		while(irany>=szomszedok.size()) szomszedok.add(null); // TODO? hack?
+		while(irany>=szomszedok.size()) szomszedok.add(null);
 		szomszedok.set(irany, c);
 		Skeleton.ret();
 	}
