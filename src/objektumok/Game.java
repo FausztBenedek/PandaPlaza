@@ -29,42 +29,47 @@ public class Game {
 	/**
 	 * lista a pályán lévő összes dologról
 	 *  */
-	private ArrayList<Dolog> dolgok;
+	private ArrayList<Dolog> dolgok = new ArrayList<Dolog>();
 	
-	private ArrayList<Csempe> csempek;
+	private ArrayList<Csempe> csempek = new ArrayList<Csempe>();
 	
 	/**
 	 * A paraméterül kapott pontmennyiséget hozzáadja a a játkos pontjaihoz
+	 * @param Hány pontot adjon a pontszámhoz
 	 *  */
 	public void addPoints(int p) {
-		Skeleton.print(this, "addPoints");
+		Skeleton.print(this, "addPoints", p);
 		pontszam+=p;
 		Skeleton.ret();
 	}
 	
 	/** 
-	 * új dolgot ad a számontartott dolgok listájához
+	 * Új dolgot ad a számontartott dolgok listájához
+	 * @param d A hozzáadandó dolog
 	 * */
 	public void addDolog(Dolog d) {
-		Skeleton.print(this, "addDolog");
+		Skeleton.print(this, "addDolog", d);
 		dolgok.add(d);
 		Skeleton.ret();
 	}
 	
-	/** 
+	/**
 	 * Új csempét ad a számontartott csempék listájához
-	 * */
+	 * @param c A játékhoz adandó csempe
+	 */
 	public void addCsempe(Csempe c) {
-		Skeleton.print(this, "addCsempe");
+		Skeleton.print(this, "addCsempe", c);
 		csempek.add(c);
 		Skeleton.ret();
 	}
 	
+	
 	/**
 	 * Beállítja a jelenleg aktív (vezérelt) orángutánt a paraméterül kapottra
-	 *  */
+	 * @param o Az irányítani kívánt orangután
+	 */
 	public void setActiveOrangutan(Orangutan o) {
-		Skeleton.print(this, "setActiveOrangutan");
+		Skeleton.print(this, "setActiveOrangutan", o);
 		aktivOrangutan = o;
 		Skeleton.ret();
 	}
@@ -104,10 +109,14 @@ public class Game {
 	}
 	
 	/**
-	 * Összeköt a paraméterül kapott csempéket a paraméterül kapott oldalaiknál
-	 *  */
+	 *  Összeköt a paraméterül kapott csempéket a paraméterül kapott oldalaiknál
+	 * @param c1 Egyik csempe
+	 * @param i1 Egyik csempe melyik oldalára
+	 * @param c2 Másik csempe
+	 * @param i2 Másik csempe melyik oldalára
+	 */
 	public void csempeOsszekot(Csempe c1, int i1, Csempe c2, int i2) {
-		Skeleton.print(this, "csempeOsszekot");
+		Skeleton.print(this, "csempeOsszekot", c1, i1, c2, i2);
 		c1.setNeighbour(i1, c2);
 		c2.setNeighbour(i2, c1);
 		Skeleton.ret();

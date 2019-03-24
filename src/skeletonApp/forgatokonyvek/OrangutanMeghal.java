@@ -13,9 +13,9 @@ public class OrangutanMeghal extends Forgatokonyv {
 
 	@Override
 	public void action() {
+		// Objektumok létrehozása és regisztrálása
 		Orangutan o = new Orangutan();
-		Skeleton.addObjectName(o, "orangutan1");
-		
+		Skeleton.addObjectName(o, "orangutan1");		
 		Game g = new Game();
 		Skeleton.addObjectName(g, "game");
 		
@@ -25,8 +25,10 @@ public class OrangutanMeghal extends Forgatokonyv {
 		Skeleton.addObjectName(c1, "csempe1");
 		c1.accept(o);
 		
+		// Forgatókönyvkiírások elindítása
 		Skeleton.startForgatokonyv();
 		o.die();
+		// Forgatókönyvkiírások befejezése
 		Skeleton.finishForgatokonyv();		
 	}
 

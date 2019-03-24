@@ -13,6 +13,7 @@ public class LeultetesFelbontEgyPandalancot extends Forgatokonyv {
 
 	@Override
 	public void action() {
+		// Objektumok létrehozása és regisztrálása
 		Fotel f = new Fotel();
 		Skeleton.addObjectName(f, "fotel1");
 		Ulos u = new Ulos();
@@ -24,6 +25,7 @@ public class LeultetesFelbontEgyPandalancot extends Forgatokonyv {
 		Ijedos i3 = new Ijedos();
 		Skeleton.addObjectName(i3, "ijedos3");
 		
+		// Állatok mancsainak összekötése
 		u.setHatsoMancs(i1);
 		i1.setElsoMancs(u);
 		i1.setHatsoMancs(i2);
@@ -31,11 +33,14 @@ public class LeultetesFelbontEgyPandalancot extends Forgatokonyv {
 		i2.setHatsoMancs(i3);
 		i3.setElsoMancs(i2);
 		
-		
-		
-		
+		Csempe c1 = new Csempe();
+		Skeleton.addObjectName(c1, "csempe1");
+		c1.accept(u);
+				
+		// Forgatókönyvkiírások elindítása
 		Skeleton.startForgatokonyv();
 		u.hitBy(f);
+		// Forgatókönyvkiírások befejezése
 		Skeleton.finishForgatokonyv();
 	}
 }

@@ -12,6 +12,7 @@ public class Torekenycsempe extends Csempe {
 	/**
 	 * Beállítja a csempe dolog attribútumát a paraméterül kapott állatra illetve az állat csempe
 	 * attribútumát saját magára, illetve csökkenti a törékeny csempe élettartamát 1-gyel.
+	 * @param A csempére rakandó állat
 	 * */
 	@Override
 	public void accept(Allat a) {
@@ -25,6 +26,7 @@ public class Torekenycsempe extends Csempe {
 	
 	/** 
 	 * Csökkenti a törékeny csempe élettartamát 3-mal
+	 * @param Az állat aki ráugrott
 	 * */
 	@Override
 	public void ugrott(Allat a) {
@@ -33,5 +35,13 @@ public class Torekenycsempe extends Csempe {
 		if(elettartam <=0)			
 			a.die();
 		Skeleton.ret();
+	}
+	
+	/**
+	 * Beállítja, hogy hány élete legyen a csempének. (Csak skeletonban kell)
+	 * @param elettartam A beállítandó érték
+	 */
+	public void setElettartam(int elettartam) {
+		this.elettartam = elettartam;
 	}
 }
