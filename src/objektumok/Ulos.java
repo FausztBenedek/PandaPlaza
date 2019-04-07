@@ -6,6 +6,12 @@ import skeletonApp.Skeleton;
  * Olyan panda, akit bele lehet ültetni egy fotelbe.
  * */
 public class Ulos extends Panda {
+	@Override
+	public String toString() {
+		return "Ijedos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
+				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
+	}	
 	
 	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi

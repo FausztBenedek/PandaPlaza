@@ -4,6 +4,17 @@ import skeletonApp.Skeleton;
 
 /** */
 public class Torekenycsempe extends Csempe {
+	@Override
+	public String toString() {
+		String csempek = "";
+		for(int i = 0; i < szomszedok.size(); i++) {
+			if(szomszedok.get(i)!=null) {
+				csempek+=" "+i+":"+Skeleton.getObjectName(szomszedok.get(i));
+			}
+		}
+		return "Torekenycsempe " +  Skeleton.getObjectName(this) + " dolog:"+Skeleton.getObjectName(getDolog()) + " elettartam:" + elettartam + " " + csempek;
+	}
+	
 	/** 
 	 * A törékeny csempe élettartama.
 	 * */

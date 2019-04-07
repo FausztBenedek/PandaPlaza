@@ -6,6 +6,12 @@ import skeletonApp.Skeleton;
  * Olyan panda, aki a csokiautomata sípolásától ugrik egyet
  * */
 public class Ugros extends Panda {
+	@Override
+	public String toString() {
+		return "Ugros " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
+				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
+	}
 
 	/** 
 	 * Ugratja a pandát

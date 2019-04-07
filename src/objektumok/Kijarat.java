@@ -9,15 +9,21 @@ import skeletonApp.Skeleton;
  *  */
 public class Kijarat extends Dolog {
 	
-	/**
-	 * Az aktuális játék.
-	 *  */
-	private Game game;
+	@Override
+	public String toString() {
+		return "Kijarat " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+				" bejarat:"+Skeleton.getObjectName(bejarat) + " game:"+Skeleton.getObjectName(game);
+	}	
 
 	/**
 	 * A pláza bejárata, amelyen az orangután visszajön miután távozik a kijáraton
 	 *  */
-	private Bejarat bejarat;
+	private Csempe bejarat;
+	
+	/**
+	 * Az aktuális játék.
+	 *  */
+	private Game game;
 	
 	/**
 	 * A paraméterül kapott orángutánt, ami rálépett a kijáratra, átteszi a bejárathoz.
@@ -37,7 +43,7 @@ public class Kijarat extends Dolog {
 		}				
 		Collections.reverse(hatsok);
 		for(Allat a : hatsok) a.die(); // Hátulról kezdve töröljük a lánc végét
-		o.leptet(bejarat.getCsempe().getRandomSzomszed()); // Léptetjük az orangutánt a bejárat melletti véletlenszerű csempére
+		o.leptet(bejarat.getRandomSzomszed()); // Léptetjük az orangutánt a bejárat melletti véletlenszerű csempére
 		Skeleton.ret();
 	}
 	/**
@@ -45,8 +51,8 @@ public class Kijarat extends Dolog {
 	 * megy ki egy orangután, hol jöjjön vissza.
 	 * @param b A beállítandó bejárat
 	 */
-	public void setBejarat(Bejarat b) {
-		bejarat = b;
+	public void setBejarat(Csempe c) {
+		bejarat = c;
 	}
 	
 	/**

@@ -7,6 +7,15 @@ import skeletonApp.Skeleton;
  * */
 public class Orangutan extends Allat {
 
+	@Override
+	public String toString() {
+		return "Orangutan " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) + 
+				" elsoMancs:"+Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:"+ Skeleton.getObjectName(getHatsoMancs()) +
+				" game:"+ Skeleton.getObjectName(game);
+	}
+	
+	
+	
 	/** 
 	 * Lépteti a megadott irányba az orangutánt
 	 * */
@@ -50,7 +59,7 @@ public class Orangutan extends Allat {
 		super.die();
 		
 		// Csökkenti a hátralévő orangutánok számát
-		game.OrangutanSzamCsokkent();
+		game.orangutanSzamCsokkent();
 		Skeleton.ret();
 	}	
 }

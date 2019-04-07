@@ -7,6 +7,11 @@ import skeletonApp.Skeleton;
 /** A Csokiautomata ugratja a szomszédos mezőkön álló Ugros pandákat.
  */
 public class Csokiautomata extends Dolog implements ITickable {	
+	@Override
+	public String toString() {
+		return "Csokiautomata " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe());
+	}
+	
 	/** Random időközönként ugratja a szomszédos csempéken
 	 * lévő Ugros pandákat.
 	 */

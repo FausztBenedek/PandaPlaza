@@ -9,6 +9,11 @@ import skeletonApp.Skeleton;
  * és ott tartja egy ideig.
  */
 public class Fotel extends Dolog implements ITickable {
+	
+	@Override
+	public String toString() {
+		return "Fotel " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe())+ " panda:"+Skeleton.getObjectName(panda) + " counter:" + counter;
+	}	
 		
 	/**
 	 * Referencia a fotelban ülő pandára. Ha a fotel üres, akkor null.
@@ -105,4 +110,14 @@ public class Fotel extends Dolog implements ITickable {
 		this.panda = u;
 		Skeleton.ret();		
 	}
+	
+	public int getCounter() { //TODO innentol lefele torolni?
+		return counter;
+	}
+	
+	public void setCounter(int n) {
+		counter = n;
+	}
+	
+	
 }

@@ -6,6 +6,12 @@ import skeletonApp.Skeleton;
 
 /** */
 public class Game {
+	@Override
+	public String toString() {
+		//TODO dolgok, csempék?
+		return "Game " + Skeleton.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Skeleton.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
+	}
+	
 	/** 
 	 * Játékos pontszáma
 	 * */
@@ -93,7 +99,7 @@ public class Game {
 	/** 
 	 * csökkenti a pályán nyilvántartott orángutánok számát
 	 * */
-	public void OrangutanSzamCsokkent() {
+	public void orangutanSzamCsokkent() {
 		Skeleton.print(this, "OrangutanSzamCsokkent");
 		orangutanszam--;
 		Skeleton.ret();
@@ -120,5 +126,30 @@ public class Game {
 		c1.setNeighbour(i1, c2);
 		c2.setNeighbour(i2, c1);
 		Skeleton.ret();
+	}
+	
+	public void elenged() { //TODO kommentelni
+		Allat hatso = aktivOrangutan.getHatsoMancs();
+		if(hatso!=null) {
+			hatso.setElsoMancs(null);
+			aktivOrangutan.setHatsoMancs(null);
+		}
+	}
+	
+	public void leptet(int irany) { // TODO kommentelni
+		if(aktivOrangutan!=null)
+			aktivOrangutan.leptet(irany);
+	}
+	
+	public void setPoint(int pont) { // TODO innentől lefele kiszedni? (+komment)
+		pontszam = pont;
+	}
+	
+	public void setOrangutanSzam(int n) {
+		orangutanszam = n;
+	}
+	
+	public void setPandaSzam(int n) {
+		pandaszam = n;
 	}
 }

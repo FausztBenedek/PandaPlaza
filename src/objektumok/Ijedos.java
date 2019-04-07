@@ -6,6 +6,12 @@ import skeletonApp.Skeleton;
  * Olyan panda, aki a játékgép csilingelésétől megijed
  * */
 public class Ijedos extends Panda {
+	@Override
+	public String toString() { 
+		return "Ijedos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
+				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
+	}
 
 	/** 
 	 * Megijeszti az ijedős pandát: elengedi az előtte és mögötte állók mancsát.

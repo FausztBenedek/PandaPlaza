@@ -8,12 +8,21 @@ import skeletonApp.Skeleton;
 /** */
 public class Csempe {
 	
+	@Override
+	public String toString() {
+		String csempek = "";
+		for(int i = 0; i < szomszedok.size(); i++) {
+			if(szomszedok.get(i)!=null) {
+				csempek+=" "+i+":"+Skeleton.getObjectName(szomszedok.get(i));
+			}
+		}
+		return "Csempe " +  Skeleton.getObjectName(this) + " dolog:"+Skeleton.getObjectName(dolog) + csempek;
+	}
+	
 	//attribútumok
 	private Dolog dolog;
-	private ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
-	
-	//Függvények
-	
+	protected ArrayList<Csempe> szomszedok = new ArrayList<Csempe>();
+		
 	/** 
 	 * Visszaadja azt a csempét ami a paraméterül kapott irányban van
 	 * @param Melyik irányú csempét kérjük

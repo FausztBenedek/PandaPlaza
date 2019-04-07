@@ -1,7 +1,8 @@
 package skeletonApp;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import skeletonApp.forgatokonyvek.*;
+import objektumok.*;
+import skeletonApp.*;
+
 
 public class SkeletonApp {
 	
@@ -9,69 +10,40 @@ public class SkeletonApp {
 	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
 	 * amelyet a felhasználó lefuttathat.
 	 */
-	private static Forgatokonyv[] forgatokonyvek = {	
-		new OrangutanNekimegyPandanak(),
-		new CsokiautomataUgratjaAzUgrosPandat(),
-		new CsokiautomataSipolassalHatAzUlosPandara(),
-		new PandaMeghalACsempen(),
-		new PandaKivezetes(),
-		new PandaEgySzekrenyben(),
-		new OrangutanMeghal(),
-		new FotelLeultetEgyUlosPandat(),
-		new JatekVege(),
-		new FotelFelallitEgyUlosPandat(),
-		new LeultetesFelbontEgyPandalancot(),
-		new PalyaLetreHozasa(),
-		new MegijedEgyIjedosPanda()
-	};
-	
 	public static Scanner sc = new Scanner(System.in);
 
 	/**
 	 * A skeleton app belépési pontja.
 	 * @param args - Nincs most ilyen
 	 */
-	public static void main(String[] args) {
-				
-		// Ameddig valid inputot kapunk, addig fut a program
-		while (true) {
-			
-			// Kiírjuk a lehetőségeket
-			System.out.println("A lehetséges forgatókönyvek:");
-			for (int i = 0; i < forgatokonyvek.length; i++) {
-				
-				// Sorszámok kiírása (indextől eggyel nagyobb)
-				System.out.print('\t');
-				System.out.print(i + 1);
-				System.out.print('.');
-			
-				// A forgatókönyv leírásának kiírása
-				String leiras = forgatokonyvek[i].getLeiras();
-				System.out.println(leiras);
+	public static void main(String[] args) {	
+	/*	Orangutan o = new Orangutan();
+		Skeleton.addObject(o, "orangutan1");		
+		Csempe cs = new Csempe();
+		Skeleton.addObject(cs, "csempe1");		
+		cs.accept(o);		
+		Csempe cs2 = new Csempe();
+		Skeleton.addObject(cs2, "csempe2");
+		cs.setNeighbour(0,cs2);
+		cs2.setNeighbour(3,cs);
+		Game g = new Game();
+		Skeleton.addObject(g, "game1");
+		o.setGame(g);		
+		Skeleton.proto_print();
+		*/
+		/*Skeleton.load("palya1.txt");
+		Skeleton.proto_print();		*/
+		System.out.println("Parancs?");
+		String userInput = "";
+		do {
+			if(sc.hasNextLine()) {		
+				userInput = sc.nextLine();
+			}	
+			if(!userInput.equals("")) {
+				Skeleton.command(userInput);
 			}
-			
-			// Elkérjük az inputot a felhasználótól, és megállítjuk a programot, ha rosszat ad.
-			System.out.println("Melyik forgatókönyvet választod? Add meg a számát! Kilépéshez bármi mást!");
-			int userInput;
-			try {
-				userInput = sc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Kilépés");
-				break;
-			}
-			
-			// A szükséges logika végrehajtása, ha tartozik hozzá sorszám.
-			try {
-				forgatokonyvek[userInput - 1].action();
-				
-				// Elválasztáshoz egy üres sort beszúrunk
-				System.out.println("");
-				
-			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("Ezt a számot nem választhatod, kilépés...");
-				break;
-			}
-		}
-		sc.close(); // Scanner lezárása
+		} while(!userInput.equals(""));
+		System.out.println("Kilépés...");
+		sc.close();
 	}
 }

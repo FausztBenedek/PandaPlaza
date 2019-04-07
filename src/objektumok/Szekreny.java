@@ -9,6 +9,12 @@ import skeletonApp.Skeleton;
  * egy másik szekrényhez, de mindig ugyan oda.
  */
 public class Szekreny extends Dolog {
+	@Override
+	public String toString() {
+		return "Szekreny " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+				" masik:"+Skeleton.getObjectName(masik);
+	}	
+	
 
 	/**
 	 * Mindig ennek a szekrénynek a szomszéd csempéinek valamelyikére
