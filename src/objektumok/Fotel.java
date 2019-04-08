@@ -51,7 +51,9 @@ public class Fotel extends Dolog implements ITickable {
 				// Mindegyik szomszédon lévő dologgal ütköztetjük.
 				ArrayList<Csempe> szomszedCsempek = sajatCsempe.getAllNeighbours();
 				for (int i = 0; i < szomszedCsempek.size(); i++) {
-					szomszedCsempek.get(i).getDolog().hitBy(this);					
+					Dolog d = szomszedCsempek.get(i).getDolog();
+					if(d!=null)
+						d.hitBy(this);					
 					// Leállítjuk a loopot, ha leültettünk valakit
 					if (this.panda != null) {
 						break;

@@ -315,7 +315,7 @@ public class Skeleton {
 		} else if(commandstring.split(" ")[0].equals("do")) {			
 			String nev = commandstring.split(" ")[1];
 			String tipus = Skeleton.getObjectFromName(nev).getClass().getSimpleName(); // TODO??
-			if(tipus.equals("Ijedos") || tipus.equals("Ulos") || tipus.equals("Ugros")|| tipus.equals("Fotel")|| tipus.equals("Jategkep")|| tipus.equals("Csokiautomata")) {
+			if(tipus.equals("Ijedos") || tipus.equals("Ulos") || tipus.equals("Ugros")|| tipus.equals("Fotel")|| tipus.equals("Jatekgep")|| tipus.equals("Csokiautomata")) {
 				if(commandstring.split(" ")[2].equals("tick")) {
 					((ITickable)Skeleton.getObjectFromName(nev)).tick();
 				}
@@ -324,12 +324,13 @@ public class Skeleton {
 					Orangutan uj = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[3]);
 					((Game)Skeleton.getObjectFromName(nev)).setActiveOrangutan(uj);
 				} else if(commandstring.split(" ")[2].equals("elenged")) {		
-					Orangutan oran = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[3]);
+					//Orangutan oran = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[2]);
 					((Game)Skeleton.getObjectFromName(nev)).elenged();
 				} else if(commandstring.split(" ")[2].equals("leptet")) {		
 					int irany = Integer.parseInt(commandstring.split(" ")[3]);
 					((Game)Skeleton.getObjectFromName(nev)).leptet(irany);
-				}				
+				}	
+				else System.out.println("Nincs ilyen parancs!");  //TODO
 			}			
 		}
 	}

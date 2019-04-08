@@ -1,0 +1,6 @@
+load palya3
+det
+do ulos1 tick
+3
+do fotel1 tick
+print

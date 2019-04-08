@@ -1,0 +1,5 @@
+load palya3
+det
+do ulos1 tick
+1
+print

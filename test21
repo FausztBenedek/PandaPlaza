@@ -1,4 +1,5 @@
 load palya1
 do game1 leptet 1
 do game1 leptet 0
+do game1 leptet 0
 print

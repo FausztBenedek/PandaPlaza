@@ -28,6 +28,9 @@ public class Torekenycsempe extends Csempe {
 	@Override
 	public void accept(Allat a) {
 		Skeleton.print(this, "accept", a);	
+		Csempe elozo = a.getCsempe();
+		if(elozo!=null)
+			elozo.setDolog(null);
 		this.setDolog(a);		
 		a.setCsempe(this);
 		if(a!=null) elettartam--;

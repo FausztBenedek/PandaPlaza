@@ -1,5 +1,11 @@
 load palya1
+det
 do game1 setActiveOrangutan orangutan2
 do game1 elenged
-do game1 leptet 0
+do ugros1 tick
+3
+do ugros1 tick
+0
+do ugros1 tick
+0
 print

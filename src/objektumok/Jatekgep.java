@@ -26,8 +26,11 @@ public class Jatekgep extends Dolog implements ITickable {
 		
 		// Mindegyik szomszédon lévő dologgal ütköztetjük.
 		ArrayList<Csempe> szomszedCsempek = sajatCsempe.getAllNeighbours();
-		for(Csempe c : szomszedCsempek)
-			c.getDolog().hitBy(this);
+		for(Csempe c : szomszedCsempek) {
+			Dolog d = c.getDolog();
+			if(d!=null)
+				d.hitBy(this);	
+		}			
 		
 		Skeleton.ret();
 	}
