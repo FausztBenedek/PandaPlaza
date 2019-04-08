@@ -8,7 +8,7 @@ import skeletonApp.Skeleton;
 public class Ulos extends Panda {
 	@Override
 	public String toString() {
-		return "Ijedos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
+		return "Ulos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
 				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
 				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
 	}	

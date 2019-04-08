@@ -60,6 +60,7 @@ public class Orangutan extends Allat {
 		
 		// Csökkenti a hátralévő orangutánok számát
 		game.orangutanSzamCsokkent();
+		game.setActiveOrangutan(null);
 		Skeleton.ret();
 	}	
 }

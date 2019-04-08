@@ -18,6 +18,8 @@ import objektumok.*;
  */
 public class Skeleton {
 
+	public static boolean det = false;
+	
 	/**
 	 * A skeleton osztály csak akkor ír ki bármit is, ha
 	 * ez a változó true.
@@ -124,6 +126,7 @@ public class Skeleton {
 	}
 	
 	public static void load(String palyanev) {
+		objektumok.clear();
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(palyanev));
@@ -303,6 +306,10 @@ public class Skeleton {
 	public static void command(String commandstring) {
 		if(commandstring.split(" ")[0].equals("load")) {
 			load(commandstring.split(" ")[1]);
+		} else if(commandstring.split(" ")[0].equals("det")) {
+			det = true;
+		} else if(commandstring.split(" ")[0].equals("nemdet")) {
+			det = false;
 		} else if(commandstring.split(" ")[0].equals("print") || commandstring.split(" ")[0].equals("list")) {
 			proto_print();
 		} else if(commandstring.split(" ")[0].equals("do")) {			
@@ -322,9 +329,12 @@ public class Skeleton {
 				} else if(commandstring.split(" ")[2].equals("leptet")) {		
 					int irany = Integer.parseInt(commandstring.split(" ")[3]);
 					((Game)Skeleton.getObjectFromName(nev)).leptet(irany);
-				}
-				
+				}				
 			}			
 		}
+	}
+	
+	public static int GetUserInput() {
+		return Integer.parseInt(SkeletonApp.sc.nextLine());
 	}
 }

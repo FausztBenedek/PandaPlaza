@@ -43,7 +43,7 @@ public class Kijarat extends Dolog {
 		}				
 		Collections.reverse(hatsok);
 		for(Allat a : hatsok) a.die(); // Hátulról kezdve töröljük a lánc végét
-		o.leptet(bejarat.getRandomSzomszed()); // Léptetjük az orangutánt a bejárat melletti véletlenszerű csempére
+		o.leptet(bejarat); // Léptetjük az orangutánt a bejáratra
 		Skeleton.ret();
 	}
 	/**
