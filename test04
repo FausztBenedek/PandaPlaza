@@ -1,0 +1,3 @@
+load palya4
+do game1 leptet 3
+print

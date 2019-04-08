@@ -1,0 +1,8 @@
+Game game1 pontszam:0 aktivOrangutan:orangutan1 orangutanszam:2 pandaszam:1
+Csempe csempe1 dolog:orangutan1 1:csempe2 2:csempe3
+Csempe csempe2 dolog:orangutan2 2:csempe4 3:csempe1
+Csempe csempe3 dolog:ulos1 0:csempe1 1:csempe4
+Csempe csempe4 dolog:null 0:csempe2 3:csempe3
+Ulos ulos1 csempe:csempe3 elsoMancs:orangutan1 hatsoMancs:null game:game1
+Orangutan orangutan2 csempe:csempe2 elsoMancs:null hatsoMancs:null game:game1
+Orangutan orangutan1 csempe:csempe1 elsoMancs:null hatsoMancs:ulos1 game:game1

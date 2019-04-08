@@ -13,9 +13,7 @@ public class Orangutan extends Allat {
 				" elsoMancs:"+Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:"+ Skeleton.getObjectName(getHatsoMancs()) +
 				" game:"+ Skeleton.getObjectName(game);
 	}
-	
-	
-	
+		
 	/** 
 	 * Lépteti a megadott irányba az orangutánt
 	 * */
@@ -63,4 +61,10 @@ public class Orangutan extends Allat {
 		game.setActiveOrangutan(null);
 		Skeleton.ret();
 	}	
+	
+	@Override
+	public void hitBy(Orangutan o) {
+		// TODO Auto-generated method stub
+		super.hitBy(o);
+	}
 }
