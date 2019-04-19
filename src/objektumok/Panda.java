@@ -11,7 +11,6 @@ public abstract class Panda extends Allat implements ITickable {
 	 * Véletlen irányba lépteti egyet a Pandát
 	 * */
 	public void leptet() {		
-		Skeleton.print(this, "leptet");
 		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
 		if(!Skeleton.det)
 			leptet(getCsempe().getRandomSzomszed());
@@ -20,17 +19,14 @@ public abstract class Panda extends Allat implements ITickable {
 			leptet(getCsempe().getNeigbour(Skeleton.GetUserInput()));
 		}
 			
-		Skeleton.ret();
 	}
 	
 	/**
 	 * Jelzi a pandának, hogy telt az idő, ennek hatására eldönti, hogy akar-e lépni
 	 * */
 	public void tick() {
-		Skeleton.print(this, "tick");
 		if(getElsoMancs()==null)
 			leptet();
-		Skeleton.ret();
 	}
 	
 	/** 
@@ -38,7 +34,6 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	@Override
 	public void hitBy(Orangutan o) {
-		Skeleton.print(this, "hitBy", o);
 		if(getElsoMancs()==null) {
 			Csempe c1 = o.getCsempe();
 			getCsempe().accept(o);
@@ -51,7 +46,6 @@ public abstract class Panda extends Allat implements ITickable {
 			}
 			o.setHatsoMancs(this);			
 		}		
-		Skeleton.ret();
 	}
 	
 	/**
@@ -60,7 +54,6 @@ public abstract class Panda extends Allat implements ITickable {
 	 * @param A csempe amelyikre léptetni akarjuk
 	 */
 	public void leptet(Csempe c) { 
-		Skeleton.print(this, "leptet", c);
 		
 		// Lekéri a csempén lévő dolgot		
 		Dolog d = c.getDolog();
@@ -71,7 +64,6 @@ public abstract class Panda extends Allat implements ITickable {
 		} else {
 			d.hitBy(this);
 		}
-		Skeleton.ret();
 	}
 	
 	/** 
@@ -79,12 +71,10 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	@Override
 	public void die() {
-		Skeleton.print(this, "die");
 		// Elengedi mindenkinek a kezét, leveszi a pályáról
 		super.die();
 		
 		// Csökkenti a hátralévő pandák számát
 		game.pandaSzamCsokkent();	
-		Skeleton.ret();
 	}
 }

@@ -34,8 +34,6 @@ public abstract class Dolog {
 	 * @param d - A dolog amivel ez a dolog ütközik.
 	 */
 	public void hitBy(Dolog d) {
-		Skeleton.print(this,"hitBy", d);
-		Skeleton.ret();
 	}	
 	public void hitBy(Allat a) {hitBy((Dolog)a);}
 	public void hitBy(Csokiautomata c) {hitBy((Dolog)c);}
@@ -48,8 +46,6 @@ public abstract class Dolog {
 	 * @return - A csempe.
 	 */
 	public Csempe getCsempe() {
-		Skeleton.print(this,"getCsempe");
-		Skeleton.ret();
 		return c;
 	}
 	
@@ -58,8 +54,6 @@ public abstract class Dolog {
 	 * @param c - Az új csempe.
 	 */
 	public void setCsempe(Csempe c) {
-		Skeleton.print(this,"setCsempe", c);
 		this.c = c;
-		Skeleton.ret();
 	}
 }

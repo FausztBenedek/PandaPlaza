@@ -20,7 +20,6 @@ public class Jatekgep extends Dolog implements ITickable {
 	 * lévő Ijedos pandákat, ha vannak.
 	 */
 	public void tick() {
-		Skeleton.print(this,"tick");
 		
 		Csempe sajatCsempe = getCsempe();
 		
@@ -32,6 +31,5 @@ public class Jatekgep extends Dolog implements ITickable {
 				d.hitBy(this);	
 		}			
 		
-		Skeleton.ret();
 	}
 }

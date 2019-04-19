@@ -44,9 +44,7 @@ public class Game {
 	 * @param Hány pontot adjon a pontszámhoz
 	 *  */
 	public void addPoints(int p) {
-		Skeleton.print(this, "addPoints", p);
 		pontszam+=p;
-		Skeleton.ret();
 	}
 	
 	/** 
@@ -54,9 +52,7 @@ public class Game {
 	 * @param d A hozzáadandó dolog
 	 * */
 	public void addDolog(Dolog d) {
-		Skeleton.print(this, "addDolog", d);
 		dolgok.add(d);
-		Skeleton.ret();
 	}
 	
 	/**
@@ -64,9 +60,7 @@ public class Game {
 	 * @param c A játékhoz adandó csempe
 	 */
 	public void addCsempe(Csempe c) {
-		Skeleton.print(this, "addCsempe", c);
 		csempek.add(c);
-		Skeleton.ret();
 	}
 	
 	
@@ -75,43 +69,33 @@ public class Game {
 	 * @param o Az irányítani kívánt orangután
 	 */
 	public void setActiveOrangutan(Orangutan o) {
-		Skeleton.print(this, "setActiveOrangutan", o);
 		aktivOrangutan = o;
-		Skeleton.ret();
 	}
 	
 	/** 
 	 * Elindítja a játékot
 	 * */
 	public void startGame() {
-		Skeleton.print(this, "startGame");
-		Skeleton.ret();
 	}
 	
 	/** 
 	 * Véget vet a játéknak
 	 * */
 	public void endGame() {
-		Skeleton.print(this, "endGame");
-		Skeleton.ret();
 	}
 	
 	/** 
 	 * csökkenti a pályán nyilvántartott orángutánok számát
 	 * */
 	public void orangutanSzamCsokkent() {
-		Skeleton.print(this, "OrangutanSzamCsokkent");
 		orangutanszam--;
-		Skeleton.ret();
 	}
 	
 	/** 
 	 * Csökkenti a pályán nyilvántartott pandák számát
 	 * */
 	public void pandaSzamCsokkent() {
-		Skeleton.print(this, "PandaSzamCsokkent");
 		pandaszam--;
-		Skeleton.ret();
 	}
 	
 	/**
@@ -122,10 +106,8 @@ public class Game {
 	 * @param i2 Másik csempe melyik oldalára
 	 */
 	public void csempeOsszekot(Csempe c1, int i1, Csempe c2, int i2) {
-		Skeleton.print(this, "csempeOsszekot", c1, i1, c2, i2);
 		c1.setNeighbour(i1, c2);
 		c2.setNeighbour(i2, c1);
-		Skeleton.ret();
 	}
 	
 	public void elenged() { //TODO kommentelni

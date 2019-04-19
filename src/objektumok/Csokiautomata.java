@@ -16,7 +16,6 @@ public class Csokiautomata extends Dolog implements ITickable {
 	 * lévő Ugros pandákat.
 	 */
 	public void tick() {
-		Skeleton.print(this, "tick");
 		
 		Csempe sajatCsempe = getCsempe();
 		
@@ -28,6 +27,5 @@ public class Csokiautomata extends Dolog implements ITickable {
 				d.hitBy(this);	
 		}
 					
-		Skeleton.ret();
 	}
 }

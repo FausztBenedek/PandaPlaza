@@ -36,7 +36,6 @@ public class Szekreny extends Dolog {
 	 */
 	@Override
 	public void hitBy(Allat a) {
-		Skeleton.print(this, "hitBy", a);
 		
 		Csempe masikSzekrenyCsempe = masik.getCsempe();
 		
@@ -61,6 +60,5 @@ public class Szekreny extends Dolog {
 			a.leptet(target);
 		}
 		
-		Skeleton.ret();
 	}
 }

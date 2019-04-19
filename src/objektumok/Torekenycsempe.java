@@ -27,7 +27,6 @@ public class Torekenycsempe extends Csempe {
 	 * */
 	@Override
 	public void accept(Allat a) {
-		Skeleton.print(this, "accept", a);	
 		Csempe elozo = a.getCsempe();
 		if(elozo!=null)
 			elozo.setDolog(null);
@@ -35,7 +34,6 @@ public class Torekenycsempe extends Csempe {
 		a.setCsempe(this);
 		if(a!=null) elettartam--;
 		if(elettartam <=0) a.die();
-		Skeleton.ret();
 	}
 	
 	/** 
@@ -44,11 +42,9 @@ public class Torekenycsempe extends Csempe {
 	 * */
 	@Override
 	public void ugrott(Allat a) {
-		Skeleton.print(this, "ugrott",a);
 		elettartam-=3;
 		if(elettartam <=0)			
 			a.die();
-		Skeleton.ret();
 	}
 	
 	/**

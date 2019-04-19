@@ -33,7 +33,6 @@ public class Kijarat extends Dolog {
 	 *  */
 	@Override
 	public void hitBy(Orangutan o) {
-		Skeleton.print(this, "hitBy", o);	
 		Allat allat = o;
 		ArrayList<Allat> hatsok = new ArrayList<Allat>();
 		while(allat.getHatsoMancs()!=null) { // Amíg vannak a jelenleg vizsgált állat mögött
@@ -44,7 +43,6 @@ public class Kijarat extends Dolog {
 		Collections.reverse(hatsok);
 		for(Allat a : hatsok) a.die(); // Hátulról kezdve töröljük a lánc végét
 		o.leptet(bejarat); // Léptetjük az orangutánt a bejáratra
-		Skeleton.ret();
 	}
 	/**
 	 * Beállítja az ehhez a kijárathoz tartozó bejáratot, hogy ha itt

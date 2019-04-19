@@ -18,7 +18,6 @@ public class Ijedos extends Panda {
 	 * */
 	@Override
 	public void hitBy(Jatekgep j) {
-		Skeleton.print(this, "hitBy", j);
 		
 		//Ha valakit fog az első mancsával, elengedi
 		Allat ae = getElsoMancs();
@@ -33,6 +32,5 @@ public class Ijedos extends Panda {
 			ah.setElsoMancs(null);
 			setHatsoMancs(null);
 		}		
-		Skeleton.ret();
 	}
 }

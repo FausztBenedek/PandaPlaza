@@ -19,7 +19,6 @@ public class Ulos extends Panda {
 	 * */
 	@Override
 	public void hitBy(Fotel f) {	
-		Skeleton.print(this, "hitBy", f);
 		//Ha valakit fog az első mancsával, elengedi
 		Allat ae = getElsoMancs();
 		if(ae != null) {
@@ -40,6 +39,5 @@ public class Ulos extends Panda {
 		// Beleülteti a fotelbe a pandát
 		f.setPanda(this);
 		
-		Skeleton.ret();
 	}	
 }

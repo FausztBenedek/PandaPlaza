@@ -41,7 +41,6 @@ public class Fotel extends Dolog implements ITickable {
 	 * közeli csempére rakja.
 	 */
 	public void tick() {
-		Skeleton.print(this,"tick");
 		// 1. feladat: A szomszédos mezőkön lévő Ulos pandákból egyet leültet, ha vannak,
 		// de csak akkor, ha nincs éppen aktuális panda, aki a fotelban ül.
 		{
@@ -97,7 +96,6 @@ public class Fotel extends Dolog implements ITickable {
 				}
 			}
 		}
-		Skeleton.ret();
 	}
 	
 	/**
@@ -108,9 +106,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * ha üres a fotel. Csak True esetén történik változás.
 	 */
 	public void setPanda(Ulos u) {
-		Skeleton.print(this, "setPanda", u);		
 		this.panda = u;
-		Skeleton.ret();		
 	}
 	
 	public int getCounter() { //TODO innentol lefele torolni?

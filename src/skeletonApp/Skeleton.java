@@ -20,68 +20,6 @@ public class Skeleton {
 
 	public static boolean det = false;
 	
-	/**
-	 * A skeleton osztály csak akkor ír ki bármit is, ha
-	 * ez a változó true.
-	 */
-	private static boolean started = false;
-	
-	/**
-	 * Megadja, hány tabulátorral kell behúzni a sort.
-	 */
-	private static int tabok = 0;
-	
-	/**
-	 * Kiírja a paraméterül kapott stringet (a metódus neve) a 
-	 * megfelelő tabulálással, és a következőkben egyel
-	 * beljebb állítja.
-	 * 
-	 * @param methodName - A metódus neve, amit ke kell írni
-	 */
-	public static void print(Object object, String methodName) {
-		/*if (started) {
-			for (int i = 0; i < tabok; i++) {
-				System.out.print("\t");
-			}
-			System.out.println(Skeleton.getObjectName(object)+"."+methodName+"()");
-			tabok++;
-		}*/
-	}
-
-	/**
-	 * Kiírja a hívott függvény nevét a megfelelő paraméterekkel, tabulálásokkal, hozzá tartozó objektummal.
-	 * @param object A hívó objektum
-	 * @param methodName A hívott függvény neve
-	 * @param params A paraméterek
-	 */
-	public static void print(Object object, String methodName, Object... params) {
-		/*if (started) {
-			for (int i = 0; i < tabok; i++) { //Szükséges mennyiségű tabulátor beszúrása
-				System.out.print("\t");
-			}
-			String paramNames = "";
-			// Minden objektum paramétert átfordít stringre: ha regisztrálva van, akkor a regisztrált nevét, ha nincs, akkor a ToString()-jét írja ki			
-			for(int i = 0; i < params.length; i++)
-				paramNames += params[i]==null?"null, ":getObjectName(params[i])!=null ? getObjectName(params[i])+", " : params[i].toString()+", ";
-			if(paramNames.endsWith(", ")) paramNames = paramNames.substring(0, paramNames.length()-2);	
-			System.out.println(Skeleton.getObjectName(object)+"."+methodName+"("+paramNames+")");
-			tabok++;
-		}*/
-	}
-	
-	/**
-	 * Eggyel kijjebb állítja a tabulálást.
-	 * @throws IllegalStateException - Ha többször lett meghívva, mint a print
-	 */
-	public static void ret() {
-		if (started) {
-			tabok--;
-			if (tabok < 0) {
-				throw new IllegalStateException("Tabulálás nem lehet negatív");
-			}
-		}
-	}
-	
 	private static HashMap<Object, String> objektumok = new HashMap<Object, String>();
 	/**
 	 * Regisztrálja az objektumot a skeletonba
@@ -107,22 +45,6 @@ public class Skeleton {
 				return entry.getKey();
 		}
 		return null;
-	}
-	
-	/**
-	 * Elindítja a forgatókönyvet.
-	 */
-	public static void startForgatokonyv() {
-		started = true;
-	}
-	
-	/**
-	 * Visszaállítja az osztályt 
-	 * az kiindulási állapotba.
-	 */
-	public static void finishForgatokonyv() {
-		started = false;
-		objektumok.clear();
 	}
 	
 	public static void load(String palyanev) {
@@ -241,49 +163,7 @@ public class Skeleton {
 			}
 		} catch (IOException e) {
 			System.out.println("Nincs ilyen pályanév!");
-		}
-		
-		
-		// Ha stdin-ről akarnánk olvasni a pályakonfigot(elvileg nem muszáj): 
-		/*String userInput = "";
-		ArrayList<String> commands = new ArrayList<String>();		
-		do {
-			if(SkeletonApp.sc.hasNextLine()) {		
-				userInput = SkeletonApp.sc.nextLine();
-			}	
-			if(!userInput.equals("")) {
-				commands.add(userInput);
-				String[] splitelt = userInput.split(" ");
-				String tipus = splitelt[0];
-				String nev = splitelt[1];
-				if(tipus.equals("Csempe")) {
-					Skeleton.addObject(new Csempe(), nev);					
-				} else if(tipus.equals("Orangutan")) {
-					Skeleton.addObject(new Orangutan(), nev);
-				}				
-			}
-		} while(!userInput.equals("") && SkeletonApp.sc.hasNextLine());		
-		
-		for(int j = 0; j < commands.size(); j++) {
-			String[] commandszavak = commands.get(j).split(" ");
-			String tipus = commandszavak[0];
-			String nev = commandszavak[1];
-			if(tipus.equals("Csempe")) {
-				Csempe cs = (Csempe)Skeleton.getObjectFromName(nev);
-				cs.setDolog((Dolog)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-				for(int i = 3; i < commandszavak.length; i++) {
-					String[] szosplit = commandszavak[i].split(":");
-					cs.setNeighbour(Integer.parseInt(szosplit[0]), (Csempe)Skeleton.getObjectFromName(szosplit[1]));
-				}
-			} else if(tipus.equals("Orangutan")) {	
-				Orangutan o = (Orangutan)Skeleton.getObjectFromName(nev);				
-				o.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-				o.setElsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-				o.setHatsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
-				o.setGame((Game)Skeleton.getObjectFromName(commandszavak[5].split(":")[1]));				
-			}
-			...
-		}	*/	
+		}		
 	}
 	
 	public static void proto_print() {
