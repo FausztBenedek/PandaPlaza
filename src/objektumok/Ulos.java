@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /**
  * Olyan panda, akit bele lehet ültetni egy fotelbe.
@@ -8,9 +8,9 @@ import skeletonApp.Skeleton;
 public class Ulos extends Panda {
 	@Override
 	public String toString() {
-		return "Ulos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
-				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
-				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
+		return "Ulos " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
+				" elsoMancs:" + Proto.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
+				Proto.getObjectName(getHatsoMancs()) + " game:" + Proto.getObjectName(game);
 	}	
 	
 	/**

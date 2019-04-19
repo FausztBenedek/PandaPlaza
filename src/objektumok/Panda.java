@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** 
  * Egy pandát reprezentáló osztály
@@ -12,11 +12,11 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	public void leptet() {		
 		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
-		if(!Skeleton.det)
+		if(!Proto.det)
 			leptet(getCsempe().getRandomSzomszed());
 		else {
 			System.out.println("Milyen irányba lépjen a panda?");
-			leptet(getCsempe().getNeigbour(Skeleton.GetUserInput()));
+			leptet(getCsempe().getNeigbour(Proto.GetUserInput()));
 		}
 			
 	}

@@ -2,14 +2,14 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** A Csokiautomata ugratja a szomszédos mezőkön álló Ugros pandákat.
  */
 public class Csokiautomata extends Dolog implements ITickable {	
 	@Override
 	public String toString() {
-		return "Csokiautomata " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe());
+		return "Csokiautomata " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe());
 	}
 	
 	/** Random időközönként ugratja a szomszédos csempéken

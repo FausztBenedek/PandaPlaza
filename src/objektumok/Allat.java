@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** */
 public abstract class Allat extends Dolog {

@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /**
  * A Fotel a szomszédos mezőn lévő Ulos pandákat leülteti,
@@ -12,7 +12,7 @@ public class Fotel extends Dolog implements ITickable {
 	
 	@Override
 	public String toString() {
-		return "Fotel " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe())+ " panda:"+Skeleton.getObjectName(panda) + " counter:" + counter;
+		return "Fotel " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe())+ " panda:"+Proto.getObjectName(panda) + " counter:" + counter;
 	}	
 		
 	/**

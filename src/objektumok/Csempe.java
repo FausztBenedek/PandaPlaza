@@ -3,7 +3,7 @@ package objektumok;
 import java.util.ArrayList;
 import java.util.Random;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** */
 public class Csempe {
@@ -13,10 +13,10 @@ public class Csempe {
 		String csempek = "";
 		for(int i = 0; i < szomszedok.size(); i++) {
 			if(szomszedok.get(i)!=null) {
-				csempek+=" "+i+":"+Skeleton.getObjectName(szomszedok.get(i));
+				csempek+=" "+i+":"+Proto.getObjectName(szomszedok.get(i));
 			}
 		}
-		return "Csempe " +  Skeleton.getObjectName(this) + " dolog:"+Skeleton.getObjectName(dolog) + csempek;
+		return "Csempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(dolog) + csempek;
 	}
 	
 	//attribútumok

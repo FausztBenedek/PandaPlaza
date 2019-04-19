@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** */
 public class Torekenycsempe extends Csempe {
@@ -9,10 +9,10 @@ public class Torekenycsempe extends Csempe {
 		String csempek = "";
 		for(int i = 0; i < szomszedok.size(); i++) {
 			if(szomszedok.get(i)!=null) {
-				csempek+=" "+i+":"+Skeleton.getObjectName(szomszedok.get(i));
+				csempek+=" "+i+":"+Proto.getObjectName(szomszedok.get(i));
 			}
 		}
-		return "Torekenycsempe " +  Skeleton.getObjectName(this) + " dolog:"+Skeleton.getObjectName(getDolog()) + " elettartam:" + elettartam + " " + csempek;
+		return "Torekenycsempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(getDolog()) + " elettartam:" + elettartam + " " + csempek;
 	}
 	
 	/** 

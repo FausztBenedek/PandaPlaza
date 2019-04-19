@@ -16,7 +16,7 @@ import objektumok.*;
 /**
  * Utility osztály, amely a metódusok nevének kiírásáért felelős.
  */
-public class Skeleton {
+public class Proto {
 
 	public static boolean det = false;
 	
@@ -61,29 +61,29 @@ public class Skeleton {
 					String tipus = splitelt[0];
 					String nev = splitelt[1];
 					if(tipus.equals("Csempe")) {
-						Skeleton.addObject(new Csempe(), nev);					
+						Proto.addObject(new Csempe(), nev);					
 					} else if(tipus.equals("Orangutan")) {
-						Skeleton.addObject(new Orangutan(), nev);
+						Proto.addObject(new Orangutan(), nev);
 					} else if(tipus.equals("Game")) {						
-						Skeleton.addObject(new Game(), nev);
+						Proto.addObject(new Game(), nev);
 					} else if(tipus.equals("Csokiautomata")) {
-						Skeleton.addObject(new Csokiautomata(), nev);
+						Proto.addObject(new Csokiautomata(), nev);
 					} else if(tipus.equals("Jatekgep")) {
-						Skeleton.addObject(new Jatekgep(), nev);
+						Proto.addObject(new Jatekgep(), nev);
 					} else if(tipus.equals("Fotel")) {
-						Skeleton.addObject(new Fotel(), nev);
+						Proto.addObject(new Fotel(), nev);
 					} else if(tipus.equals("Szekreny")) {
-						Skeleton.addObject(new Szekreny(), nev);
+						Proto.addObject(new Szekreny(), nev);
 					} else if(tipus.equals("Kijarat")) {
-						Skeleton.addObject(new Kijarat(), nev);
+						Proto.addObject(new Kijarat(), nev);
 					} else if(tipus.equals("Torekenycsempe")) {
-						Skeleton.addObject(new Torekenycsempe(), nev);
+						Proto.addObject(new Torekenycsempe(), nev);
 					} else if(tipus.equals("Ugros")) {
-						Skeleton.addObject(new Ugros(), nev);
+						Proto.addObject(new Ugros(), nev);
 					} else if(tipus.equals("Ulos")) {
-						Skeleton.addObject(new Ulos(), nev);
+						Proto.addObject(new Ulos(), nev);
 					} else if(tipus.equals("Ijedos")) {
-						Skeleton.addObject(new Ijedos(), nev);
+						Proto.addObject(new Ijedos(), nev);
 					} 
 				}
 				else
@@ -95,68 +95,68 @@ public class Skeleton {
 				String tipus = commandszavak[0];
 				String nev = commandszavak[1];
 				if(tipus.equals("Csempe")) {
-					Csempe cs = (Csempe)Skeleton.getObjectFromName(nev);
-					cs.setDolog((Dolog)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
+					Csempe cs = (Csempe)Proto.getObjectFromName(nev);
+					cs.setDolog((Dolog)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
 					for(int i = 3; i < commandszavak.length; i++) {
 						String[] szosplit = commandszavak[i].split(":");
-						cs.setNeighbour(Integer.parseInt(szosplit[0]), (Csempe)Skeleton.getObjectFromName(szosplit[1]));
+						cs.setNeighbour(Integer.parseInt(szosplit[0]), (Csempe)Proto.getObjectFromName(szosplit[1]));
 					}
 				} else if(tipus.equals("Torekenycsempe")) {	
-					Torekenycsempe torekeny = (Torekenycsempe)Skeleton.getObjectFromName(nev);
-					torekeny.setDolog((Dolog)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
+					Torekenycsempe torekeny = (Torekenycsempe)Proto.getObjectFromName(nev);
+					torekeny.setDolog((Dolog)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
 					torekeny.setElettartam(Integer.parseInt(commandszavak[3].split(":")[1]));  
 					for(int i = 4; i < commandszavak.length; i++) {
 						String[] szosplit = commandszavak[i].split(":");
-						torekeny.setNeighbour(Integer.parseInt(szosplit[0]), (Csempe)Skeleton.getObjectFromName(szosplit[1]));
+						torekeny.setNeighbour(Integer.parseInt(szosplit[0]), (Csempe)Proto.getObjectFromName(szosplit[1]));
 					}
 				} else if(tipus.equals("Orangutan")) {	
-					Orangutan o = (Orangutan)Skeleton.getObjectFromName(nev);				
-					o.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					o.setElsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-					o.setHatsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
-					o.setGame((Game)Skeleton.getObjectFromName(commandszavak[5].split(":")[1]));				
+					Orangutan o = (Orangutan)Proto.getObjectFromName(nev);				
+					o.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					o.setElsoMancs((Allat)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
+					o.setHatsoMancs((Allat)Proto.getObjectFromName(commandszavak[4].split(":")[1]));
+					o.setGame((Game)Proto.getObjectFromName(commandszavak[5].split(":")[1]));				
 				} else if(tipus.equals("Csokiautomata")) {	
-					Csokiautomata csoki = (Csokiautomata)Skeleton.getObjectFromName(nev);
-					csoki.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));	
+					Csokiautomata csoki = (Csokiautomata)Proto.getObjectFromName(nev);
+					csoki.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));	
 				} else if(tipus.equals("Jatekgep")) {	
-					Jatekgep jatek = (Jatekgep)Skeleton.getObjectFromName(nev);
-					jatek.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
+					Jatekgep jatek = (Jatekgep)Proto.getObjectFromName(nev);
+					jatek.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
 				} else if(tipus.equals("Fotel")) {	
-					Fotel fotel = (Fotel)Skeleton.getObjectFromName(nev);
-					fotel.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));					
-					fotel.setPanda((Ulos)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
+					Fotel fotel = (Fotel)Proto.getObjectFromName(nev);
+					fotel.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));					
+					fotel.setPanda((Ulos)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
 					fotel.setCounter(Integer.parseInt(commandszavak[4].split(":")[1]));
 				} else if(tipus.equals("Szekreny")) {	
-					Szekreny szekreny = (Szekreny)Skeleton.getObjectFromName(nev);
-					szekreny.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					szekreny.setMasik((Szekreny)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
+					Szekreny szekreny = (Szekreny)Proto.getObjectFromName(nev);
+					szekreny.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					szekreny.setMasik((Szekreny)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
 				} else if(tipus.equals("Kijarat")) {	
-					Kijarat kijarat = (Kijarat)Skeleton.getObjectFromName(nev);
-					kijarat.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					kijarat.setBejarat((Csempe)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-					kijarat.setGame((Game)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
+					Kijarat kijarat = (Kijarat)Proto.getObjectFromName(nev);
+					kijarat.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					kijarat.setBejarat((Csempe)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
+					kijarat.setGame((Game)Proto.getObjectFromName(commandszavak[4].split(":")[1]));
 				} else if(tipus.equals("Ugros")) {	
-					Ugros ugros = (Ugros)Skeleton.getObjectFromName(nev);											
-					ugros.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					ugros.setElsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-					ugros.setHatsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
-					ugros.setGame((Game)Skeleton.getObjectFromName(commandszavak[5].split(":")[1]));
+					Ugros ugros = (Ugros)Proto.getObjectFromName(nev);											
+					ugros.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					ugros.setElsoMancs((Allat)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
+					ugros.setHatsoMancs((Allat)Proto.getObjectFromName(commandszavak[4].split(":")[1]));
+					ugros.setGame((Game)Proto.getObjectFromName(commandszavak[5].split(":")[1]));
 				} else if(tipus.equals("Ulos")) {	
-					Ulos ulos = (Ulos)Skeleton.getObjectFromName(nev);												
-					ulos.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					ulos.setElsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-					ulos.setHatsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
-					ulos.setGame((Game)Skeleton.getObjectFromName(commandszavak[5].split(":")[1]));
+					Ulos ulos = (Ulos)Proto.getObjectFromName(nev);												
+					ulos.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					ulos.setElsoMancs((Allat)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
+					ulos.setHatsoMancs((Allat)Proto.getObjectFromName(commandszavak[4].split(":")[1]));
+					ulos.setGame((Game)Proto.getObjectFromName(commandszavak[5].split(":")[1]));
 				} else if(tipus.equals("Ijedos")) {	
-					Ijedos ijedos = (Ijedos)Skeleton.getObjectFromName(nev);							
-					ijedos.setCsempe((Csempe)Skeleton.getObjectFromName(commandszavak[2].split(":")[1]));
-					ijedos.setElsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[3].split(":")[1]));
-					ijedos.setHatsoMancs((Allat)Skeleton.getObjectFromName(commandszavak[4].split(":")[1]));
-					ijedos.setGame((Game)Skeleton.getObjectFromName(commandszavak[5].split(":")[1]));
+					Ijedos ijedos = (Ijedos)Proto.getObjectFromName(nev);							
+					ijedos.setCsempe((Csempe)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
+					ijedos.setElsoMancs((Allat)Proto.getObjectFromName(commandszavak[3].split(":")[1]));
+					ijedos.setHatsoMancs((Allat)Proto.getObjectFromName(commandszavak[4].split(":")[1]));
+					ijedos.setGame((Game)Proto.getObjectFromName(commandszavak[5].split(":")[1]));
 				} else if(tipus.equals("Game")) {	
-					Game g = (Game)Skeleton.getObjectFromName(nev);
+					Game g = (Game)Proto.getObjectFromName(nev);
 					g.setPoint(Integer.parseInt(commandszavak[2].split(":")[1]));
-					g.setActiveOrangutan((Orangutan)Skeleton.getObjectFromName(commandszavak[3].split(":")[1])); 
+					g.setActiveOrangutan((Orangutan)Proto.getObjectFromName(commandszavak[3].split(":")[1])); 
 					g.setOrangutanSzam(Integer.parseInt(commandszavak[4].split(":")[1]));
 					g.setPandaSzam(Integer.parseInt(commandszavak[5].split(":")[1]));	
 				}
@@ -194,21 +194,21 @@ public class Skeleton {
 			proto_print();
 		} else if(commandstring.split(" ")[0].equals("do")) {			
 			String nev = commandstring.split(" ")[1];
-			String tipus = Skeleton.getObjectFromName(nev).getClass().getSimpleName(); // TODO??
+			String tipus = Proto.getObjectFromName(nev).getClass().getSimpleName(); // TODO??
 			if(tipus.equals("Ijedos") || tipus.equals("Ulos") || tipus.equals("Ugros")|| tipus.equals("Fotel")|| tipus.equals("Jatekgep")|| tipus.equals("Csokiautomata")) {
 				if(commandstring.split(" ")[2].equals("tick")) {
-					((ITickable)Skeleton.getObjectFromName(nev)).tick();
+					((ITickable)Proto.getObjectFromName(nev)).tick();
 				}
 			} else if(tipus.equals("Game")) {
 				if(commandstring.split(" ")[2].equals("setActiveOrangutan")) {		
-					Orangutan uj = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[3]);
-					((Game)Skeleton.getObjectFromName(nev)).setActiveOrangutan(uj);
+					Orangutan uj = (Orangutan)Proto.getObjectFromName(commandstring.split(" ")[3]);
+					((Game)Proto.getObjectFromName(nev)).setActiveOrangutan(uj);
 				} else if(commandstring.split(" ")[2].equals("elenged")) {		
 					//Orangutan oran = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[2]);
-					((Game)Skeleton.getObjectFromName(nev)).elenged();
+					((Game)Proto.getObjectFromName(nev)).elenged();
 				} else if(commandstring.split(" ")[2].equals("leptet")) {		
 					int irany = Integer.parseInt(commandstring.split(" ")[3]);
-					((Game)Skeleton.getObjectFromName(nev)).leptet(irany);
+					((Game)Proto.getObjectFromName(nev)).leptet(irany);
 				}	
 				else System.out.println("Nincs ilyen parancs!");  //TODO
 			}			
@@ -216,6 +216,6 @@ public class Skeleton {
 	}
 	
 	public static int GetUserInput() {
-		return Integer.parseInt(SkeletonApp.sc.nextLine());
+		return Integer.parseInt(ProtoApp.sc.nextLine());
 	}
 }

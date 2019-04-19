@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /**
  * Egy olyan dolog, amivel ha egy állat ütközik, akkor elteleportálja
@@ -11,8 +11,8 @@ import skeletonApp.Skeleton;
 public class Szekreny extends Dolog {
 	@Override
 	public String toString() {
-		return "Szekreny " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
-				" masik:"+Skeleton.getObjectName(masik);
+		return "Szekreny " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
+				" masik:"+Proto.getObjectName(masik);
 	}	
 	
 

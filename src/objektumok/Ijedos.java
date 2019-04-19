@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** 
  * Olyan panda, aki a játékgép csilingelésétől megijed
@@ -8,9 +8,9 @@ import skeletonApp.Skeleton;
 public class Ijedos extends Panda {
 	@Override
 	public String toString() { 
-		return "Ijedos " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
-				" elsoMancs:" + Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
-				Skeleton.getObjectName(getHatsoMancs()) + " game:" + Skeleton.getObjectName(game);
+		return "Ijedos " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
+				" elsoMancs:" + Proto.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
+				Proto.getObjectName(getHatsoMancs()) + " game:" + Proto.getObjectName(game);
 	}
 
 	/** 

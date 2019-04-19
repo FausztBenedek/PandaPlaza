@@ -2,14 +2,14 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** */
 public class Game {
 	@Override
 	public String toString() {
 		//TODO dolgok, csempék?
-		return "Game " + Skeleton.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Skeleton.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
+		return "Game " + Proto.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Proto.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
 	}
 	
 	/** 

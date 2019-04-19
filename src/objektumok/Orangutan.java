@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /** 
  * Egy orangutánt reprezentál
@@ -9,9 +9,9 @@ public class Orangutan extends Allat {
 
 	@Override
 	public String toString() {
-		return "Orangutan " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) + 
-				" elsoMancs:"+Skeleton.getObjectName(getElsoMancs()) + " hatsoMancs:"+ Skeleton.getObjectName(getHatsoMancs()) +
-				" game:"+ Skeleton.getObjectName(game);
+		return "Orangutan " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) + 
+				" elsoMancs:"+Proto.getObjectName(getElsoMancs()) + " hatsoMancs:"+ Proto.getObjectName(getHatsoMancs()) +
+				" game:"+ Proto.getObjectName(game);
 	}
 		
 	/** 

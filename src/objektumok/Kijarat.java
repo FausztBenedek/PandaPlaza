@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.*;
 
-import skeletonApp.Skeleton;
+import skeletonApp.Proto;
 
 /**
  * A pláza kijáratát reprezentálja. A kijáraton való távozás után a bejáraton jön vissza az orangután.
@@ -11,8 +11,8 @@ public class Kijarat extends Dolog {
 	
 	@Override
 	public String toString() {
-		return "Kijarat " + Skeleton.getObjectName(this) + " csempe:" + Skeleton.getObjectName(getCsempe()) +
-				" bejarat:"+Skeleton.getObjectName(bejarat) + " game:"+Skeleton.getObjectName(game);
+		return "Kijarat " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
+				" bejarat:"+Proto.getObjectName(bejarat) + " game:"+Proto.getObjectName(game);
 	}	
 
 	/**

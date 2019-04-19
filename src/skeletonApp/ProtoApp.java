@@ -4,7 +4,7 @@ import objektumok.*;
 import skeletonApp.*;
 
 
-public class SkeletonApp {
+public class ProtoApp {
 	
 	/**
 	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
@@ -24,7 +24,7 @@ public class SkeletonApp {
 				userInput = sc.nextLine();
 			}	
 			if(!userInput.equals("")) {
-				Skeleton.command(userInput);
+				Proto.command(userInput);
 			}
 		} while(!userInput.equals(""));
 		System.out.println("Kilépés...");
