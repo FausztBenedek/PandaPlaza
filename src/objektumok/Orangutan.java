@@ -61,7 +61,7 @@ public class Orangutan extends Allat {
 	
 	@Override
 	public void hitBy(Orangutan o) {
-		if(vedelem == 0 && o.getHatsoMancs()==null) {
+		if(o.vedelem == 0 && o.getHatsoMancs()==null) {
 			Csempe sajatCsempe = getCsempe();
 			Csempe masikCsempe = o.getCsempe();		
 			sajatCsempe.accept(o);
