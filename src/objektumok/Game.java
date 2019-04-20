@@ -63,7 +63,6 @@ public class Game {
 		csempek.add(c);
 	}
 	
-	
 	/**
 	 * Beállítja a jelenleg aktív (vezérelt) orángutánt a paraméterül kapottra
 	 * @param o Az irányítani kívánt orangután
@@ -82,7 +81,7 @@ public class Game {
 	 * Véget vet a játéknak
 	 * */
 	public void endGame() {
-	}
+	}	
 	
 	/** 
 	 * csökkenti a pályán nyilvántartott orángutánok számát

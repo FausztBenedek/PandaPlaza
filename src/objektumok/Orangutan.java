@@ -6,6 +6,8 @@ import skeletonApp.Proto;
  * Egy orangutánt reprezentál
  * */
 public class Orangutan extends Allat {
+	
+	private int vedelem = 0; 
 
 	@Override
 	public String toString() {
@@ -23,7 +25,7 @@ public class Orangutan extends Allat {
 		
 		//Megpróbálja az adott irányú csempére léptetni az orangutánt, ha létezik ilyen irányú szomszéd
 		if(cs !=null)
-			leptet(cs);
+			leptet(cs);	
 	}
 	
 	/**
@@ -35,6 +37,7 @@ public class Orangutan extends Allat {
 		// Lekéri a csempén lévő dolgot
 		Dolog d = c.getDolog();
 		
+		if(vedelem > 0) vedelem--;
 		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
 		if(d==null) {
 			c.accept(this);
@@ -58,7 +61,19 @@ public class Orangutan extends Allat {
 	
 	@Override
 	public void hitBy(Orangutan o) {
-		// TODO Auto-generated method stub
-		super.hitBy(o);
+		if(vedelem == 0 && o.getHatsoMancs()==null) {
+			Csempe sajatCsempe = getCsempe();
+			Csempe masikCsempe = o.getCsempe();		
+			sajatCsempe.accept(o);
+			setCsempe(null);
+			Allat hatso = getHatsoMancs();
+			if(hatso!=null) {
+				o.setHatsoMancs(hatso);
+				hatso.setElsoMancs(o);
+				setHatsoMancs(null);				
+			}
+			masikCsempe.accept(this);
+			vedelem = 3;			
+		}		
 	}
 }
