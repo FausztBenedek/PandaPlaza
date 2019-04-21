@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** 
  * Olyan panda, aki a játékgép csilingelésétől megijed

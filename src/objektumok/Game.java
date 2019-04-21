@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** */
 public class Game {

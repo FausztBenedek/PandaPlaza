@@ -1,7 +1,7 @@
-package skeletonApp;
+package protoApp;
 import java.util.Scanner;
 import objektumok.*;
-import skeletonApp.*;
+import protoApp.*;
 
 
 public class ProtoApp {
@@ -17,17 +17,18 @@ public class ProtoApp {
 	 * @param args - Nincs most ilyen
 	 */
 	public static void main(String[] args) {	
-		System.out.println("Parancs?");
+	//	System.out.println("Parancs?");
 		String userInput = "";
 		do {
 			if(sc.hasNextLine()) {		
 				userInput = sc.nextLine();
-			}	
+			} else 
+				break;			
 			if(!userInput.equals("")) {
 				Proto.command(userInput);
 			}
 		} while(!userInput.equals(""));
-		System.out.println("Kilépés...");
+	//	System.out.print("Kilépés...");
 		sc.close();
 	}
 }

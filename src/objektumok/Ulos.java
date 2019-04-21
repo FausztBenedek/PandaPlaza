@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /**
  * Olyan panda, akit bele lehet ültetni egy fotelbe.

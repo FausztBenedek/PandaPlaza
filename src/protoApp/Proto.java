@@ -1,4 +1,4 @@
-package skeletonApp;
+package protoApp;
 
 import java.util.Comparator;
 import java.io.BufferedReader;
@@ -47,19 +47,30 @@ public class Proto {
 		return null;
 	}
 	
+	/**
+	 * Betölti a paraméterül kapott pályát
+	 * @param palyanev A betöltendő pálya neve. A program a tests/palyak/
+	 * mappa alatt keresi az ilyen nevű fájlt. 
+	 */
 	public static void load(String palyanev) {
+		// Ha volt korábban betöltve valami, törli
 		objektumok.clear();
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader(palyanev));
+			br = new BufferedReader(new FileReader("tests/palyak/"+palyanev));			
 			String sor;
+			// Az összes sor eltárolásra kerül. Első körben csak létrejönnek az objektumok, és
+			// beregisztrálódnak az adott névvel, a második körben pedig ezek attribútumai kerülnek beállításra.
+			// Erre azért van szükség, mert az objektumok egymásra is hivatkozhatnak attribútumaikban, így a
+			// későbbi sorokban szereplő objektumokra nem lehetne hivatkozni.
 			ArrayList<String> commands = new ArrayList<String>();		
-			while ((sor = br.readLine()) != null) {
+			while ((sor = br.readLine()) != null) { // Soronként objektumok beolvasása
 				if(!sor.equals("")) {
 					commands.add(sor);
 					String[] splitelt = sor.split(" ");
 					String tipus = splitelt[0];
 					String nev = splitelt[1];
+					// Objektumok beregisztrálása a nevükkel
 					if(tipus.equals("Csempe")) {
 						Proto.addObject(new Csempe(), nev);					
 					} else if(tipus.equals("Orangutan")) {
@@ -90,10 +101,11 @@ public class Proto {
 					break;
 			}
 			
+			// Létrehozott objektumok attribútumainak beállítása
 			for(int j = 0; j < commands.size(); j++) {
 				String[] commandszavak = commands.get(j).split(" ");
 				String tipus = commandszavak[0];
-				String nev = commandszavak[1];
+				String nev = commandszavak[1];				 
 				if(tipus.equals("Csempe")) {
 					Csempe cs = (Csempe)Proto.getObjectFromName(nev);
 					cs.setDolog((Dolog)Proto.getObjectFromName(commandszavak[2].split(":")[1]));
@@ -161,12 +173,12 @@ public class Proto {
 					g.setPandaSzam(Integer.parseInt(commandszavak[5].split(":")[1]));	
 				}
 			}
-		} catch (IOException e) {
+		} catch (IOException e) { // Ha nem létezik az adott nevű pálya..
 			System.out.println("Nincs ilyen pályanév!");
 		}		
 	}
 	
-	public static void proto_print() {
+	public static void print() {
 		ArrayList<String> sorok = new ArrayList<String>();
 		
 		for(Entry<Object, String> entry : objektumok.entrySet()) {			
@@ -191,7 +203,7 @@ public class Proto {
 		} else if(commandstring.split(" ")[0].equals("nemdet")) {
 			det = false;
 		} else if(commandstring.split(" ")[0].equals("print") || commandstring.split(" ")[0].equals("list")) {
-			proto_print();
+			print();
 		} else if(commandstring.split(" ")[0].equals("do")) {			
 			String nev = commandstring.split(" ")[1];
 			String tipus = Proto.getObjectFromName(nev).getClass().getSimpleName(); // TODO??
@@ -204,7 +216,6 @@ public class Proto {
 					Orangutan uj = (Orangutan)Proto.getObjectFromName(commandstring.split(" ")[3]);
 					((Game)Proto.getObjectFromName(nev)).setActiveOrangutan(uj);
 				} else if(commandstring.split(" ")[2].equals("elenged")) {		
-					//Orangutan oran = (Orangutan)Skeleton.getObjectFromName(commandstring.split(" ")[2]);
 					((Game)Proto.getObjectFromName(nev)).elenged();
 				} else if(commandstring.split(" ")[2].equals("leptet")) {		
 					int irany = Integer.parseInt(commandstring.split(" ")[3]);

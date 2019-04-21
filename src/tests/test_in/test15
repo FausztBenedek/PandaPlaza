@@ -1,0 +1,4 @@
+load palya2
+det
+do csokiautomata1 tick
+print

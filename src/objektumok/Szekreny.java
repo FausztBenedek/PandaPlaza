@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /**
  * Egy olyan dolog, amivel ha egy állat ütközik, akkor elteleportálja

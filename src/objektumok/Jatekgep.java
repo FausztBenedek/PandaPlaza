@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** A Jatekgep random időközönként megijeszti a szomszédos mezőkön lévő
  * lévő Ijedos pandákat.

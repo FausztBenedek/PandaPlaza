@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /**
  * A Fotel a szomszédos mezőn lévő Ulos pandákat leülteti,

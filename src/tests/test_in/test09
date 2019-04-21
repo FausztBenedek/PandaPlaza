@@ -1,0 +1,5 @@
+load palya3
+det
+do ijedos1 tick
+3
+print

@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.*;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /**
  * A pláza kijáratát reprezentálja. A kijáraton való távozás után a bejáraton jön vissza az orangután.

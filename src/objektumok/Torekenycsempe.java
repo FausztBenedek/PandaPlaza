@@ -1,6 +1,6 @@
 package objektumok;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** */
 public class Torekenycsempe extends Csempe {
@@ -12,7 +12,7 @@ public class Torekenycsempe extends Csempe {
 				csempek+=" "+i+":"+Proto.getObjectName(szomszedok.get(i));
 			}
 		}
-		return "Torekenycsempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(getDolog()) + " elettartam:" + elettartam + " " + csempek;
+		return "Torekenycsempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(getDolog()) + " elettartam:" + elettartam + csempek;
 	}
 	
 	/** 

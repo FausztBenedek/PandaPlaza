@@ -2,7 +2,7 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** A Csokiautomata ugratja a szomszédos mezőkön álló Ugros pandákat.
  */

@@ -1,0 +1,5 @@
+load palya4
+do game1 leptet 3
+do game1 setActiveOrangutan orangutan2
+do game1 leptet 3
+print

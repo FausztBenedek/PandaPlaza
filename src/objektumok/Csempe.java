@@ -3,7 +3,7 @@ package objektumok;
 import java.util.ArrayList;
 import java.util.Random;
 
-import skeletonApp.Proto;
+import protoApp.Proto;
 
 /** */
 public class Csempe {

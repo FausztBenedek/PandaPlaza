@@ -1,5 +1,5 @@
 package objektumok;
-import skeletonApp.*;
+import protoApp.*;
 
 /** A dolog reprezentál minden olyan objektumot a játékban,
  * ami ütközhet egy másik példánnyal.
