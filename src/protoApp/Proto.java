@@ -17,9 +17,9 @@ import objektumok.*;
  * Utility osztály, amely a metódusok nevének kiírásáért felelős.
  */
 public class Proto {
-
+	// A program determinisztikus módban fusson-e. Alapértelmezetten hamis.
 	public static boolean det = false;
-	
+	// Az objektumokat tárolja a nevükkel együtt.
 	private static HashMap<Object, String> objektumok = new HashMap<Object, String>();
 	/**
 	 * Regisztrálja az objektumot a skeletonba
@@ -39,6 +39,11 @@ public class Proto {
 		return objektumok.get(o);
 	}
 	
+	/**
+	 * Visszatér azzal a beregisztrált objektummal, aminek a paraméterül kapott string a neve.
+	 * @param s A kért objektum neve
+	 * @return A keresett nevű objektum
+	 */
 	public static Object getObjectFromName(String s) {
 		for(Entry<Object, String> entry : objektumok.entrySet()) {
 			if(entry.getValue().equals(s))
@@ -178,24 +183,33 @@ public class Proto {
 		}		
 	}
 	
+	/**
+	 * Abc sorrendben kiírja az összes beregisztrált objektumot az attribútumaikkal együtt.
+	 */
 	public static void print() {
-		ArrayList<String> sorok = new ArrayList<String>();
-		
+		ArrayList<String> sorok = new ArrayList<String>();		
+		// Minden objektum bekerül a listába, de még rendezetlenül
 		for(Entry<Object, String> entry : objektumok.entrySet()) {			
 			sorok.add(entry.getKey().toString());			
 		}		
+		// Sorok rendezése abc sorrendbe
 		Collections.sort(sorok, new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
 				return o1.compareTo(o2);
 			}			
 		});
+		// Minden sor kiírása
 		for(String s : sorok) {
 			System.out.println(s);
 		}
 	}
 	
-	public static void command(String commandstring) {
+	/**
+	 * Végrehajtja a paraméterül kapott prototípus parancsot.
+	 * @param commandstring A végrehajtandó parancs, lehetséges parancsokat ld. dokumentáció
+	 */
+	public static void command(String commandstring) {		
 		if(commandstring.split(" ")[0].equals("load")) {
 			load(commandstring.split(" ")[1]);
 		} else if(commandstring.split(" ")[0].equals("det")) {
@@ -221,11 +235,15 @@ public class Proto {
 					int irany = Integer.parseInt(commandstring.split(" ")[3]);
 					((Game)Proto.getObjectFromName(nev)).leptet(irany);
 				}	
-				else System.out.println("Nincs ilyen parancs!");  //TODO
+				else System.out.println("Nincs ilyen parancs!");
 			}			
 		}
 	}
 	
+	/**
+	 * Beolvas a standard inputról egy intet
+	 * @return A beolvasott egész szám
+	 */
 	public static int GetUserInput() {
 		return Integer.parseInt(ProtoApp.sc.nextLine());
 	}

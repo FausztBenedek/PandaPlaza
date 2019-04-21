@@ -5,13 +5,7 @@ import protoApp.*;
 
 
 public class ProtoApp {
-	
-	/**
-	 * Egy lista, amelyben az összes forgatókönyv megtalálható, 
-	 * amelyet a felhasználó lefuttathat.
-	 */
 	public static Scanner sc = new Scanner(System.in);
-
 	/**
 	 * A skeleton app belépési pontja.
 	 * @param args - Nincs most ilyen
@@ -27,7 +21,7 @@ public class ProtoApp {
 			if(!userInput.equals("")) {
 				Proto.command(userInput);
 			}
-		} while(!userInput.equals(""));
+		} while(!userInput.equals("")); // Addig fut a program, míg üres sort nem kap a bemenetére.
 	//	System.out.print("Kilépés...");
 		sc.close();
 	}
