@@ -8,7 +8,6 @@ import protoApp.Proto;
 public class Game {
 	@Override
 	public String toString() {
-		//TODO dolgok, csempék?
 		return "Game " + Proto.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Proto.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
 	}
 	
@@ -109,7 +108,10 @@ public class Game {
 		c2.setNeighbour(i2, c1);
 	}
 	
-	public void elenged() { //TODO kommentelni
+	/**
+	 * Elengedi az éppen aktív orangutan a mögötte álló állat mancsát.
+	 */
+	public void elenged() {
 		Allat hatso = aktivOrangutan.getHatsoMancs();
 		if(hatso!=null) {
 			hatso.setElsoMancs(null);
@@ -117,19 +119,34 @@ public class Game {
 		}
 	}
 	
-	public void leptet(int irany) { // TODO kommentelni
+	/**
+	 * Lépteti az aktív orangutánt a paraméterül kapott irányba.
+	 * @param irany Az irány amerre léptetni kívánjuk az orangutánt
+	 */
+	public void leptet(int irany) {
 		if(aktivOrangutan!=null)
 			aktivOrangutan.leptet(irany);
 	}
 	
-	public void setPoint(int pont) { // TODO innentől lefele kiszedni? (+komment)
+	/**
+	 * Beállítja a játék pontszámát.
+	 * @param pont A beállítandó pontszám
+	 */
+	public void setPoint(int pont) { // TODO innentől lefele kiszedni?
 		pontszam = pont;
 	}
-	
+	/**
+	 * Beállítja a játékban lévő orangutánok számát
+	 * @param n Az orangutánok száma
+	 */
 	public void setOrangutanSzam(int n) {
 		orangutanszam = n;
 	}
 	
+	/**
+	 * Beállítja a játékban lévő pandák számát
+	 * @param n A pandák száma
+	 */
 	public void setPandaSzam(int n) {
 		pandaszam = n;
 	}

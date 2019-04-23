@@ -109,10 +109,18 @@ public class Fotel extends Dolog implements ITickable {
 		this.panda = u;
 	}
 	
+	/**
+	 * Visszatér a fotel számlálójával
+	 * @return a fotel számlálója
+	 */
 	public int getCounter() { //TODO innentol lefele torolni?
 		return counter;
 	}
 	
+	/**
+	 * Beállítja a fotel számlálóját
+	 * @param n A beállítandó érték
+	 */
 	public void setCounter(int n) {
 		counter = n;
 	}
