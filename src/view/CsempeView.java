@@ -85,7 +85,7 @@ public class CsempeView implements Drawable {
                 xDistance * xDistance + yDistance * yDistance);
         
         // Ha ez a távolság kisebb, mint a sugár => benne van a pont a körben.
-        return rad >= xDistance;
+        return rad >= distanceFromCenter;
     }
     
     /**
