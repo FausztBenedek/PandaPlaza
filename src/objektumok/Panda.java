@@ -12,13 +12,7 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	public void leptet() {		
 		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
-		if(!Proto.det)
-			leptet(getCsempe().getRandomSzomszed());
-		else {
-			System.out.println("Milyen irányba lépjen a panda?");
-			leptet(getCsempe().getNeigbour(Proto.GetUserInput()));
-		}
-			
+                leptet(getCsempe().getRandomSzomszed());	
 	}
 	
 	/**
