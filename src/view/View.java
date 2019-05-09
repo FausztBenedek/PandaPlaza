@@ -18,13 +18,13 @@ public class View {
     /**
      * A singleton objektum.
      */
-    private View instance = new View();
+    private static View instance = new View();
     
     /**
      * Getter a singleton View objektumra.
      * @return 
      */
-    public View getInstance() {
+    public static View getInstance() {
         return instance;
     }
     
