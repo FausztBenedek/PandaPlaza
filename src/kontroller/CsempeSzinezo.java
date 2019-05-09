@@ -9,13 +9,13 @@ public class CsempeSzinezo implements MouseBeKiListener{
 
     @Override
     public void onArrive(CsempeView cs) {
-        cs.setColor(Color.BLACK);
+        cs.setColor(Color.GREEN);
         DrawPanel.getInstance().repaint();
     }
 
     @Override
     public void onLeave(CsempeView cs) {
-        cs.setColor(Color.YELLOW);
+        cs.setColor(Color.WHITE);
         DrawPanel.getInstance().repaint();
     }
 
