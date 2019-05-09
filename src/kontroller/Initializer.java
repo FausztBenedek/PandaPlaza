@@ -10,22 +10,26 @@ import objektumok.*;
  * Inicializálja a pályát.
  */
 public class Initializer {
+    
+    public static MouseBeKiPoller mouseBeKiEvent = new MouseBeKiPoller();
+
     /**
      * Inicializálja a pályát.
      */
     public static void initialize() {
         DrawPanel drawPanel = DrawPanel.getInstance();
-        
-        View viewCollection = View.getInstance();
-        
-        MouseBeKiPoller mouseBeKiEvent = new MouseBeKiPoller();
+        drawPanel.addMouseMotionListener(mouseBeKiEvent);
         mouseBeKiEvent.subscribe(new CsempeSzinezo());
         
+        createCsempe(100,100);
+        createCsempe(200,100);
+    }
+    
+    public static Csempe createCsempe(int x, int y) {
         Csempe c = new Csempe();
-        CsempeView cView = new CsempeView(c, 100, 100);
+        CsempeView cView = new CsempeView(c, x, y);
         mouseBeKiEvent.addCsempeView(cView);
-        drawPanel.addMouseMotionListener(mouseBeKiEvent);
-        
-        viewCollection.add(cView);
+        View.getInstance().add(cView);
+        return c;
     }
 }
