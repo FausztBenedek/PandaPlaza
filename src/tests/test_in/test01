@@ -1,3 +1,0 @@
-load palya1
-do game1 setActiveOrangutan orangutan2
-print
