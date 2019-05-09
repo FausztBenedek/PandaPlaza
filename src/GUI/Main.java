@@ -2,6 +2,7 @@
 package GUI;
 
 import javax.swing.JFrame;
+import kontroller.Initializer;
 
 public class Main {
 
@@ -12,7 +13,7 @@ public class Main {
         //2. What happens when the frame closes?
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Az első inicializálás (megjelés előtt) jön ide.
+        Initializer.initialize();
         
         //4. Size the frame.
         frame.pack();

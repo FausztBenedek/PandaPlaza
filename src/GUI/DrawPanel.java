@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import view.View;
 
 /**
  * Erre a JPanel-re rajzolódik ki a játék. Ebben az osztályban lévő Graphics objektumot
@@ -29,8 +30,8 @@ public class DrawPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         setG(g);
-        g.setColor(Color.red);
-        g.fillRect(10,10,10,10);
+        View viewCollection = View.getInstance();
+        viewCollection.drawAll();
     }
     
     /**
