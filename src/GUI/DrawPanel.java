@@ -1,7 +1,6 @@
 
 package GUI;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -9,16 +8,29 @@ import view.View;
 
 /**
  * Erre a JPanel-re rajzolódik ki a játék. Ebben az osztályban lévő Graphics objektumot
- * használja minden View osztály.
+ * használja minden View osztály. Ez egy singleton osztály.
  */
 public class DrawPanel extends JPanel {
 
     /**
-     * Konstruktor.
-     * @param size A rajzolófelület mérete. 
+     * Konstruktor, levédve a singleton tervezési mintának megfelelően.
+     * @param size A rajzolófelület mérete.
      */
-    public DrawPanel(Dimension size) {
+    private DrawPanel(Dimension size) {
         setPreferredSize(size);
+    }
+    
+    /**
+     * Az singleton objektum.
+     */
+    private static DrawPanel instance = new DrawPanel(MainFrame.getScreenSize());
+    
+    /**
+     * Getter a singleton objektumra.
+     * @return 
+     */
+    public static DrawPanel getInstance() {
+        return instance;
     }
     
     /**

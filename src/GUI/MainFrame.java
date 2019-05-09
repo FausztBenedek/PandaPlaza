@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
      */
     public MainFrame(String string) {
         super(string);
-        JPanel drawpanel = new DrawPanel(getScreenSize());
+        JPanel drawpanel = DrawPanel.getInstance();
         add(drawpanel);
     }
 
