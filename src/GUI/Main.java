@@ -12,6 +12,8 @@ public class Main {
         //2. What happens when the frame closes?
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Az első inicializálás (megjelés előtt) jön ide.
+        
         //4. Size the frame.
         frame.pack();
 

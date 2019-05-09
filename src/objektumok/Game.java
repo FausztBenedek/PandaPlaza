@@ -6,6 +6,7 @@ import protoApp.Proto;
 
 /** */
 public class Game {
+        // TODO töröl függvény, hogy a modellből el lehessen távolítani a dolgokat.
 	@Override
 	public String toString() {
 		return "Game " + Proto.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Proto.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
