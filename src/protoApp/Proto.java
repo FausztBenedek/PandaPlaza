@@ -17,8 +17,6 @@ import objektumok.*;
  * Utility osztály, amely a metódusok nevének kiírásáért felelős.
  */
 public class Proto {
-	// A program determinisztikus módban fusson-e. Alapértelmezetten hamis.
-	public static boolean det = false;
 	// Az objektumokat tárolja a nevükkel együtt.
 	private static HashMap<Object, String> objektumok = new HashMap<Object, String>();
 	/**
@@ -212,10 +210,6 @@ public class Proto {
 	public static void command(String commandstring) {		
 		if(commandstring.split(" ")[0].equals("load")) {
 			load(commandstring.split(" ")[1]);
-		} else if(commandstring.split(" ")[0].equals("det")) {
-			det = true;
-		} else if(commandstring.split(" ")[0].equals("nemdet")) {
-			det = false;
 		} else if(commandstring.split(" ")[0].equals("print") || commandstring.split(" ")[0].equals("list")) {
 			print();
 		} else if(commandstring.split(" ")[0].equals("do")) {			
@@ -238,13 +232,5 @@ public class Proto {
 				else System.out.println("Nincs ilyen parancs!");
 			}			
 		}
-	}
-	
-	/**
-	 * Beolvas a standard inputról egy intet
-	 * @return A beolvasott egész szám
-	 */
-	public static int GetUserInput() {
-		return Integer.parseInt(ProtoApp.sc.nextLine());
 	}
 }
