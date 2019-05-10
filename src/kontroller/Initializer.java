@@ -28,6 +28,7 @@ public class Initializer {
     public static Csempe createCsempe(int x, int y) {
         Csempe c = new Csempe();
         CsempeView cView = new CsempeView(c, x, y);
+        c.setView(cView);
         mouseBeKiEvent.addCsempeView(cView);
         View.getInstance().add(cView);
         return c;

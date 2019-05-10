@@ -4,10 +4,32 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import protoApp.Proto;
+import view.CsempeView;
 
 /** */
 public class Csempe {
 	
+        /**
+         * A kirajzoló objektum.
+         */
+        private CsempeView view;
+    
+        /**
+         * Getter a kirajzoló objektumra.
+         * @return 
+         */
+        public CsempeView getView() {
+            return view;
+        }
+        
+        /**
+         * Beállítja a kirajzoló objektumot.
+         * @param view 
+         */
+        public void setView(CsempeView view) {
+            this.view = view;
+        }
+        
 	@Override
 	public String toString() {
 		String csempek = "";
