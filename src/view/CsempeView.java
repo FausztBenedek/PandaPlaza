@@ -103,4 +103,19 @@ public class CsempeView implements Drawable {
     public void setColor(Color color) {
         this.color = color;
     }
+    
+    /**
+     * A csempét ábrázoló körnek az x koordinátája.
+     * @return 
+     */
+    public int getX() {
+        return x;
+    }
+    /**
+     * A csempét ábrázoló körnek az y koordinátája.
+     * @return 
+     */
+    public int getY() {
+        return y;
+    }
 }
