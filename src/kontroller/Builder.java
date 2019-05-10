@@ -24,6 +24,8 @@ public class Builder {
      */
     private static MouseBeKiPoller mouseBeKiEvent = new MouseBeKiPoller();
     
+    private static OrangutanValto orangutanValto = new OrangutanValto();
+
     /**
      * Az orángutánok képe.
      */
@@ -67,6 +69,7 @@ public class Builder {
                 System.exit(-1);
             }
         }
+        orangutanValto.addOrangutan(o);
         OrangutanView oVeiw = new OrangutanView(o, orangutanImage);
         View.getInstance().add(oVeiw);
         return o;
@@ -79,5 +82,10 @@ public class Builder {
      */
     public static MouseBeKiPoller getMouseBeKiEvent() {
         return mouseBeKiEvent;
+    }
+    
+    
+    public static OrangutanValto getOrangutanValto() {
+        return orangutanValto;
     }
 }

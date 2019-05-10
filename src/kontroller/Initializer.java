@@ -20,6 +20,9 @@ public class Initializer {
         OrangutanLepteto orangutanLepteto = new OrangutanLepteto();
         drawPanel.addMouseListener(orangutanLepteto); // Kattintás detektálásához
         Builder.getMouseBeKiEvent().subscribe(orangutanLepteto); // Csempékbe való be-, kilépések detektálásához
+        // Orángutánt váltó logika inicializálása
+        drawPanel.addMouseListener(Builder.getOrangutanValto());
+        Builder.getMouseBeKiEvent().subscribe(Builder.getOrangutanValto());
         
         // 3x3-as négyzet sorfojtonosan
         Csempe c1 = Builder.createCsempe(100,100); Csempe c2 = Builder.createCsempe(200,100); Csempe c3 = Builder.createCsempe(300,100);
