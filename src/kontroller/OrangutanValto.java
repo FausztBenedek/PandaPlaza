@@ -49,11 +49,14 @@ public class OrangutanValto implements MouseBeKiListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (potencialisCsempeView != null) {
-            Game.getInstance().setActiveOrangutan(potencialisOrangutan);
-            potencialisCsempeView.setDifferentColor(false);
-            // Változott a felállás => 
-            DrawPanel.getInstance().repaint();
+        // Csak jobb gomb lenyomása esetén.
+        if (e.getButton() == MouseEvent.BUTTON3) {
+            if (potencialisCsempeView != null) {
+                Game.getInstance().setActiveOrangutan(potencialisOrangutan);
+                potencialisCsempeView.setDifferentColor(false);
+                // Változott a felállás => 
+                DrawPanel.getInstance().repaint();
+            }
         }
     }
 

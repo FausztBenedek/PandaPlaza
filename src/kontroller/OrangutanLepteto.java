@@ -62,14 +62,17 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // Ha akkor kattint a felhasználó, amikor éppen olyan csempére mutat
-        // a felhasználó, hogy oda léphet az aktív orángután:
-        if (lepesLehetoseg != null) {
-            Orangutan lepo = Game.getInstance().getActiveOrangutan();
-            lepo.leptet(lepesLehetoseg.getRepresented());
-            lepesLehetoseg.setDifferentColor(false);
-            // Változott a felállás => 
-            DrawPanel.getInstance().repaint();
+        // Csak bal gomb lenyomása esetén
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            // Ha akkor kattint a felhasználó, amikor éppen olyan csempére mutat
+            // a felhasználó, hogy oda léphet az aktív orángután:
+            if (lepesLehetoseg != null) {
+                Orangutan lepo = Game.getInstance().getActiveOrangutan();
+                lepo.leptet(lepesLehetoseg.getRepresented());
+                lepesLehetoseg.setDifferentColor(false);
+                // Változott a felállás => 
+                DrawPanel.getInstance().repaint();
+            }
         }
     }
 
