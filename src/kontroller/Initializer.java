@@ -27,10 +27,32 @@ public class Initializer {
         drawPanel.addMouseMotionListener(mouseBeKiEvent);
         mouseBeKiEvent.subscribe(new CsempeSzinezo());
         
-        Csempe c1 = createCsempe(100,100);
-        Csempe c2 = createCsempe(200,100);
+        // 3x3-as négyzet sorfojtonosan
+        Csempe c1 = createCsempe(100,100); Csempe c2 = createCsempe(200,100); Csempe c3 = createCsempe(300,100);
+        Csempe c4 = createCsempe(100,200); Csempe c5 = createCsempe(200,200); Csempe c6 = createCsempe(300,200);        
+        Csempe c7 = createCsempe(100,300); Csempe c8 = createCsempe(200,300); Csempe c9 = createCsempe(300,300);
+        
+        // Vízszintes kapcsolatok
+        osszekot(1, c1, c2);
+        osszekot(2, c2, c3);
+        osszekot(3, c4, c5);
+        osszekot(4, c5, c6);
+        osszekot(5, c7, c8);
+        osszekot(6, c8, c9);
+        // Függőleges kapcsolatok
+        osszekot(7, c1, c4);
+        osszekot(8, c4, c7);
+        osszekot(9, c2, c5);
+        osszekot(10, c5, c8);
+        osszekot(11, c3, c6);
+        osszekot(12, c6, c9);
         
         Orangutan o = createOrangutan(c1);
+    }
+    
+    public static void osszekot(int id, Csempe c1, Csempe c2) {
+        c1.setNeighbour(id, c2);
+        c2.setNeighbour(id, c1);
     }
     
     public static Csempe createCsempe(int x, int y) {
