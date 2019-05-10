@@ -12,7 +12,8 @@ import view.CsempeView;
 /**
  * Az aktív orángután lépetéséért felelős osztály.
  * Folyamatosan figyeli, hogy melyik csempére lépett be az egérmutató, és ha
- * az az aktív orángután mellett van, akkor kattintás esetén lépteti az orángutánt.
+ * az az aktív orángután mellett van, akkor kattintás esetén 
+ * (csak bal gomb) lépteti az orángutánt.
  */
 public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
 
@@ -23,7 +24,7 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
     
     /**
      * Beállítja az lepesLehetoseg: csempeView attribútumot, ha egy aktív orángután
- melletti a paraméterként átadott csempe.
+     * melletti a paraméterként átadott csempe.
      * @param cs A vizsgált csemepe.
      */
     @Override
@@ -51,6 +52,11 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
         DrawPanel.getInstance().repaint();
     }
 
+    /**
+     * Amikor a mutató kilép a csempéből, akkor visszaállítjuk az eredeti állapotot.
+     * @param cs Amelyik csempéből kilépett a mutató. Ennek kell visszaállítani
+     * az állapotát.
+     */
     @Override
     public void onLeave(CsempeView cs) {
         lepesLehetoseg = null;
@@ -60,6 +66,10 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
         DrawPanel.getInstance().repaint();
     }
 
+    /**
+     * Az orángutánt lépteti, ha a feltételek teljesültek.
+     * @param e 
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         // Csak bal gomb lenyomása esetén
