@@ -5,6 +5,8 @@ import GUI.DrawPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import objektumok.Csempe;
+import objektumok.Game;
+import objektumok.Orangutan;
 
 
 /** Kirajzolja a csempét. 
@@ -17,12 +19,12 @@ public class CsempeView implements Drawable {
      * A modellben lévő csempe.
      */
     private Csempe represented;
-    
+
     /**
-     * A csempe színe.
+     * Ha igaz, akkor a csempe nem az alapértelmezett színén jelenik meg.
      */
-    private Color color = Color.WHITE;
-    
+    private boolean hasDifferentColor = false;
+
     /**
      * A csempék sugara.
      */
@@ -68,11 +70,26 @@ public class CsempeView implements Drawable {
             
             g.drawLine(x, y, xMasik, yMasik);
         }
+        
         // Csempe rajzolása
-        g.setColor(color);
+        boolean aktivOrangutanMellett = false;
+        Orangutan aktivOrangutan = Game.getInstance().getActiveOrangutan();
+        for (Csempe szomszedCsempe : represented.getAllNeighbours()) {
+            
+            if (szomszedCsempe.getDolog() == aktivOrangutan) {
+                aktivOrangutanMellett = true;
+            }
+        }
+        boolean aktivOrangutanRajta = (represented.getDolog() == aktivOrangutan);
+        
+        g.setColor(Color.WHITE);        // Default color
+        if (aktivOrangutanMellett)      g.setColor(Color.YELLOW);
+        if (aktivOrangutanRajta)        g.setColor(Color.BLUE);
+        if (hasDifferentColor)          g.setColor(Color.GREEN);
+       
         g.fillOval(xBalFelso, yBalFelso, 2 * rad, 2 * rad);
         
-
+        
     }
 
     /**
@@ -106,19 +123,12 @@ public class CsempeView implements Drawable {
     }
     
     /**
-     * A csempe színe.
-     * @return A csempe aktuális színe.
+     * Ha igazra van állítva, akkor a csempe színe el lesz állítva az 
+     * alapértelmezettről, ha hamisra, akkor nem történik semmi.
+     * @param hasDifferentColor 
      */
-    public Color getColor() {
-        return color;
-    }
-
-    /**
-     * Beállítja a csempe színét.
-     * @param color Az új szín
-     */
-    public void setColor(Color color) {
-        this.color = color;
+    public void setDifferentColor(boolean hasDifferentColor) {
+        this.hasDifferentColor = hasDifferentColor;
     }
     
     /**

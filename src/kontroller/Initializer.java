@@ -25,7 +25,7 @@ public class Initializer {
     public static void initialize() {
         DrawPanel drawPanel = DrawPanel.getInstance();
         drawPanel.addMouseMotionListener(mouseBeKiEvent);
-        mouseBeKiEvent.subscribe(new CsempeSzinezo());
+        mouseBeKiEvent.subscribe(new OragnutanLepteto());
         
         // 3x3-as négyzet sorfojtonosan
         Csempe c1 = createCsempe(100,100); Csempe c2 = createCsempe(200,100); Csempe c3 = createCsempe(300,100);
@@ -47,7 +47,9 @@ public class Initializer {
         osszekot(11, c3, c6);
         osszekot(12, c6, c9);
         
-        Orangutan o = createOrangutan(c1);
+        Orangutan o = createOrangutan(c5);
+        Orangutan o2 = createOrangutan(c9);
+        Game.getInstance().setActiveOrangutan(o);
     }
     
     public static void osszekot(int id, Csempe c1, Csempe c2) {
