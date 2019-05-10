@@ -59,6 +59,10 @@ public class CsempeView implements Drawable {
         for (Csempe szomszedCsempe : represented.getAllNeighbours()) {
             CsempeView szomszedCsempeView = szomszedCsempe.getView();
             
+            // TODO Összekötés vonal hosszának korigálása.
+            // Ötlet: Az egyik pontból a másikba mutató egységvektor
+            // sugárszorosát kell felhasználni.
+            
             int xMasik = szomszedCsempeView.getX();
             int yMasik = szomszedCsempeView.getY();
             
