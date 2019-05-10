@@ -24,8 +24,12 @@ public class Initializer {
      */
     public static void initialize() {
         DrawPanel drawPanel = DrawPanel.getInstance();
+        // Eseménydobálók inicializálása
         drawPanel.addMouseMotionListener(mouseBeKiEvent);
-        mouseBeKiEvent.subscribe(new OragnutanLepteto());
+        // Orángutánt léptető logika inicializálása
+        OrangutanLepteto orangutanLepteto = new OrangutanLepteto();
+        drawPanel.addMouseListener(orangutanLepteto);
+        mouseBeKiEvent.subscribe(orangutanLepteto);
         
         // 3x3-as négyzet sorfojtonosan
         Csempe c1 = createCsempe(100,100); Csempe c2 = createCsempe(200,100); Csempe c3 = createCsempe(300,100);
