@@ -52,10 +52,23 @@ public class CsempeView implements Drawable {
     @Override
     public void draw() {
         Graphics g = DrawPanel.getG();
-        g.setColor(color);
         int xBalFelso = x - rad;
         int yBalFelso = y - rad;
+        // Draw neighbours
+        g.setColor(Color.BLACK);
+        for (Csempe szomszedCsempe : represented.getAllNeighbours()) {
+            CsempeView szomszedCsempeView = szomszedCsempe.getView();
+            
+            int xMasik = szomszedCsempeView.getX();
+            int yMasik = szomszedCsempeView.getY();
+            
+            g.drawLine(x, y, xMasik, yMasik);
+        }
+        // Csempe rajzolása
+        g.setColor(color);
         g.fillOval(xBalFelso, yBalFelso, 2 * rad, 2 * rad);
+        
+
     }
 
     /**
