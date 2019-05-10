@@ -4,13 +4,31 @@ import java.util.ArrayList;
 
 import protoApp.Proto;
 
-/** */
+/** Singleton */
 public class Game {
         // TODO töröl függvény, hogy a modellből el lehessen távolítani a dolgokat.
 	@Override
 	public String toString() {
 		return "Game " + Proto.getObjectName(this) + " pontszam:"+pontszam+" aktivOrangutan:"+Proto.getObjectName(aktivOrangutan) + " orangutanszam:"+ orangutanszam + " pandaszam:"+pandaszam;
 	}
+        
+        /**
+         * Konstruktor levédve a singleton tervezési mintának megfelelően.
+         */
+        private Game() {}
+        
+        /**
+         * A statikus singleton objektum
+         */
+        private static Game instance = new Game();
+        
+        /**
+         * A statikus singleton objektumra getter. A konstruktort helyettesíti.
+         * @return 
+         */
+        public static Game getInstance() {
+            return instance;
+        }
 	
 	/** 
 	 * Játékos pontszáma
@@ -70,6 +88,14 @@ public class Game {
 	public void setActiveOrangutan(Orangutan o) {
 		aktivOrangutan = o;
 	}
+        
+        /**
+         * Getter az aktív orángutánra.
+         * @return 
+         */
+        public Orangutan getActiveOrangutan() {
+            return aktivOrangutan;
+        }
 	
 	/** 
 	 * Elindítja a játékot

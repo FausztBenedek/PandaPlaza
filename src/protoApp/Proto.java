@@ -79,7 +79,7 @@ public class Proto {
 					} else if(tipus.equals("Orangutan")) {
 						Proto.addObject(new Orangutan(), nev);
 					} else if(tipus.equals("Game")) {						
-						Proto.addObject(new Game(), nev);
+						Proto.addObject(Game.getInstance(), nev);
 					} else if(tipus.equals("Csokiautomata")) {
 						Proto.addObject(new Csokiautomata(), nev);
 					} else if(tipus.equals("Jatekgep")) {
