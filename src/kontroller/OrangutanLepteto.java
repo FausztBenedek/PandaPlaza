@@ -67,6 +67,7 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
         if (lepesLehetoseg != null) {
             Orangutan lepo = Game.getInstance().getActiveOrangutan();
             lepo.leptet(lepesLehetoseg.getRepresented());
+            lepesLehetoseg.setDifferentColor(false);
             // Változott a felállás => 
             DrawPanel.getInstance().repaint();
         }
