@@ -2,7 +2,12 @@
 package kontroller;
 
 import GUI.DrawPanel;
-import javax.swing.event.AncestorListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import view.*;
 import objektumok.*;
 
@@ -12,17 +17,31 @@ import objektumok.*;
 public class Initializer {
     
     public static MouseBeKiPoller mouseBeKiEvent = new MouseBeKiPoller();
+    public static BufferedImage orangutanImage;
 
     /**
      * Inicializálja a pályát.
      */
     public static void initialize() {
+        try {
+            orangutanImage = ImageIO.read(new File("img/gorilla.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+        }
         DrawPanel drawPanel = DrawPanel.getInstance();
         drawPanel.addMouseMotionListener(mouseBeKiEvent);
         mouseBeKiEvent.subscribe(new CsempeSzinezo());
         
-        createCsempe(100,100);
-        createCsempe(200,100);
+        Csempe c1 = createCsempe(100,100);
+        Csempe c2 = createCsempe(200,100);
+        
+        Orangutan o = new Orangutan();
+        o.setCsempe(c1);
+                
+        OrangutanView oView = new OrangutanView(o, orangutanImage);
+        View.getInstance().add(oView);
+        
+        c1.setDolog(o);
     }
     
     public static Csempe createCsempe(int x, int y) {
