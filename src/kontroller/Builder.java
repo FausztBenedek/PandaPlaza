@@ -30,6 +30,10 @@ public class Builder {
      * Az orángutánok képe.
      */
     private static BufferedImage orangutanImage = null;
+    /**
+     * A csokiautomata képe.
+     */
+    private static BufferedImage csokiautomataImage = null;
     
     /**
      * Elkészít és inicializál egy csempét.
@@ -73,6 +77,28 @@ public class Builder {
         OrangutanView oVeiw = new OrangutanView(o, orangutanImage);
         View.getInstance().add(oVeiw);
         return o;
+    }
+    
+    public static Csokiautomata createCsokiautomata(Csempe pos) throws IllegalArgumentException {
+        if (pos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Csokiautomata c = new Csokiautomata();
+        // Összekötjük a csempével.
+        c.setCsempe(pos);
+        pos.setDolog(c);
+        // Betöltjük a képet, ha még nem volt betöltve
+        if (csokiautomataImage == null) {
+            try {
+                csokiautomataImage = ImageIO.read(new File(ImagePaths.csokiautomata));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        CsokiautomataView cView = new CsokiautomataView(c, csokiautomataImage);
+        View.getInstance().add(cView);
+        return c;
     }
     
     /**

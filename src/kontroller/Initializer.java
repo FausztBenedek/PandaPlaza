@@ -54,6 +54,8 @@ public class Initializer {
         Orangutan o = Builder.createOrangutan(c5);
         Orangutan o2 = Builder.createOrangutan(c9);
         Game.getInstance().setActiveOrangutan(o);
+        
+        Csokiautomata csokiautomata = Builder.createCsokiautomata(cC);
     }
     
     public static void osszekot(int id, Csempe c1, Csempe c2) {
