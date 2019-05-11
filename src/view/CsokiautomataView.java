@@ -20,13 +20,17 @@ public class CsokiautomataView implements Drawable {
     
     /**
      * Konstruktor.
-     * @param represented 
+     * @param represented - A modelben lévő Csokiautomata.
+     * @param img - A modelben lévő kép a Csokiautomatáról.
      */
     public CsokiautomataView(Csokiautomata represented, BufferedImage img) {
         this.represented = represented;
         this.img = img;
     }
-
+    
+    /**
+     *Kirajzolja a Csokiautomatát ábrázoló képet. 
+     */
     @Override
     public void draw() {
         Graphics g = DrawPanel.getG();

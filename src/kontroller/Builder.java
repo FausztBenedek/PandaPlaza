@@ -59,6 +59,11 @@ public class Builder {
     private static BufferedImage ijedosImage = null;
     
     /**
+     * A Szekrenyek képe.
+     */
+    private static BufferedImage szekrenyImage = null;
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -163,7 +168,7 @@ public class Builder {
      * Elkészít és inicializál egy Ulost.
      * @param startPos Az Ulos kezdő csempéje.
      * @return Az elkészített Ulos.
-     * @throws IllegalArgumentException Ha az Ulostt olyan csempére akarjuk
+     * @throws IllegalArgumentException Ha az Ulost olyan csempére akarjuk
      * inicializálni, ahol már van egy dolog.
      */
     public static Ulos createUlos(Csempe startPos) throws IllegalArgumentException {
@@ -185,6 +190,34 @@ public class Builder {
         PandaView ugrosVeiw = new PandaView(ulos, ulosImage);
         View.getInstance().add(ugrosVeiw);
         return ulos;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Szekrenyt.
+     * @param startPos A Szekreny kezdő csempéje.
+     * @return Az elkészített Szekreny.
+     * @throws IllegalArgumentException Ha az Szekrenyt olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */
+    public static Szekreny createSzekreny(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Szekreny szekreny = new Szekreny();
+        szekreny.setCsempe(startPos);
+        startPos.setDolog(szekreny);
+        // Kép betöltése, ha még nincs betöltve.
+        if (szekrenyImage == null) {
+            try {
+            	szekrenyImage = ImageIO.read(new File(ImagePaths.szekreny));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        SzekrenyView ugrosVeiw = new SzekrenyView(szekreny, szekrenyImage);
+        View.getInstance().add(ugrosVeiw);
+        return szekreny;
     }
     
     /**

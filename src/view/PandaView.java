@@ -20,11 +20,19 @@ public class PandaView implements Drawable {
      */
     private final BufferedImage img;
     
+    /**
+     * Konstruktor.
+     * @param panda - A modelben lévő Panda.
+     * @param img - A modelben lévő kép a Pandáról.
+     */
     public PandaView(Panda panda, BufferedImage img) {
         this.panda = panda;
         this.img = img;
     }
     
+    /**
+     *Kirajzolja a Pandát ábrázoló képet. 
+     */
 	@Override
 	public void draw() {
 		Graphics g = DrawPanel.getG();        
