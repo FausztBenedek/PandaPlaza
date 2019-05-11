@@ -44,6 +44,11 @@ public class Builder {
     private static BufferedImage csokiautomataImage = null;
     
     /**
+     * Az Ugrosok képe.
+     */
+    private static BufferedImage ugrosImage = null;
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -114,6 +119,34 @@ public class Builder {
         View.getInstance().add(cView);
         ticker.subscribe(c, 1);
         return c;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Ugrostt.
+     * @param startPos Az Ugros kezdő csempéje.
+     * @return Az elkészített Ugrós.
+     * @throws IllegalArgumentException Ha az Ugróst olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */
+    public static Ugros createUgros(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Ugros ugros = new Ugros();
+        ugros.setCsempe(startPos);
+        startPos.setDolog(ugros);
+        // Kép betöltése, ha még nincs betöltve.
+        if (ugrosImage == null) {
+            try {
+            	ugrosImage = ImageIO.read(new File(ImagePaths.ugros));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        PandaView ugrosVeiw = new PandaView(ugros, ugrosImage);
+        View.getInstance().add(ugrosVeiw);
+        return ugros;
     }
     
     /**
