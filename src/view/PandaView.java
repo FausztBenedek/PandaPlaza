@@ -4,32 +4,34 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import GUI.DrawPanel;
+import objektumok.Panda;
 import objektumok.Ugros;
 
 public class PandaView implements Drawable {
 
 	/**
-     * Az Ugrosra referencia.
+     * A Pandár referencia.
      */
-    private final Ugros ugros;
+    //private final Ugros ugros;
+    private final Panda panda;
     
     /**
-     * Az Ugrost ábrázoló kép.
+     * A Pandát ábrázoló kép.
      */
-    private final BufferedImage ugros_img;
+    private final BufferedImage img;
     
-    public PandaView(Ugros ugros, BufferedImage ugros_img) {
-        this.ugros = ugros;
-        this.ugros_img = ugros_img;
+    public PandaView(Panda panda, BufferedImage img) {
+        this.panda = panda;
+        this.img = img;
     }
     
 	@Override
 	public void draw() {
 		Graphics g = DrawPanel.getG();        
 		
-        CsempeView pos = ugros.getCsempe().getView();
-        int xTopLeft = pos.getX() - ugros_img.getWidth() / 2;
-        int yTopLeft = pos.getY() - ugros_img.getHeight() / 2;
-        g.drawImage(ugros_img, xTopLeft, yTopLeft, null);		
+        CsempeView pos = panda.getCsempe().getView();
+        int xTopLeft = pos.getX() - img.getWidth() / 2;
+        int yTopLeft = pos.getY() - img.getHeight() / 2;
+        g.drawImage(img, xTopLeft, yTopLeft, null);		
 	}
 }

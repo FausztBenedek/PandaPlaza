@@ -49,6 +49,16 @@ public class Builder {
     private static BufferedImage ugrosImage = null;
     
     /**
+     * Az Ulosök képe.
+     */
+    private static BufferedImage ulosImage = null;
+    
+    /**
+     * Az Ijedosök képe.
+     */
+    private static BufferedImage ijedosImage = null;
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -122,7 +132,7 @@ public class Builder {
     }
     
     /**
-     * Elkészít és inicializál egy Ugrostt.
+     * Elkészít és inicializál egy Ugrost.
      * @param startPos Az Ugros kezdő csempéje.
      * @return Az elkészített Ugrós.
      * @throws IllegalArgumentException Ha az Ugróst olyan csempére akarjuk
@@ -147,6 +157,62 @@ public class Builder {
         PandaView ugrosVeiw = new PandaView(ugros, ugrosImage);
         View.getInstance().add(ugrosVeiw);
         return ugros;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Ulost.
+     * @param startPos Az Ulos kezdő csempéje.
+     * @return Az elkészített Ulos.
+     * @throws IllegalArgumentException Ha az Ulostt olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */
+    public static Ulos createUlos(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Ulos ulos = new Ulos();
+        ulos.setCsempe(startPos);
+        startPos.setDolog(ulos);
+        // Kép betöltése, ha még nincs betöltve.
+        if (ulosImage == null) {
+            try {
+            	ulosImage = ImageIO.read(new File(ImagePaths.ulos));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        PandaView ugrosVeiw = new PandaView(ulos, ulosImage);
+        View.getInstance().add(ugrosVeiw);
+        return ulos;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Ijedost.
+     * @param startPos Az Ijedos kezdő csempéje.
+     * @return Az elkészített Ijedos.
+     * @throws IllegalArgumentException Ha az Ijedost olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */
+    public static Ijedos createIjedos(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Ijedos ijedos = new Ijedos();
+        ijedos.setCsempe(startPos);
+        startPos.setDolog(ijedos);
+        // Kép betöltése, ha még nincs betöltve.
+        if (ijedosImage == null) {
+            try {
+            	ijedosImage = ImageIO.read(new File(ImagePaths.ijedos));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        PandaView ugrosVeiw = new PandaView(ijedos, ijedosImage);
+        View.getInstance().add(ugrosVeiw);
+        return ijedos;
     }
     
     /**

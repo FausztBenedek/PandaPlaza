@@ -61,6 +61,8 @@ public class Initializer {
         
         Csokiautomata csokiautomata = Builder.createCsokiautomata(cC);
         Ugros ugros = Builder.createUgros(c1);
+        Ulos ulos = Builder.createUlos(c4);
+        Ijedos ijedos = Builder.createIjedos(c7);
     }
     
     public static void osszekot(int id, Csempe c1, Csempe c2) {
