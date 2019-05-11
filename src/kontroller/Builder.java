@@ -24,7 +24,15 @@ public class Builder {
      */
     private static MouseBeKiPoller mouseBeKiEvent = new MouseBeKiPoller();
     
+    /**
+     * Orángutánok váltására szolgáló objektum.
+     */
     private static OrangutanValto orangutanValto = new OrangutanValto();
+    
+    /**
+     * ITickables heterogén kollekciója. 
+     */
+    private static Ticker ticker = new Ticker();
 
     /**
      * Az orángutánok képe.
@@ -79,6 +87,12 @@ public class Builder {
         return o;
     }
     
+    /**
+     * Elkészít és inicializál egy csokiautómatát
+     * @param pos A kezdő csempe
+     * @return Az elkészített csokiautomata
+     * @throws IllegalArgumentException Ha a kezdő csempén már van valami.
+     */
     public static Csokiautomata createCsokiautomata(Csempe pos) throws IllegalArgumentException {
         if (pos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
@@ -98,6 +112,7 @@ public class Builder {
         }
         CsokiautomataView cView = new CsokiautomataView(c, csokiautomataImage);
         View.getInstance().add(cView);
+        ticker.subscribe(c, 1);
         return c;
     }
     
@@ -110,8 +125,11 @@ public class Builder {
         return mouseBeKiEvent;
     }
     
-    
     public static OrangutanValto getOrangutanValto() {
         return orangutanValto;
+    }
+    
+    public static Ticker getTicker() {
+        return ticker;
     }
 }
