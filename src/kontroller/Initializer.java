@@ -28,6 +28,7 @@ public class Initializer {
         Csempe c1 = Builder.createCsempe(100,100); Csempe c2 = Builder.createCsempe(200,100); Csempe c3 = Builder.createCsempe(300,100);
         Csempe c4 = Builder.createCsempe(100,200); Csempe c5 = Builder.createCsempe(200,200); Csempe c6 = Builder.createCsempe(300,200);        
         Csempe c7 = Builder.createCsempe(100,300); Csempe c8 = Builder.createCsempe(200,300); Csempe c9 = Builder.createCsempe(300,300);
+        Csempe cA = Builder.createCsempe(100,400); Csempe cB = Builder.createCsempe(200,400); Csempe cC = Builder.createCsempe(300,400);
         
         // Vízszintes kapcsolatok
         osszekot(1, c1, c2);
@@ -43,7 +44,13 @@ public class Initializer {
         osszekot(10, c5, c8);
         osszekot(11, c3, c6);
         osszekot(12, c6, c9);
-        
+
+        // Utolsó szint
+        osszekot(13, c7, cA);
+        osszekot(14, c9, cC);
+        osszekot(15, cA, cB);
+        osszekot(16, cB, cC);
+
         Orangutan o = Builder.createOrangutan(c5);
         Orangutan o2 = Builder.createOrangutan(c9);
         Game.getInstance().setActiveOrangutan(o);
