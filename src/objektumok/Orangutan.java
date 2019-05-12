@@ -31,11 +31,14 @@ public class Orangutan extends Allat {
 	/**
 	 * Megpróbálja ráléptetni az adott csempére az orangutánt. Ha van ott 
 	 * valami, meghívja rá a hitby függvényt.
+         * Lépteti a mögötte lévő pandát is, ha van.
 	 * @param A csempe amelyikre léptetni akarjuk
 	 */
 	public void leptet(Csempe c) {
 		// Lekéri a csempén lévő dolgot
 		Dolog d = c.getDolog();
+                // Eltároljuk a mostani csempét
+                Csempe elozo = getCsempe();
 		
 		if(vedelem > 0) vedelem--;
 		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
@@ -44,6 +47,10 @@ public class Orangutan extends Allat {
 		} else {
 			d.hitBy(this);
 		}
+                
+                if (getHatsoMancs() != null) {
+                    getHatsoMancs().leptet(elozo);
+                }
 	}
 	
 	/** 

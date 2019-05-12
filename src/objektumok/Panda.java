@@ -45,19 +45,27 @@ public abstract class Panda extends Allat implements ITickable {
 	/**
 	 * Megpróbálja ráléptetni az adott csempére a pandát. Ha van ott 
 	 * valami, meghívja rá a hitby függvényt.
+         * Rekurzívan lépteti a mögötte lévőt, miután már lépett
 	 * @param A csempe amelyikre léptetni akarjuk
 	 */
 	public void leptet(Csempe c) { 
 		
 		// Lekéri a csempén lévő dolgot		
 		Dolog d = c.getDolog();
-		
+		// Eltároljuk a mostani csempéjét, ameddig még nem változott
+                Csempe elozo = getCsempe();
+                
 		//Ha üres a szomszédos mező, átlép rá, ha nem, ütközteti magát az ott levő dologgal.
 		if(d==null) {			
 			c.accept(this);
 		} else {
 			d.hitBy(this);
 		}
+                
+                // Léptetjük mögötte lévő pandát, ha van ilyen
+                if (getHatsoMancs() != null) {
+                    getHatsoMancs().leptet(elozo);
+                }
 	}
 	
 	/** 
