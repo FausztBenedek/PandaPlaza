@@ -32,7 +32,10 @@ public class TorekenycsempeView extends CsempeView {
         int num = represented.getElettartam();
         g.setFont(f);
         g.setColor(Color.red);
-        g.drawString(Integer.toString(num), x, y);
+        if(num==0)
+        	g.drawString("X", x-5, y-15);        	
+        else
+        	g.drawString(Integer.toString(num), x-10, y-15);
     }
     
 }

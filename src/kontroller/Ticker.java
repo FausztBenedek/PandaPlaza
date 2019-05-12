@@ -47,7 +47,7 @@ public class Ticker implements ActionListener {
     public void subscribe(ITickable tickable, int gyakorisag) {
         TickGyakorisag elem = new TickGyakorisag();
         elem.gyakorisag = gyakorisag;
-        elem.tickable = tickable;
+        elem.tickable = tickable;         
         tickables.add(elem);
     }
     
@@ -63,7 +63,5 @@ public class Ticker implements ActionListener {
                 ticked.tickable.tick();
             }
         }
-    }
-
-    
+    }    
 }

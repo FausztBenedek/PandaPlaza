@@ -2,8 +2,13 @@
 package view;
 
 import GUI.DrawPanel;
+
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+
 import objektumok.Csempe;
 import objektumok.Game;
 import objektumok.Orangutan;
@@ -28,7 +33,7 @@ public class CsempeView implements Drawable {
     /**
      * A csempék sugara.
      */
-    private static final int rad = 20;
+    private static final int rad = 30;
         
     /**
      * A csempe középpontjának a koordinátái.
@@ -59,16 +64,20 @@ public class CsempeView implements Drawable {
         // Draw neighbours
         g.setColor(Color.BLACK);
         for (Csempe szomszedCsempe : represented.getAllNeighbours()) {
-            CsempeView szomszedCsempeView = szomszedCsempe.getView();
-            
-            // TODO Összekötés vonal hosszának korigálása.
-            // Ötlet: Az egyik pontból a másikba mutató egységvektor
-            // sugárszorosát kell felhasználni.
-            
+            CsempeView szomszedCsempeView = szomszedCsempe.getView();        
             int xMasik = szomszedCsempeView.getX();
             int yMasik = szomszedCsempeView.getY();
             
-            g.drawLine(x, y, xMasik, yMasik);
+            int dx = x-xMasik; 
+            int dy = y-yMasik;            
+            double angle = Math.atan2(dy, dx);
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setRenderingHint(
+                    RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_ON);
+           // g2.setStroke(new BasicStroke(1));
+            g2.drawLine(x+(int)(Math.cos(angle+Math.PI)*rad), y+(int)(Math.sin(angle+Math.PI)*rad), xMasik+(int)(Math.cos(angle)*rad), yMasik+(int)(Math.sin(angle)*rad));         
+          //  g.drawLine(x, y, xMasik, yMasik);
         }
         
         // Csempe rajzolása
@@ -83,8 +92,8 @@ public class CsempeView implements Drawable {
         boolean aktivOrangutanRajta = (represented.getDolog() == aktivOrangutan);
         
         g.setColor(Color.WHITE);        // Default color
-        if (aktivOrangutanMellett)      g.setColor(Color.YELLOW);
-        if (aktivOrangutanRajta)        g.setColor(Color.BLUE);
+        if (aktivOrangutan!=null&&aktivOrangutanMellett)      g.setColor(Color.YELLOW);
+        if (aktivOrangutan!=null&&aktivOrangutanRajta)        g.setColor(Color.BLUE);
         if (hasDifferentColor)          g.setColor(Color.GREEN);
        
         g.fillOval(xBalFelso, yBalFelso, 2 * rad, 2 * rad);

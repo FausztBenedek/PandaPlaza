@@ -28,7 +28,7 @@ public class Initializer {
         
         // Pálya építése
         Csempe[] c = new Csempe[42];
-        c[0] = Builder.createCsempe(530, 45);
+      /*  c[0] = Builder.createCsempe(530, 45);
         c[1] = Builder.createCsempe(38, 34);
         c[2] = Builder.createCsempe(36, 103);
         c[3] = Builder.createCsempe(32, 178);
@@ -60,6 +60,7 @@ public class Initializer {
         c[29] = Builder.createCsempe(435, 93);
         c[30] = Builder.createCsempe(431, 138);
         c[31] = Builder.createTorekenycsempe(418, 226);
+        //c[31] = Builder.createCsempe(418, 226);
         c[32] = Builder.createCsempe(417, 283);
         c[33] = Builder.createCsempe(464, 307);
         c[34] = Builder.createCsempe(469, 249);
@@ -69,7 +70,53 @@ public class Initializer {
         c[38] = Builder.createCsempe(570, 189);
         c[39] = Builder.createCsempe(570, 82);
         c[40] = Builder.createCsempe(487, 83);
-        c[41] = Builder.createCsempe(469, 19);
+        c[41] = Builder.createCsempe(469, 19);*/
+        double sx = 1.5;
+        double sy = 1.5;
+        
+        c[0] = Builder.createCsempe((int)(sx* 530), (int)(sy* 45       ));
+        c[1] = Builder.createCsempe( (int)(sx* 38), (int)(sy*34        ));
+        c[2] = Builder.createCsempe( (int)(sx* 36), (int)(sy*103       ));
+        c[3] = Builder.createCsempe( (int)(sx* 32), (int)(sy*178       ));
+        c[4] = Builder.createCsempe( (int)(sx* 87), (int)(sy*187       ));
+        c[5] = Builder.createCsempe( (int)(sx* 96), (int)(sy*41        ));
+        c[6] = Builder.createCsempe( (int)(sx*146), (int)(sy*63        ));
+        c[7] = Builder.createCsempe( (int)(sx*151), (int)(sy*113       ));
+        c[8] = Builder.createCsempe( (int)(sx*133), (int)(sy*164       ));
+        c[9] = Builder.createCsempe( (int)(sx*185), (int)(sy*28        ));
+       c[10] = Builder.createCsempe( (int)(sx*232), (int)(sy*90        ));
+       c[11] = Builder.createCsempe( (int)(sx*192), (int)(sy*152       ));
+       c[13] = Builder.createCsempe( (int)(sx*108), (int)(sy*239       ));
+       c[14] = Builder.createCsempe( (int)(sx*158), (int)(sy*283       ));
+       c[15] = Builder.createCsempe( (int)(sx*220), (int)(sy*307       ));
+       c[16] = Builder.createCsempe( (int)(sx*214), (int)(sy*236       ));
+       c[17] = Builder.createCsempe( (int)(sx*242), (int)(sy*25        ));
+       c[18] = Builder.createCsempe( (int)(sx*248), (int)(sy*183       ));
+       c[19] = Builder.createCsempe( (int)(sx*299), (int)(sy*267       ));
+       c[20] = Builder.createCsempe( (int)(sx*297), (int)(sy*44        ));
+       c[21] = Builder.createCsempe( (int)(sx*302), (int)(sy*181       ));
+       c[22] = Builder.createCsempe( (int)(sx*347), (int)(sy*200       ));
+       c[23] = Builder.createCsempe( (int)(sx*366), (int)(sy*244       ));
+       c[24] = Builder.createCsempe( (int)(sx*359), (int)(sy*300       ));
+       c[25] = Builder.createCsempe( (int)(sx*361), (int)(sy*104       ));
+       c[26] = Builder.createCsempe( (int)(sx*397), (int)(sy*172       ));
+       c[27] = Builder.createCsempe( (int)(sx*353), (int)(sy*33        ));
+       c[28] = Builder.createCsempe( (int)(sx*417), (int)(sy*44        ));
+       c[29] = Builder.createCsempe( (int)(sx*435), (int)(sy*93        ));
+       c[30] = Builder.createCsempe( (int)(sx*431), (int)(sy*138       ));
+       c[32] = Builder.createCsempe( (int)(sx*417), (int)(sy*283       ));
+       c[33] = Builder.createCsempe( (int)(sx*464), (int)(sy*307       ));
+       c[34] = Builder.createCsempe( (int)(sx*469), (int)(sy*249       ));
+       c[35] = Builder.createCsempe( (int)(sx*528), (int)(sy*128       ));
+       c[36] = Builder.createCsempe( (int)(sx*475), (int)(sy*177       ));
+       c[37] = Builder.createCsempe( (int)(sx*522), (int)(sy*203       ));
+       c[38] = Builder.createCsempe( (int)(sx*570), (int)(sy*189       ));
+       c[39] = Builder.createCsempe( (int)(sx*570), (int)(sy*82        ));
+       c[40] = Builder.createCsempe( (int)(sx*487), (int)(sy*83        ));
+       c[41] = Builder.createCsempe( (int)(sx*469), (int)(sy*19        ));
+
+       c[31] = Builder.createTorekenycsempe((int)(sx*418), (int)(sy*226));
+       c[12] = Builder.createTorekenycsempe((int)(sx*160), (int)(sy*209));
         
         osszekotCsempe(c[2 ], c[1 ]);
         osszekotCsempe(c[2 ], c[5 ]);
@@ -175,10 +222,8 @@ public class Initializer {
         Ijedos ijedos2 = Builder.createIjedos(c[18]);
         Ugros ugros2 = Builder.createUgros(c[32]);
         Szekreny szekreny1 = Builder.createSzekreny(c[14]);
-        Szekreny szekreny2 = Builder.createSzekreny(c[38]);
-        
-        osszekotSzekreny(szekreny1, szekreny2);
-        
+        Szekreny szekreny2 = Builder.createSzekreny(c[38]);        
+        osszekotSzekreny(szekreny1, szekreny2);        
         Fotel fotel = Builder.createFotel(c[33]);
     }
     

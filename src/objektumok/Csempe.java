@@ -49,8 +49,7 @@ public class Csempe {
 	 * */
 	public void accept(Allat a) {
 		Csempe elozo = a.getCsempe();
-		if(elozo!=null) 
-                    if (elozo.getDolog() == a) 
+		if(elozo!=null)
 			elozo.setDolog(null);
 		a.setCsempe(this);
 		this.setDolog(a);

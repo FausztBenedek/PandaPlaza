@@ -21,6 +21,7 @@ public class Torekenycsempe extends Csempe {
 		this.setDolog(a);		
 		a.setCsempe(this);
 		if(a!=null) elettartam--;
+		if(elettartam < 0) elettartam = 0;
 		if(elettartam <=0) a.die();
 	}
 	
@@ -31,6 +32,7 @@ public class Torekenycsempe extends Csempe {
 	@Override
 	public void ugrott(Allat a) {
 		elettartam-=3;
+		if(elettartam<0) elettartam = 0;			
 		if(elettartam <=0)			
 			a.die();
 	}

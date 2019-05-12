@@ -106,7 +106,7 @@ public class Fotel extends Dolog implements ITickable {
 	 * Visszatér a fotel számlálójával
 	 * @return a fotel számlálója
 	 */
-	public int getCounter() { //TODO innentol lefele torolni?
+	public int getCounter() {
 		return counter;
 	}
 	

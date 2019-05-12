@@ -152,7 +152,7 @@ public class Game {
 	 * Beállítja a játék pontszámát.
 	 * @param pont A beállítandó pontszám
 	 */
-	public void setPoint(int pont) { // TODO innentől lefele kiszedni?
+	public void setPoint(int pont) { 
 		pontszam = pont;
 	}
 	/**

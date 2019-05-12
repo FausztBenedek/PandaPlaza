@@ -10,7 +10,8 @@ public abstract class Panda extends Allat implements ITickable {
 	 * */
 	public void leptet() {		
 		//Megpróbálja egy véletlenszerűen választott csempére léptetni a pandát
-                leptet(getCsempe().getRandomSzomszed());	
+		if(getCsempe()!=null&&getCsempe().getRandomSzomszed()!=null)
+			leptet(getCsempe().getRandomSzomszed());	
 	}
 	
 	/**
@@ -29,7 +30,9 @@ public abstract class Panda extends Allat implements ITickable {
 		if(getElsoMancs()==null) {
 			Csempe c1 = o.getCsempe();
 			getCsempe().accept(o);
-			c1.accept(this);
+
+			c1.setDolog(this);
+			this.setCsempe(c1);
 			setElsoMancs(o);
 			Allat orangutanMogotti = o.getHatsoMancs();
 			if(orangutanMogotti!=null) {

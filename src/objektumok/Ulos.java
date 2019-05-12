@@ -24,9 +24,8 @@ public class Ulos extends Panda {
 			setHatsoMancs(null);
 		}
 		// Leveszi magát a jelenlegi mezőről
-		Csempe sajatCsempe = getCsempe();
-		sajatCsempe.setDolog(null);
-		sajatCsempe = null;
+		getCsempe().setDolog(null);
+		setCsempe(null);
 		
 		// Beleülteti a fotelbe a pandát
 		f.setPanda(this);

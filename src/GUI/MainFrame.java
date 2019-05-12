@@ -10,7 +10,7 @@ import javax.swing.*;
 public class MainFrame extends JFrame {
 
     /**
-     * Konstruktor. Hozzáada fő kerethez egy DrawPanel típusú JPanelt.
+     * Konstruktor. Hozzáad a fő kerethez egy DrawPanel típusú JPanelt.
      * @param string 
      */
     public MainFrame(String string) {
@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
     /**
      * A képernyő mérete.
      */
-    private static Dimension screenSize = new Dimension(600, 600);
+    private static Dimension screenSize = new Dimension(900, 500);
     
     /**
      * Akkor használd, ha szükséged van a képernyő méretére.

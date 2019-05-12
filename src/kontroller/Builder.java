@@ -161,7 +161,7 @@ public class Builder {
         }
         CsokiautomataView cView = new CsokiautomataView(c, csokiautomataImage);
         View.getInstance().add(cView);
-        ticker.subscribe(c, 1);
+        ticker.subscribe(c, 3);
         return c;
     }
     
@@ -190,7 +190,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ugros, ugrosImage);
         View.getInstance().add(ugrosVeiw);
-        ticker.subscribe(ugros, 3);
+        ticker.subscribe(ugros, 2);
         return ugros;
     }
     
@@ -219,7 +219,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ulos, ulosImage);
         View.getInstance().add(ugrosVeiw);
-        ticker.subscribe(ulos, 3);
+        ticker.subscribe(ulos, 2);
         return ulos;
     }
     
@@ -277,7 +277,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ijedos, ijedosImage);
         View.getInstance().add(ugrosVeiw);
-        ticker.subscribe(ijedos, 3);
+        ticker.subscribe(ijedos, 2);
         return ijedos;
     }
     
@@ -306,7 +306,7 @@ public class Builder {
         }
         JatekgepView jView = new JatekgepView(j, jatekgepImage);
         View.getInstance().add(jView);
-        ticker.subscribe(j, 1);
+        ticker.subscribe(j, 3);
         return j;
     }
     
@@ -382,7 +382,7 @@ public class Builder {
         }
         FotelView fView = new FotelView(f, fotelImage[0], fotelImage[1]);
         View.getInstance().add(fView);
-        ticker.subscribe(f, 1);
+        ticker.subscribe(f, 3);
         return f;
     }
     
