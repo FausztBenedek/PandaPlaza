@@ -117,6 +117,14 @@ public class Fotel extends Dolog implements ITickable {
 	public void setCounter(int n) {
 		counter = n;
 	}
+        
+        /**
+         * Visszaad egy referenciát arra pandára aki a fotelban ül. Null, ha üres
+         * @return 
+         */
+        public Ulos getPanda() {
+            return panda;
+        }
 	
 	
 }
