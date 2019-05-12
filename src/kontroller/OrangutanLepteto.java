@@ -2,8 +2,10 @@
 package kontroller;
 
 import GUI.DrawPanel;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import objektumok.Csempe;
 import objektumok.Game;
 import objektumok.Orangutan;
@@ -14,6 +16,7 @@ import view.CsempeView;
  * Folyamatosan figyeli, hogy melyik csempére lépett be az egérmutató, és ha
  * az az aktív orángután mellett van, akkor kattintás esetén 
  * (csak bal gomb) lépteti az orángutánt.
+ * Lépés esetén eventet dob a feliratkozott ActionListenereknek
  */
 public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
 
@@ -21,6 +24,21 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
      * Vagy null, vagy az aktív orángután mellett lévő csempére mutató referencia.
      */
     CsempeView lepesLehetoseg;
+    
+    /**
+     * Eventet kapnak, ha az orángután lépett.
+     */
+    ArrayList<ActionListener> actionsOnLepes = new ArrayList<>();
+    
+    /**
+     * Ezzel a metódussal lehet feliratkozni az eseményre.
+     * A feliratkozóknak meghívódik az actionPerformed metódusa, ha az orángután
+     * lépett.
+     * @param subscriber A feliratkozó.
+     */
+    public void subscribe(ActionListener subscriber) {
+        actionsOnLepes.add(subscriber);
+    }
     
     /**
      * Beállítja az lepesLehetoseg: csempeView attribútumot, ha egy aktív orángután
@@ -82,6 +100,10 @@ public class OrangutanLepteto implements MouseBeKiListener, MouseListener {
                 lepesLehetoseg.setDifferentColor(false);
                 // Változott a felállás => 
                 DrawPanel.getInstance().repaint();
+                
+                // Az event dobása:
+                for (ActionListener action : actionsOnLepes) 
+                    action.actionPerformed(null);
             }
         }
     }

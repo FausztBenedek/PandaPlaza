@@ -1,7 +1,6 @@
 
 package kontroller;
 
-import javax.swing.Timer;
 import GUI.DrawPanel;
 import objektumok.*;
 
@@ -25,8 +24,7 @@ public class Initializer {
         drawPanel.addMouseListener(Builder.getOrangutanValto());
         Builder.getMouseBeKiEvent().subscribe(Builder.getOrangutanValto());
         // ITickable tickeltetési logikájának inicializálása
-        Timer timer = new Timer(1500, Builder.getTicker());
-        timer.start();
+        orangutanLepteto.subscribe(Builder.getTicker());
         
         // 3x3-as négyzet sorfojtonosan
         Csempe c1 = Builder.createCsempe(100,100); Csempe c2 = Builder.createCsempe(200,100); Csempe c3 = Builder.createCsempe(300,100);

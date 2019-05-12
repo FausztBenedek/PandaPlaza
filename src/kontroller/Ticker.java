@@ -54,7 +54,7 @@ public class Ticker implements ActionListener {
     /**
      * Meghívja a heterogén kollekció tick() metódusát.
      * Figyeli a hívási gyakoriságot.
-     * @param e 
+     * @param e Nem haszáljuk.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
