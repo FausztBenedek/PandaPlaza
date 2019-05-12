@@ -3,6 +3,7 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -50,7 +51,8 @@ public class DrawPanel extends JPanel {
         
         int points = Game.getInstance().getPoints();
         g.setColor(Color.black);
-        g.drawString( "Eddig elért pontszám: " +Integer.toString(points), 40, 380);
+        g.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
+        g.drawString("Pontszám: " +Integer.toString(points), 30, 30);
     }
     
     /**

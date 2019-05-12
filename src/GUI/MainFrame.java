@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
     /**
      * A képernyő mérete.
      */
-    private static Dimension screenSize = new Dimension(900, 500);
+    private static Dimension screenSize = new Dimension(900, 530);
     
     /**
      * Akkor használd, ha szükséged van a képernyő méretére.
