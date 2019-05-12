@@ -64,6 +64,11 @@ public class Builder {
     private static BufferedImage szekrenyImage = null;
     
     /**
+     * A játékgép képe.
+     */
+    private static BufferedImage jatekgepImage = null;
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -246,6 +251,28 @@ public class Builder {
         PandaView ugrosVeiw = new PandaView(ijedos, ijedosImage);
         View.getInstance().add(ugrosVeiw);
         return ijedos;
+    }
+       
+    public static Jatekgep createJatekgep(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Jatekgep j = new Jatekgep();
+        j.setCsempe(startPos);
+        startPos.setDolog(j);
+        // Kép betöltése, ha még nincs betöltve.
+        if (jatekgepImage == null) {
+            try {
+                jatekgepImage = ImageIO.read(new File(ImagePaths.jatekgep));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        JatekgepView jView = new JatekgepView(j, jatekgepImage);
+        View.getInstance().add(jView);
+        ticker.subscribe(j, 1);
+        return j;
     }
     
     /**
