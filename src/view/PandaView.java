@@ -5,14 +5,12 @@ import java.awt.image.BufferedImage;
 
 import GUI.DrawPanel;
 import objektumok.Panda;
-import objektumok.Ugros;
 
 public class PandaView implements Drawable {
 
 	/**
      * A Pandár referencia.
      */
-    //private final Ugros ugros;
     private final Panda panda;
     
     /**
@@ -41,9 +39,9 @@ public class PandaView implements Drawable {
                 Graphics g = DrawPanel.getG();
                 CsempeView pos = panda.getCsempe().getView();
                 
-                int xTopLeft = pos.getX() - img.getWidth() / 2;
-                int yTopLeft = pos.getY() - img.getHeight() / 2;
-                g.drawImage(img, xTopLeft, yTopLeft, null);		
+                int xTopLeft = pos.getX() - 29;
+                int yTopLeft = pos.getY() - 29;
+                g.drawImage(img, xTopLeft, yTopLeft, 58, 58, null);		
             }
 	}
 }
