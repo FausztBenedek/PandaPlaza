@@ -2,19 +2,10 @@ package objektumok;
 
 import java.util.*;
 
-import protoApp.Proto;
-
 /**
  * A pláza kijáratát reprezentálja. A kijáraton való távozás után a bejáraton jön vissza az orangután.
  *  */
 public class Kijarat extends Dolog {
-	
-	@Override
-	public String toString() {
-		return "Kijarat " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
-				" bejarat:"+Proto.getObjectName(bejarat) + " game:"+Proto.getObjectName(game);
-	}	
-
 	/**
 	 * A pláza bejárata, amelyen az orangután visszajön miután távozik a kijáraton
 	 *  */

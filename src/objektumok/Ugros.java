@@ -1,17 +1,9 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** 
  * Olyan panda, aki a csokiautomata sípolásától ugrik egyet
  * */
 public class Ugros extends Panda {
-	@Override
-	public String toString() {
-		return "Ugros " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
-				" elsoMancs:" + Proto.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
-				Proto.getObjectName(getHatsoMancs()) + " game:" + Proto.getObjectName(game);
-	}
 
 	/** 
 	 * Ugratja a pandát

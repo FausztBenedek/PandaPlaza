@@ -1,7 +1,5 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** 
  * Egy pandát reprezentáló osztály
  * */

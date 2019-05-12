@@ -2,18 +2,11 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import protoApp.Proto;
-
 /**
  * A Fotel a szomszédos mezőn lévő Ulos pandákat leülteti,
  * és ott tartja egy ideig.
  */
 public class Fotel extends Dolog implements ITickable {
-	
-	@Override
-	public String toString() {
-		return "Fotel " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe())+ " panda:"+Proto.getObjectName(panda) + " counter:" + counter;
-	}	
 		
 	/**
 	 * Referencia a fotelban ülő pandára. Ha a fotel üres, akkor null.

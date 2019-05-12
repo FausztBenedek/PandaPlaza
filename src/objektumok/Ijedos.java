@@ -1,19 +1,11 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** 
  * Olyan panda, aki a játékgép csilingelésétől megijed
  * */
 public class Ijedos extends Panda {
-	@Override
-	public String toString() { 
-		return "Ijedos " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
-				" elsoMancs:" + Proto.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
-				Proto.getObjectName(getHatsoMancs()) + " game:" + Proto.getObjectName(game);
-	}
 
-	/** 
+    /** 
 	 * Megijeszti az ijedős pandát: elengedi az előtte és mögötte állók mancsát.
 	 * */
 	@Override

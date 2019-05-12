@@ -1,17 +1,9 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /**
  * Olyan panda, akit bele lehet ültetni egy fotelbe.
  * */
-public class Ulos extends Panda {
-	@Override
-	public String toString() {
-		return "Ulos " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
-				" elsoMancs:" + Proto.getObjectName(getElsoMancs()) + " hatsoMancs:" + 
-				Proto.getObjectName(getHatsoMancs()) + " game:" + Proto.getObjectName(game);
-	}	
+public class Ulos extends Panda {	
 	
 	/**
 	 *  Leülteti a pandát a paraméterül kapott Fotelbe. Ha fogja valakinek a mancsát, elengedi

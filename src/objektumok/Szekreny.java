@@ -2,18 +2,11 @@ package objektumok;
 
 import java.util.ArrayList;
 
-import protoApp.Proto;
-
 /**
  * Egy olyan dolog, amivel ha egy állat ütközik, akkor elteleportálja
  * egy másik szekrényhez, de mindig ugyan oda.
  */
 public class Szekreny extends Dolog {
-	@Override
-	public String toString() {
-		return "Szekreny " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) +
-				" masik:"+Proto.getObjectName(masik);
-	}	
 	
 
 	/**

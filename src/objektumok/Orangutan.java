@@ -1,20 +1,11 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** 
  * Egy orangutánt reprezentál
  * */
 public class Orangutan extends Allat {
 	
 	private int vedelem = 0; 
-
-	@Override
-	public String toString() {
-		return "Orangutan " + Proto.getObjectName(this) + " csempe:" + Proto.getObjectName(getCsempe()) + 
-				" elsoMancs:"+Proto.getObjectName(getElsoMancs()) + " hatsoMancs:"+ Proto.getObjectName(getHatsoMancs()) +
-				" game:"+ Proto.getObjectName(game);
-	}
 		
 	/** 
 	 * Lépteti a megadott irányba az orangutánt

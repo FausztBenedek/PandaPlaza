@@ -1,19 +1,7 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** */
 public class Torekenycsempe extends Csempe {
-	@Override
-	public String toString() {
-		String csempek = "";
-		for(int i = 0; i < szomszedok.size(); i++) {
-			if(szomszedok.get(i)!=null) {
-				csempek+=" "+i+":"+Proto.getObjectName(szomszedok.get(i));
-			}
-		}
-		return "Torekenycsempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(getDolog()) + " elettartam:" + elettartam + csempek;
-	}
 	
 	/** 
 	 * A törékeny csempe élettartama.

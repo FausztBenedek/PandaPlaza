@@ -3,7 +3,6 @@ package objektumok;
 import java.util.ArrayList;
 import java.util.Random;
 
-import protoApp.Proto;
 import view.CsempeView;
 
 /** */
@@ -29,17 +28,6 @@ public class Csempe {
         public void setView(CsempeView view) {
             this.view = view;
         }
-        
-	@Override
-	public String toString() {
-		String csempek = "";
-		for(int i = 0; i < szomszedok.size(); i++) {
-			if(szomszedok.get(i)!=null) {
-				csempek+=" "+i+":"+Proto.getObjectName(szomszedok.get(i));
-			}
-		}
-		return "Csempe " +  Proto.getObjectName(this) + " dolog:"+Proto.getObjectName(dolog) + csempek;
-	}
 	
 	//attribútumok
 	private Dolog dolog;

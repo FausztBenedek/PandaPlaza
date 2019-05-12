@@ -1,7 +1,5 @@
 package objektumok;
 
-import protoApp.Proto;
-
 /** */
 public abstract class Allat extends Dolog {
 
