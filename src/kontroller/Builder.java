@@ -69,6 +69,16 @@ public class Builder {
     private static BufferedImage jatekgepImage = null;
     
     /**
+     * A Kijarat képe.
+     */
+    private static BufferedImage kijaratImage = null;
+    
+    /**
+     * A Bejarat képe.
+     */
+    private static BufferedImage bejaratImage = null;
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -252,6 +262,7 @@ public class Builder {
         View.getInstance().add(ugrosVeiw);
         return ijedos;
     }
+    
     /**
      * Elkészít és inicializál egy Jatekgep-et.
      * @param startPos Az Ulos kezdő csempéje.
@@ -279,6 +290,34 @@ public class Builder {
         View.getInstance().add(jView);
         ticker.subscribe(j, 1);
         return j;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Kijaratot.
+     * @param startPos A Kijarat kezdő csempéje.
+     * @return Az elkészített Kijarat.
+     * @throws IllegalArgumentException Ha a Kijaratot olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */ 
+    public static Kijarat createKijarat(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Kijarat kijarat = new Kijarat();
+        kijarat.setCsempe(startPos);
+        startPos.setDolog(kijarat);
+        // Kép betöltése, ha még nincs betöltve.
+        if (kijaratImage == null) {
+            try {
+            	kijaratImage = ImageIO.read(new File(ImagePaths.kijarat));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        KijaratView jView = new KijaratView(kijarat, kijaratImage);
+        View.getInstance().add(jView);
+        return kijarat;
     }
     
     /**
