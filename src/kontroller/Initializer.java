@@ -174,11 +174,10 @@ public class Initializer {
         Ijedos ijedos = Builder.createIjedos(c[39]);
         Ijedos ijedos2 = Builder.createIjedos(c[18]);
         Ugros ugros2 = Builder.createUgros(c[32]);
-        /*Szekreny szekreny1;
-        Szekreny szekreny2 = Builder.createSzekreny(c[14], szekreny1);
-        szekreny1 = Builder.createSzekreny(c[38], szekreny2);*/
+        Szekreny szekreny1 = Builder.createSzekreny(c[14]);
+        Szekreny szekreny2 = Builder.createSzekreny(c[38]);
         
-        
+        osszekotSzekreny(szekreny1, szekreny2);
         
     }
     
@@ -186,5 +185,10 @@ public class Initializer {
     public static void osszekotCsempe(Csempe c1, Csempe c2) {
         c1.setNeighbour(id++, c2);
         c2.setNeighbour(id++, c1);
+    }
+    
+    public static void osszekotSzekreny(Szekreny sz1 ,Szekreny sz2) {
+        sz1.setMasik(sz2);
+        sz2.setMasik(sz1);
     }
 }

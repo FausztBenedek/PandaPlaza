@@ -217,13 +217,12 @@ public class Builder {
      * @throws IllegalArgumentException Ha az Szekrenyt olyan csempére akarjuk
      * inicializálni, ahol már van egy dolog.
      */
-    public static Szekreny createSzekreny(Csempe startPos, Szekreny masikSzekreny) throws IllegalArgumentException {
+    public static Szekreny createSzekreny(Csempe startPos) throws IllegalArgumentException {
         if (startPos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
         }
         Szekreny szekreny = new Szekreny();
         szekreny.setCsempe(startPos);
-        szekreny.setMasik(masikSzekreny);
         startPos.setDolog(szekreny);
         // Kép betöltése, ha még nincs betöltve.
         if (szekrenyImage == null) {
