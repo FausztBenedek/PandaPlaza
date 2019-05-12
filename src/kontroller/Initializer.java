@@ -179,6 +179,7 @@ public class Initializer {
         
         osszekotSzekreny(szekreny1, szekreny2);
         
+        Fotel fotel = Builder.createFotel(c[33]);
     }
     
     private static int id = 0;

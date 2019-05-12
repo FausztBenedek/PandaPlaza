@@ -12,4 +12,6 @@ public class ImagePaths {
     public static final String jatekgep =       "img/jatekgep.png";
     public static final String kijarat = 		"img/kijarat.png";
     public static final String bejarat = 		"img/bejarat.png";
+    public static final String fotelPandaval =          "img/fotelPandaval.png";
+    public static final String fotelPandaNelkul =       "img/fotelPandaNelkul.png";
 }

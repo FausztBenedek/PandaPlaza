@@ -79,6 +79,11 @@ public class Builder {
     private static BufferedImage bejaratImage = null;
     
     /**
+     * A fotelhez tartozó képek. 0 index-> panda nélkül, 1. index-> pandával
+     */
+    private static BufferedImage[] fotelImage = {null, null};
+    
+    /**
      * Elkészít és inicializál egy csempét.
      * @param x A csempét megjelenítő kör x koordinátája.
      * @param y A csempét megjelenítő kör y koordinátája.
@@ -348,6 +353,28 @@ public class Builder {
         }
         BejaratView jView = new BejaratView(startPos, bejaratImage);
         View.getInstance().add(jView);
+    }
+    
+    public static Fotel createFotel(Csempe startPos) {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        Fotel f = new Fotel();
+        f.setCsempe(startPos);
+        startPos.setDolog(f);
+        try {
+            if (fotelImage[0] == null) {
+                    fotelImage[0] = ImageIO.read(new File(ImagePaths.fotelPandaNelkul));
+                    fotelImage[1] = ImageIO.read(new File(ImagePaths.fotelPandaval));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+            System.exit(-1);
+        }
+        FotelView fView = new FotelView(f, fotelImage[0], fotelImage[1]);
+        View.getInstance().add(fView);
+        ticker.subscribe(f, 1);
+        return f;
     }
     
     /**
