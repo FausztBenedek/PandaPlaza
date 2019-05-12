@@ -299,11 +299,12 @@ public class Builder {
      * @throws IllegalArgumentException Ha a Kijaratot olyan csempére akarjuk
      * inicializálni, ahol már van egy dolog.
      */ 
-    public static Kijarat createKijarat(Csempe startPos) throws IllegalArgumentException {
+    public static Kijarat createKijarat(Csempe startPos, Csempe bejarat) throws IllegalArgumentException {
         if (startPos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
         }
         Kijarat kijarat = new Kijarat();
+        kijarat.setBejarat(bejarat);
         kijarat.setCsempe(startPos);
         startPos.setDolog(kijarat);
         // Kép betöltése, ha még nincs betöltve.
@@ -318,6 +319,30 @@ public class Builder {
         KijaratView jView = new KijaratView(kijarat, kijaratImage);
         View.getInstance().add(jView);
         return kijarat;
+    }
+    
+    /**
+     * Elkészít és inicializál egy Bejarat-ot.
+     * @param startPos A Bejarat csempéje.
+     * @return Az elkészített Bejarat.
+     * @throws IllegalArgumentException Ha a Bejaratot olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */ 
+    public static void createBejarat(Csempe startPos) throws IllegalArgumentException {
+        if (startPos.getDolog() != null) {
+            throw new IllegalArgumentException("A csempén már van egy dolog.");
+        }
+        // Kép betöltése, ha még nincs betöltve.
+        if (bejaratImage == null) {
+            try {
+            	bejaratImage = ImageIO.read(new File(ImagePaths.bejarat));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        BejaratView jView = new BejaratView(startPos, bejaratImage);
+        View.getInstance().add(jView);
     }
     
     /**

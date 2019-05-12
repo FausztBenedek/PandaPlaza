@@ -59,11 +59,13 @@ public class Initializer {
         
         Csokiautomata csokiautomata = Builder.createCsokiautomata(cC);
         Ugros ugros = Builder.createUgros(c1);
-        Ulos ulos = Builder.createUlos(c4);
-        Ijedos ijedos = Builder.createIjedos(c7);
+        //Ulos ulos = Builder.createUlos(c4);
+        //Ijedos ijedos = Builder.createIjedos(c7);
         //Szekreny szekreny = Builder.createSzekreny(c3);
         Jatekgep jatekgep = Builder.createJatekgep(cA);
-        Kijarat kijarat = Builder.createKijarat(c3);
+        Builder.createBejarat(c7);
+        Kijarat kijarat = Builder.createKijarat(c3, c7);
+        
     }
     
     public static void osszekot(int id, Csempe c1, Csempe c2) {
