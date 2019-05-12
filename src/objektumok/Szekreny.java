@@ -54,4 +54,9 @@ public class Szekreny extends Dolog {
 		}
 		
 	}
+        
+        @Override
+        public void hitBy(Orangutan o) {
+            hitBy((Allat)o);
+        }
 }
