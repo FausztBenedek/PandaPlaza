@@ -176,6 +176,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ugros, ugrosImage);
         View.getInstance().add(ugrosVeiw);
+        ticker.subscribe(ugros, 3);
         return ugros;
     }
     
@@ -204,6 +205,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ulos, ulosImage);
         View.getInstance().add(ugrosVeiw);
+        ticker.subscribe(ulos, 3);
         return ulos;
     }
     
@@ -262,6 +264,7 @@ public class Builder {
         }
         PandaView ugrosVeiw = new PandaView(ijedos, ijedosImage);
         View.getInstance().add(ugrosVeiw);
+        ticker.subscribe(ijedos, 3);
         return ijedos;
     }
     
