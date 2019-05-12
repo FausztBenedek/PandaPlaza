@@ -32,12 +32,14 @@ public class OrangutanView implements Drawable {
 
     @Override
     public void draw() {
-        Graphics g = DrawPanel.getG();
-        
-        CsempeView pos = represented.getCsempe().getView();
-        int xTopLeft = pos.getX() - img.getWidth() / 2;
-        int yTopLeft = pos.getY() - img.getHeight() / 2;
-        g.drawImage(img, xTopLeft, yTopLeft, null);
+        if (!represented.isDead()) {
+            Graphics g = DrawPanel.getG();
+
+            CsempeView pos = represented.getCsempe().getView();
+            int xTopLeft = pos.getX() - img.getWidth() / 2;
+            int yTopLeft = pos.getY() - img.getHeight() / 2;
+            g.drawImage(img, xTopLeft, yTopLeft, null);
+        }
     }
     
     
