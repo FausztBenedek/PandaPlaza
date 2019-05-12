@@ -58,6 +58,13 @@ public class Game {
 		pontszam+=p;
 	}
 	
+	/**
+	 * Vissza adja a pontszámot.
+	 *  */
+	public int getPoints() {
+		return pontszam;
+	}
+	
 	/** 
 	 * Új dolgot ad a számontartott dolgok listájához
 	 * @param d A hozzáadandó dolog
