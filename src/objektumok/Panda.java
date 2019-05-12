@@ -75,6 +75,6 @@ public abstract class Panda extends Allat implements ITickable {
 		super.die();
 		
 		// Csökkenti a hátralévő pandák számát
-		game.pandaSzamCsokkent();	
+		Game.getInstance().pandaSzamCsokkent();	
 	}
 }

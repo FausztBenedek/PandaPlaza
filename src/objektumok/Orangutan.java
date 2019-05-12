@@ -53,8 +53,8 @@ public class Orangutan extends Allat {
 		super.die();
 		
 		// Csökkenti a hátralévő orangutánok számát
-		game.orangutanSzamCsokkent();
-		game.setActiveOrangutan(null);
+		Game.getInstance().orangutanSzamCsokkent();
+		Game.getInstance().setActiveOrangutan(null);
 	}	
 	
 	@Override

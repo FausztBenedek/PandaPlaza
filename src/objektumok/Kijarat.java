@@ -12,14 +12,10 @@ public class Kijarat extends Dolog {
 	private Csempe bejarat;
 	
 	/**
-	 * Az aktuális játék.
-	 *  */
-	private Game game;
-	
-	/**
 	 * A paraméterül kapott orángutánt, ami rálépett a kijáratra, átteszi a bejárathoz.
 	 * Az orángután után álló pandákat a láncban eltűnteti, növeli annyival a pontszámot,
 	 * amennyi panádt kivezetett az orángután.
+         * @param o
 	 * @param Az orangután aki rálépett a kijáratra
 	 *  */
 	@Override
@@ -27,7 +23,7 @@ public class Kijarat extends Dolog {
 		Allat allat = o;
 		ArrayList<Allat> hatsok = new ArrayList<Allat>();
 		while(allat.getHatsoMancs()!=null) { // Amíg vannak a jelenleg vizsgált állat mögött
-			game.addPoints(1); // Pontszám növelés
+			Game.getInstance().addPoints(1); // Pontszám növelés
 			hatsok.add(allat.getHatsoMancs());
 			allat = allat.getHatsoMancs();
 		}				
@@ -42,13 +38,5 @@ public class Kijarat extends Dolog {
 	 */
 	public void setBejarat(Csempe c) {
 		bejarat = c;
-	}
-	
-	/**
-	 * Beállítja a game attribútumot a paraméterként kapottra
-	 * @param g A beállítandó érték
-	 */
-	public void setGame(Game g) {
-		game = g;
 	}
 }

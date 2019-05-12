@@ -14,11 +14,6 @@ public abstract class Allat extends Dolog {
 	private Allat elsoMancs;
 	
 	/** 
-	 * A játékot reprezentálja
-	 * */
-	protected Game game;
-	
-	/** 
 	 * Elengedi az előtte és mögötte állók mancsát és leveszi a pályáról az állatot
 	 * */
 	public void die() {		
@@ -84,12 +79,4 @@ public abstract class Allat extends Dolog {
 	 * Megpróbálja ráléptetni a paraméterül kapott csempére az állatot
 	 * */
 	public abstract void leptet(Csempe c);
-	
-	/**
-	 * Beállítja az állat game attribútumát a paraméterben kapottra 
-	 * @param A beállítandó érték
-	 */
-	public void setGame(Game g) {
-		game = g;
-	}
 }
