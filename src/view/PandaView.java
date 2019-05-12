@@ -35,11 +35,15 @@ public class PandaView implements Drawable {
      */
 	@Override
 	public void draw() {
-		Graphics g = DrawPanel.getG();        
-		
-        CsempeView pos = panda.getCsempe().getView();
-        int xTopLeft = pos.getX() - img.getWidth() / 2;
-        int yTopLeft = pos.getY() - img.getHeight() / 2;
-        g.drawImage(img, xTopLeft, yTopLeft, null);		
+            // Halott pandákat nem rajzolunk ki. Onnan tudjuk, hogy egy
+            // panda halott, hogy nincs csempéje.
+            if (panda.getCsempe() != null) {
+                Graphics g = DrawPanel.getG();        
+
+                CsempeView pos = panda.getCsempe().getView();
+                int xTopLeft = pos.getX() - img.getWidth() / 2;
+                int yTopLeft = pos.getY() - img.getHeight() / 2;
+                g.drawImage(img, xTopLeft, yTopLeft, null);		
+            }
 	}
 }
