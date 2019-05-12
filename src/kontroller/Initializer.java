@@ -40,7 +40,7 @@ public class Initializer {
         c[9] = Builder.createCsempe(185, 28);
         c[10] = Builder.createCsempe(232, 90);
         c[11] = Builder.createCsempe(192, 152);
-        c[12] = Builder.createCsempe(160, 209);
+        c[12] = Builder.createTorekenycsempe(160, 209);
         c[13] = Builder.createCsempe(108, 239);
         c[14] = Builder.createCsempe(158, 283);
         c[15] = Builder.createCsempe(220, 307);
@@ -59,7 +59,7 @@ public class Initializer {
         c[28] = Builder.createCsempe(417, 44);
         c[29] = Builder.createCsempe(435, 93);
         c[30] = Builder.createCsempe(431, 138);
-        c[31] = Builder.createCsempe(418, 226);
+        c[31] = Builder.createTorekenycsempe(418, 226);
         c[32] = Builder.createCsempe(417, 283);
         c[33] = Builder.createCsempe(464, 307);
         c[34] = Builder.createCsempe(469, 249);

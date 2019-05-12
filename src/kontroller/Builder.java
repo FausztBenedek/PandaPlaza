@@ -98,6 +98,15 @@ public class Builder {
         return c;
     }
     
+    public static Torekenycsempe createTorekenycsempe(int x, int y) {
+        Torekenycsempe c = new Torekenycsempe();
+        TorekenycsempeView cView = new TorekenycsempeView(c, x, y);
+        c.setView(cView);
+        mouseBeKiEvent.addCsempeView(cView);
+        View.getInstance().add(cView);
+        return c;
+    }
+    
     /**
      * Elkészít és inicializál egy orángutánt.
      * @param startPos Az orángután kezdő csempéje.
