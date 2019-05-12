@@ -3,6 +3,11 @@ package objektumok;
 /** */
 public abstract class Allat extends Dolog {
 
+        /**
+         * Hamis addig, ameddig a panda nem halt meg.
+         */
+        private boolean dead = false;
+
 	/** 
 	 * Az az állat, akit a hátsó mancsával fog
 	 * */
@@ -34,9 +39,18 @@ public abstract class Allat extends Dolog {
 		// Leveszi az állatot a csempéről
 		getCsempe().setDolog(null);
 		setCsempe(null);
-                //TODO panda törlése
-	}
-	
+                dead = true;
+
+        }
+            
+        /**
+         * Le tudjuk kérdezni, hogy a panda meg van-e halva.
+         * @return Élve vagy halva :D
+         */
+        public boolean isDead() {
+            return dead;
+        }
+    	
 	/** 
 	 * Visszatér azzal az állattal, akit a hátsó mancsával fog
 	 * */

@@ -37,7 +37,7 @@ public class PandaView implements Drawable {
 	public void draw() {
             // Halott pandákat nem rajzolunk ki. Onnan tudjuk, hogy egy
             // panda halott, hogy nincs csempéje.
-            if (panda.getCsempe() != null) {
+            if (!panda.isDead()) {
                 Graphics g = DrawPanel.getG();        
 
                 CsempeView pos = panda.getCsempe().getView();

@@ -17,7 +17,7 @@ public abstract class Panda extends Allat implements ITickable {
 	 * Jelzi a pandának, hogy telt az idő, ennek hatására eldönti, hogy akar-e lépni
 	 * */
 	public void tick() {
-		if(getElsoMancs()==null)
+		if(getElsoMancs()==null && !isDead())
 			leptet();
 	}
 	
