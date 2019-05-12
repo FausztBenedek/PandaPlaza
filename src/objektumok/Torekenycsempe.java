@@ -42,4 +42,12 @@ public class Torekenycsempe extends Csempe {
 	public void setElettartam(int elettartam) {
 		this.elettartam = elettartam;
 	}
+        
+        /**
+         * Lekérdezhető a csempének a hátra lévő élettartama.
+         * @return 
+         */
+        public int getElettartam() {
+            return elettartam;
+        }
 }
