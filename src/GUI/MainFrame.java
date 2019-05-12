@@ -4,6 +4,7 @@ package GUI;
 import java.awt.Dimension;
 import javax.swing.*;
 
+
 /**
  * A fő ablak.
  */
@@ -15,8 +16,9 @@ public class MainFrame extends JFrame {
      */
     public MainFrame(String string) {
         super(string);
+        
         JPanel drawpanel = DrawPanel.getInstance();
-        add(drawpanel);
+        add(drawpanel);   
     }
 
     /**
@@ -31,6 +33,5 @@ public class MainFrame extends JFrame {
      */
     public static Dimension getScreenSize() {
         return screenSize;
-    }
-    
+    }    
 }

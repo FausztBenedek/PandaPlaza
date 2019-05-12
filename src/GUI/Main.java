@@ -2,13 +2,14 @@
 package GUI;
 
 import javax.swing.JFrame;
+
 import kontroller.Initializer;
 
 public class Main {
 
     public static void main(String[] args) {
         //1. Create the frame.
-        JFrame frame = new MainFrame("Panda Plaza");
+        JFrame frame = new MainFrame("Panda Plaza");  
 
         //2. What happens when the frame closes?
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

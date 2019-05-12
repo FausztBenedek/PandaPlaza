@@ -1,9 +1,12 @@
 
 package GUI;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+
+import objektumok.Game;
 import view.View;
 
 /**
@@ -43,7 +46,11 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);
         setG(g);
         View viewCollection = View.getInstance();
-        viewCollection.drawAll();
+        viewCollection.drawAll();        
+        
+        int points = Game.getInstance().getPoints();
+        g.setColor(Color.black);
+        g.drawString( "Eddig elért pontszám: " +Integer.toString(points), 40, 380);
     }
     
     /**
