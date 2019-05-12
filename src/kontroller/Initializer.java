@@ -163,14 +163,22 @@ public class Initializer {
         Orangutan o2 = Builder.createOrangutan(c[10]);
         Game.getInstance().setActiveOrangutan(o);
         
-        Csokiautomata csokiautomata = Builder.createCsokiautomata(c[19]);
-        Ugros ugros = Builder.createUgros(c[9]);
-        //Ulos ulos = Builder.createUlos(c4);
-        //Ijedos ijedos = Builder.createIjedos(c7);
-        //Szekreny szekreny = Builder.createSzekreny(c3);
-        Jatekgep jatekgep = Builder.createJatekgep(c[4]);
         Builder.createBejarat(c[2]);
-        Kijarat kijarat = Builder.createKijarat(c[2], c[35]);
+        Kijarat kijarat = Builder.createKijarat(c[35], c[2]);        
+        Csokiautomata csokiautomata = Builder.createCsokiautomata(c[19]);
+        Jatekgep jatekgep = Builder.createJatekgep(c[25]);
+        
+        Ugros ugros = Builder.createUgros(c[9]);
+        Ulos ulos = Builder.createUlos(c[20]);
+        Ulos ulos2 = Builder.createUlos(c[40]);
+        Ijedos ijedos = Builder.createIjedos(c[39]);
+        Ijedos ijedos2 = Builder.createIjedos(c[18]);
+        Ugros ugros2 = Builder.createUgros(c[32]);
+        /*Szekreny szekreny1;
+        Szekreny szekreny2 = Builder.createSzekreny(c[14], szekreny1);
+        szekreny1 = Builder.createSzekreny(c[38], szekreny2);*/
+        
+        
         
     }
     

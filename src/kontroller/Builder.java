@@ -210,16 +210,18 @@ public class Builder {
     /**
      * Elkészít és inicializál egy Szekrenyt.
      * @param startPos A Szekreny kezdő csempéje.
+     * @param masikSzekreny A Szekreny párja.
      * @return Az elkészített Szekreny.
      * @throws IllegalArgumentException Ha az Szekrenyt olyan csempére akarjuk
      * inicializálni, ahol már van egy dolog.
      */
-    public static Szekreny createSzekreny(Csempe startPos) throws IllegalArgumentException {
+    public static Szekreny createSzekreny(Csempe startPos, Szekreny masikSzekreny) throws IllegalArgumentException {
         if (startPos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
         }
         Szekreny szekreny = new Szekreny();
         szekreny.setCsempe(startPos);
+        szekreny.setMasik(masikSzekreny);
         startPos.setDolog(szekreny);
         // Kép betöltése, ha még nincs betöltve.
         if (szekrenyImage == null) {
@@ -295,6 +297,7 @@ public class Builder {
     /**
      * Elkészít és inicializál egy Kijaratot.
      * @param startPos A Kijarat kezdő csempéje.
+     * @param bejarat A Kijaratnak a Bejárat párja..
      * @return Az elkészített Kijarat.
      * @throws IllegalArgumentException Ha a Kijaratot olyan csempére akarjuk
      * inicializálni, ahol már van egy dolog.
