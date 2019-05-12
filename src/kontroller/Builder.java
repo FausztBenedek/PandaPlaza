@@ -16,7 +16,7 @@ import view.*;
  * egy képet stb)
  */
 public class Builder {
-    
+        
     /**
      * Eventeket dobáló objektum, amikor az egér belép egy csempére, vagy
      * kilép egy csempéről. Azért van itt tárolva, mert egy két objektumhoz
@@ -252,7 +252,13 @@ public class Builder {
         View.getInstance().add(ugrosVeiw);
         return ijedos;
     }
-       
+    /**
+     * Elkészít és inicializál egy Jatekgep-et.
+     * @param startPos Az Ulos kezdő csempéje.
+     * @return Az elkészített Ulos.
+     * @throws IllegalArgumentException Ha az Ulost olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */ 
     public static Jatekgep createJatekgep(Csempe startPos) throws IllegalArgumentException {
         if (startPos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
