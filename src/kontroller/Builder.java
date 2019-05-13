@@ -364,6 +364,13 @@ public class Builder {
         View.getInstance().add(jView);
     }
     
+    /**
+     * Elkészít és inicializál egy Fotelt.
+     * @param startPos A Fotel csempéje.
+     * @return Az elkészített Fotelt.
+     * @throws IllegalArgumentException Ha a Fotelt olyan csempére akarjuk
+     * inicializálni, ahol már van egy dolog.
+     */ 
     public static Fotel createFotel(Csempe startPos) {
         if (startPos.getDolog() != null) {
             throw new IllegalArgumentException("A csempén már van egy dolog.");
@@ -393,7 +400,7 @@ public class Builder {
      */
     public static MouseBeKiPoller getMouseBeKiEvent() {
         return mouseBeKiEvent;
-    }
+    }    
     
     public static OrangutanValto getOrangutanValto() {
         return orangutanValto;
