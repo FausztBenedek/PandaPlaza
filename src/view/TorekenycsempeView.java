@@ -32,6 +32,7 @@ public class TorekenycsempeView extends CsempeView {
         int num = represented.getElettartam();
         g.setFont(f);
         g.setColor(Color.red);
+        //Törékeny csempe hátrelévő élettartamának kiírása, ha törött, akkor a szám helyett X.
         if(num==0)
         	g.drawString("X", x-5, y-28);        	
         else

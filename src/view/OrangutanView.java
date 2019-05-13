@@ -34,7 +34,7 @@ public class OrangutanView implements Drawable {
     public void draw() {
         if (!represented.isDead()) {
             Graphics g = DrawPanel.getG();
-
+            //Kép kirajzolása a megfelelő helyre
             CsempeView pos = represented.getCsempe().getView();
             int xTopLeft = pos.getX() - 25;
             int yTopLeft = pos.getY() - 25;

@@ -28,6 +28,7 @@ public class FotelView implements Drawable {
         } else {
             img = defaultImage;
         }
+        //Kép kirajzolása a megfelelő helyre
         CsempeView pos = fotel.getCsempe().getView();
         int xTopLeft = pos.getX() - 31;
         int yTopLeft = pos.getY() - 31;

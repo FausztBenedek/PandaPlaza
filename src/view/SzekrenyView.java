@@ -33,7 +33,7 @@ public class SzekrenyView implements Drawable {
     @Override
     public void draw() {
         Graphics g = DrawPanel.getG();
-        
+        //Kép kirajzolása a megfelelő helyre
         CsempeView pos = szekreny.getCsempe().getView();
         int xTopLeft = pos.getX() - 26;
         int yTopLeft = pos.getY() - 26;

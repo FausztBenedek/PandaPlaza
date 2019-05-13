@@ -24,6 +24,7 @@ public class KijaratView implements Drawable{
     
     @Override
     public void draw() {  
+        //Kép kirajzolása a megfelelő helyre
     	Graphics g = DrawPanel.getG();
         CsempeView pos = csempe.getView();
         int xTopLeft = pos.getX() - 24;

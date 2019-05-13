@@ -34,7 +34,7 @@ public class BejaratView implements Drawable {
     @Override
     public void draw() {
         Graphics g = DrawPanel.getG();
-        
+        //Kép kirajzolása a megfelelő helyre
         CsempeView pos = represented.getView();
         int xTopLeft = pos.getX() - 24;
         int yTopLeft = pos.getY() - 24;

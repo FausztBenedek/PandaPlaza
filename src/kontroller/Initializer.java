@@ -28,10 +28,14 @@ public class Initializer {
         
         // Pálya építése
         Csempe[] c = new Csempe[42];
-      
+        //X irányű skálázási tényező
         double sx = 1.5;
+        //Y irányű skálázási tényező
         double sy = 1.5;
+        //Pálya Y irányú eltolása
         int dy = 30;
+        
+        //Csempék létrehozása megfelelő pozícióba
         c[0] = Builder.createCsempe((int)(sx* 530), dy+(int)(sy* 45));
         c[1] = Builder.createCsempe( (int)(sx* 38), dy+(int)(sy*34));
         c[2] = Builder.createCsempe( (int)(sx* 36), dy+(int)(sy*103));
@@ -75,7 +79,7 @@ public class Initializer {
        c[40] = Builder.createCsempe( (int)(sx*487), dy+(int)(sy*83));
        c[41] = Builder.createCsempe( (int)(sx*469), dy+(int)(sy*19));
 
-        
+        //Szomszédos csempék összekötése
         osszekotCsempe(c[2 ], c[1 ]);
         osszekotCsempe(c[2 ], c[5 ]);
         osszekotCsempe(c[2 ], c[6 ]);
@@ -164,15 +168,14 @@ public class Initializer {
         osszekotCsempe(c[40], c[39]);
         osszekotCsempe(c[14], c[15]);
 
-        Orangutan o = Builder.createOrangutan(c[5]);
-        Orangutan o2 = Builder.createOrangutan(c[10]);
-        Game.getInstance().setActiveOrangutan(o);
-        
+        //Dolgok elhelyezése a csempéken:
         Builder.createBejarat(c[2]);
         Kijarat kijarat = Builder.createKijarat(c[35], c[2]);        
         Csokiautomata csokiautomata = Builder.createCsokiautomata(c[19]);
-        Jatekgep jatekgep = Builder.createJatekgep(c[25]);
-        
+        Jatekgep jatekgep = Builder.createJatekgep(c[25]);        
+        Orangutan o = Builder.createOrangutan(c[5]);
+        Orangutan o2 = Builder.createOrangutan(c[10]);
+        Game.getInstance().setActiveOrangutan(o);        
         Ugros ugros = Builder.createUgros(c[9]);
         Ulos ulos = Builder.createUlos(c[20]);
         Ulos ulos2 = Builder.createUlos(c[40]);
@@ -180,8 +183,8 @@ public class Initializer {
         Ijedos ijedos2 = Builder.createIjedos(c[18]);
         Ugros ugros2 = Builder.createUgros(c[32]);
         Szekreny szekreny1 = Builder.createSzekreny(c[14]);
-        Szekreny szekreny2 = Builder.createSzekreny(c[38]);        
-        osszekotSzekreny(szekreny1, szekreny2);        
+        Szekreny szekreny2 = Builder.createSzekreny(c[38]);
+        osszekotSzekreny(szekreny1, szekreny2); //Szekrények összekötése
         Fotel fotel = Builder.createFotel(c[33]);
     }
     
