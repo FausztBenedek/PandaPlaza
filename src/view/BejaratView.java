@@ -36,8 +36,8 @@ public class BejaratView implements Drawable {
         Graphics g = DrawPanel.getG();
         
         CsempeView pos = represented.getView();
-        int xTopLeft = pos.getX() - img.getWidth() / 2;
-        int yTopLeft = pos.getY() - img.getHeight() / 2;
-        g.drawImage(img, xTopLeft, yTopLeft, null);
+        int xTopLeft = pos.getX() - 24;
+        int yTopLeft = pos.getY() - 24;
+        g.drawImage(img, xTopLeft, yTopLeft, 48,48, null);   
     }
 }

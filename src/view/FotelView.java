@@ -29,8 +29,8 @@ public class FotelView implements Drawable {
             img = defaultImage;
         }
         CsempeView pos = fotel.getCsempe().getView();
-        int xTopLeft = pos.getX() - img.getWidth() / 2;
-        int yTopLeft = pos.getY() - img.getHeight() / 2;
-        g.drawImage(img, xTopLeft, yTopLeft, null);
+        int xTopLeft = pos.getX() - 31;
+        int yTopLeft = pos.getY() - 31;
+        g.drawImage(img, xTopLeft, yTopLeft, 62,62, null);
     }
 }

@@ -39,9 +39,9 @@ public class PandaView implements Drawable {
                 Graphics g = DrawPanel.getG();
                 CsempeView pos = panda.getCsempe().getView();
                 
-                int xTopLeft = pos.getX() - 29;
-                int yTopLeft = pos.getY() - 29;
-                g.drawImage(img, xTopLeft, yTopLeft, 58, 58, null);		
+                int xTopLeft = pos.getX() - 44;
+                int yTopLeft = pos.getY() - 50;
+                g.drawImage(img, xTopLeft, yTopLeft, 80, 80, null);		
             }
 	}
 }

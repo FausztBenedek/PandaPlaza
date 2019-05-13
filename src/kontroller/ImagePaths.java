@@ -14,4 +14,5 @@ public class ImagePaths {
     public static final String bejarat = 		"img/bejarat.png";
     public static final String fotelPandaval =          "img/fotelPandaval.png";
     public static final String fotelPandaNelkul =       "img/fotelPandaNelkul.png";
+    public static final String background =       "img/hatter.png";
 }

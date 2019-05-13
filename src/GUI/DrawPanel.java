@@ -5,8 +5,17 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import kontroller.ImagePaths;
+import kontroller.Initializer;
 import objektumok.Game;
 import view.View;
 
@@ -46,6 +55,20 @@ public class DrawPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         setG(g);
+        BufferedImage backgroundImage = null;
+        if (backgroundImage == null) {
+            try {
+            	backgroundImage = ImageIO.read(new File(ImagePaths.background));
+            } catch (IOException ex) {
+                Logger.getLogger(Initializer.class.getName()).log(Level.SEVERE, null, ex);
+                System.exit(-1);
+            }
+        }
+        
+    
+        g.drawImage(backgroundImage, 0, 0, 900,530, null);
+        
+        
         View viewCollection = View.getInstance();
         viewCollection.drawAll();        
         

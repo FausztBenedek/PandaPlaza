@@ -33,7 +33,7 @@ public class CsempeView implements Drawable {
     /**
      * A csempék sugara.
      */
-    private static final int rad = 30;
+    private static final int rad = 32;
         
     /**
      * A csempe középpontjának a koordinátái.
@@ -90,12 +90,15 @@ public class CsempeView implements Drawable {
             }
         }
         boolean aktivOrangutanRajta = (represented.getDolog() == aktivOrangutan);
+        g.setColor(Color.BLACK);
+        g.fillOval(xBalFelso+2, yBalFelso+2, 2 * rad+3, 2 * rad+3);
         
         g.setColor(Color.WHITE);        // Default color
         if (aktivOrangutan!=null&&aktivOrangutanMellett)      g.setColor(Color.YELLOW);
         if (aktivOrangutan!=null&&aktivOrangutanRajta)        g.setColor(Color.BLUE);
-        if (hasDifferentColor)          g.setColor(Color.GREEN);
-       
+        if (hasDifferentColor)          g.setColor(Color.GREEN);       
+        
+        
         g.fillOval(xBalFelso, yBalFelso, 2 * rad, 2 * rad);
         
         

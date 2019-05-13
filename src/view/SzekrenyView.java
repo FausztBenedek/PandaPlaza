@@ -35,8 +35,8 @@ public class SzekrenyView implements Drawable {
         Graphics g = DrawPanel.getG();
         
         CsempeView pos = szekreny.getCsempe().getView();
-        int xTopLeft = pos.getX() - img.getWidth() / 2;
-        int yTopLeft = pos.getY() - img.getHeight() / 2;
-        g.drawImage(img, xTopLeft, yTopLeft, null);
+        int xTopLeft = pos.getX() - 26;
+        int yTopLeft = pos.getY() - 26;
+        g.drawImage(img, xTopLeft, yTopLeft, 52,52, null);
     }
 }
